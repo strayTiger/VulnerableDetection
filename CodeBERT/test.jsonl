@@ -1,0 +1,2 @@
+{"func": "int AES_wrap_key(AES_KEY *key, const unsigned char *iv,  unsigned char *out,  const unsigned char *in, unsigned int inlen) { return CRYPTO_128_wrap(key, iv, out, in, inlen, (block128_f) AES_encrypt); }", "func_name": "aes_wrap.c_AES_wrap_key.c", "target": 0, "idx": 131607, "project": "OpenSSL"}
+{"func": "int OSSL_STORE_eof(OSSL_STORE_CTX *ctx) { return ctx->loader->eof(ctx->loader_ctx); }", "func_name": "store_lib.c_OSSL_STORE_eof.c", "target": 0, "idx": 137202, "project": "OpenSSL"}
