@@ -40,14 +40,14 @@ from DataLoader import SplitCharacters, ListToCSV
 #BERT 的 512 长度限制是开发者权衡效率、资源和任务需求后的结果，而非技术上限。BERT使用的是绝对位置编码
 # 2. 全局配置 这些值提到文件最前面统一管理，方便后期微调；完全不会改变算法逻辑。
 # ---------------------------------------------------------
-#SEED          = 42    # 1. 可复现性——同一机器或不同机器，多次跑实验能得出几乎一致的结果；2. 对比公平——改其他超参时，避免因为“刚好抽到好/坏初值”带来噪声
+SEED          = 42    # 1. 可复现性——同一机器或不同机器，多次跑实验能得出几乎一致的结果；2. 对比公平——改其他超参时，避免因为“刚好抽到好/坏初值”带来噪声
 MAX_LEN       = 512   # CodeBERT base 最大长度
 BATCH_SIZE    = 12
-NUM_EPOCHS    = 2
+NUM_EPOCHS    = 10
 LR            = 2e-5  # 学习率
 WEIGHT_DECAY  = 0.01  # L2 正则项系数，AdamW 会在每步更新时额外乘以 (1 − lr*weight_decay)，抑制权重过大,减少过拟合，特别是参数量大的 Transformer；也能在一定程度上稳定训练
 GRAD_NORM     = 1.0   # 梯度裁剪上限：反向传播完毕后，把所有参数梯度的 L2 范数缩放到不超过这一数值.防止出现 梯度爆炸 —— 特别是大模型、大学习率或 LoRA 等微调时，某一小批次可能让梯度异常大，导致权重发散
-MODEL_DIR     = "./codebert_model"       # 你的 CodeBERT 权重目录
+MODEL_DIR     = "./distil_codeBERT"       # 你的 CodeBERT 权重目录
 RESULT_DIR    = "./result"
 DEVICE        = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -74,9 +74,9 @@ def generate_id_label_code(json_path):
     return ids, labels, codes
 
 data_dir = "./"
-train_ids, train_y, train_code = generate_id_label_code(Path(data_dir, "train.jsonl"))
-valid_ids, valid_y, valid_code = generate_id_label_code(Path(data_dir, "valid.jsonl"))
-test_ids,  test_y,  test_code  = generate_id_label_code(Path(data_dir, "test.jsonl"))
+train_ids, train_y, train_code = generate_id_label_code(Path(data_dir, "libpng_train.jsonl"))
+valid_ids, valid_y, valid_code = generate_id_label_code(Path(data_dir, "libpng_val.jsonl"))
+test_ids,  test_y,  test_code  = generate_id_label_code(Path(data_dir, "libpng_test.jsonl"))
 
 print(f"Train {len(train_y)}  | positive {np.sum(train_y)}")
 print(f"Valid {len(valid_y)}  | positive {np.sum(valid_y)}")
@@ -176,7 +176,7 @@ scheduler = get_linear_schedule_with_warmup(optimizer,
                                             num_warmup_steps=int(0.1*total_steps),
                                             num_training_steps=total_steps)
 
-def topk_metrics(pred_probs, labels, ks=(50,100,150,200,250,300,350,400)):
+def topk_metrics(pred_probs, labels, ks=(10,20,30,40,50,100,150,200)):
     scores = np.asarray(pred_probs).flatten()
     labels = np.asarray(labels).flatten()
     total_pos = labels.sum()
@@ -211,7 +211,7 @@ def train(model):
         torch.cuda.reset_peak_memory_stats() # 把峰值计数器清零，便于下一次测量.每 40 个 batch 的当前最大 GPU 占用
 
         for step, batch in enumerate(train_loader):
-            if step % 40 == 0 and step:
+            if step % 1000 == 0 and step:
                 elapsed = format_time(time.time() - t0)
                 peak_mem = torch.cuda.max_memory_allocated() / 1024 ** 3
                 print(f"训练峰值显存: {peak_mem:.2f} GB  Batch {step}/{len(train_loader)} | Elapsed {elapsed}")
@@ -252,6 +252,7 @@ def train(model):
             best_val_loss = avg_val_loss  # 更新最好的验证集损失
             epochs_no_improve = 0
             path = Path(RESULT_DIR, f"codebert_best.bin")
+            # 使用 model.state_dict() 保存模型的权重，这种方法只保存模型的参数（即权重和偏置），而不保存模型的架构。
             torch.save(model.state_dict(), path)
             print(f"  >> Saved best model to {path}")
         else:
@@ -278,8 +279,12 @@ def get_predictions(model, loader):
             probs.extend(p.tolist())
     return np.asarray(probs)
 
+# 加载保存的最优模型权重
+best_model = CodeBERTClassifier().to(DEVICE)
+best_model.load_state_dict(torch.load(Path(RESULT_DIR, "codebert_best.bin")))
+
 t0=time.time()
-pred_probs = get_predictions(model, test_loader)
+pred_probs = get_predictions(best_model, test_loader)
 elapsed = format_time(time.time() - t0)   
 print(f" test elapsed {elapsed}")
 auc = roc_auc_score(test_y, pred_probs)
@@ -298,7 +303,7 @@ def evaluate(y_true, p, thr=0.5):
     prec, rec, _ = precision_recall_curve(y_true, p)
     print("AP (trapz)", trapz(rec, prec))
     print(classification_report(y_true, p>thr,target_names=["Non-vuln","Vuln"]))
-    pq_rq = topk_metrics(p, y_true, ks=[50,100,150,200,250,300,350,400])
+    pq_rq = topk_metrics(p, y_true, ks=[10,20,30,40,50,100,150,200])
     for k,(pq,rq) in pq_rq.items():
         print(f"PQ{k:>3} = {pq*100:5.2f}% | RQ{k:>3} = {rq*100:5.2f}%")
 

@@ -25,12 +25,12 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 MODEL_NAME      = "./graphcodebert_model"
 MAX_LEN         = 512
 BATCH_SIZE      = 12
-NUM_EPOCHS      = 2
+NUM_EPOCHS      = 10
 LR              = 2e-5
 WEIGHT_DECAY    = 0.01
 WARMUP_RATIO    = 0.1
 GRAD_NORM       = 1.0
-LOG_EVERY       = 40           # 每多少个batch打印一次中间日志
+LOG_EVERY       = 1000           # 每多少个batch打印一次中间日志
 PATIENCE        = 5            # 早停
 MIN_DELTA       = 1e-4
 
@@ -300,7 +300,7 @@ def main():
             bad_epochs = 0
             save_dir = Path(RESULT_DIR, BEST_DIR_NAME)
             save_dir.mkdir(exist_ok=True, parents=True)
-            model.save_pretrained(save_dir)
+            model.save_pretrained(save_dir) #保存整个模型，不仅保存权重，还保存模型的架构。
             print(f"  >> Saved best model to {save_dir}")
         else:
             bad_epochs += 1
@@ -314,10 +314,14 @@ def main():
 
     # Loss 曲线
     plot_loss_curve(training_stats, RESULT_DIR)
+    
+    # 在测试阶段加载最优模型
+    best_model_path = Path(RESULT_DIR, BEST_DIR_NAME)
+    best_model = AutoModelForSequenceClassification.from_pretrained(best_model_path, num_labels=2).to(DEVICE)    
 
     # 测试
     t0 = time.time()
-    pred_probs = get_predictions(model, test_loader)
+    pred_probs = get_predictions(best_model, test_loader)
     print(f" test elapsed {format_time(time.time() - t0)}")
     evaluate(test_y, pred_probs, thr=0.5)
 
