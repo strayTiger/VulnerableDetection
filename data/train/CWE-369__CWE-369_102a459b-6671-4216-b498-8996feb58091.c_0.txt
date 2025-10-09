@@ -1,0 +1,32 @@
+static void goodG2B()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    if(globalReturnsTrueOrFalse())
+    {
+        /* FIX: Use a hardcoded number that won't a divide by zero */
+        data = 2.0F;
+    }
+    else
+    {
+        /* FIX: Use a hardcoded number that won't a divide by zero */
+        data = 2.0F;
+    }
+    if(globalReturnsTrueOrFalse())
+    {
+        {
+            /* POTENTIAL FLAW: Possibly divide by zero */
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+    }
+    else
+    {
+        {
+            /* POTENTIAL FLAW: Possibly divide by zero */
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+    }
+}

@@ -1,0 +1,20 @@
+static void goodB2G2()
+{
+    char * data;
+    data = NULL;
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        {
+            char myString[] = "myString";
+            /* POTENTIAL FLAW: Allocate memory from the heap using a function that requires free() for deallocation */
+            data = strdup(myString);
+            /* Use data */
+            printLine(data);
+        }
+    }
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        /* FIX: Deallocate memory initialized in the source */
+        free(data);
+    }
+}

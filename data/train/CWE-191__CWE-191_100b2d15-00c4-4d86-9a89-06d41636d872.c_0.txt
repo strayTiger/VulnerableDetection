@@ -1,0 +1,5 @@
+void CWE191_Integer_Underflow__char_rand_multiply_68_good()
+{
+    goodG2B();
+    goodB2G();
+}

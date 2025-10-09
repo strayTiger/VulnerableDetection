@@ -1,0 +1,31 @@
+static void good1()
+{
+    if(staticFalse)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            int x = (rand() % 3);
+            /* FIX: Use break in all cases that you do not intend "fall-through"
+             * behavior */
+            switch (x)
+            {
+            case 0:
+                printLine("0");
+                break;
+            case 1:
+                printLine("1");
+                break;
+            case 2:
+                printLine("2");
+                break;
+            default:
+                printLine("Invalid Number");
+                break;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+void CWE369_Divide_by_Zero__int_rand_modulo_17_bad()
+{
+    int i,j;
+    int data;
+    /* Initialize data */
+    data = -1;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+    }
+    for(j = 0; j < 1; j++)
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 % data);
+    }
+}

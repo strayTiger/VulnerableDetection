@@ -1,0 +1,5 @@
+void CWE78_OS_Command_Injection__wchar_t_file_system_09_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

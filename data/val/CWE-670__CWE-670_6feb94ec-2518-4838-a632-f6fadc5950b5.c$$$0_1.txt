@@ -1,0 +1,6 @@
+void CWE617_Reachable_Assertion__fixed_68b_badSink()
+{
+    int data = CWE617_Reachable_Assertion__fixed_68_badData;
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

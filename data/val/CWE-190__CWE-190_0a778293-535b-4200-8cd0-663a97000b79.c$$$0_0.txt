@@ -1,0 +1,20 @@
+static void goodG2B()
+{
+    int h,j;
+    short data;
+    data = 0;
+    for(h = 0; h < 1; h++)
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    for(j = 0; j < 1; j++)
+    {
+        if(data > 0) /* ensure we won't have an underflow */
+        {
+            /* POTENTIAL FLAW: if (data*2) > SHRT_MAX, this will overflow */
+            short result = data * 2;
+            printIntLine(result);
+        }
+    }
+}

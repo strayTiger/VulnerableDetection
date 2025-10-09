@@ -1,0 +1,8 @@
+static void goodB2GSink(HANDLE data)
+{
+    /* FIX: If the file is still opened, close it */
+    if (data != INVALID_HANDLE_VALUE)
+    {
+        CloseHandle(data);
+    }
+}

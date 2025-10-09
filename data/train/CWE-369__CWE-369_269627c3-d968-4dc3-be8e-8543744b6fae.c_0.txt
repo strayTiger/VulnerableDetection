@@ -1,0 +1,28 @@
+static void goodG2B1()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    switch(5)
+    {
+    case 6:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    default:
+        /* FIX: Use a value not equal to zero */
+        data = 7;
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 % data);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

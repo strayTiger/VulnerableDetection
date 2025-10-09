@@ -1,0 +1,11 @@
+static void good2()
+{
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        /* FIX: check for the correct return value */
+        if (REMOVE(L"removemegood.txt") != 0)
+        {
+            printLine("remove failed!");
+        }
+    }
+}

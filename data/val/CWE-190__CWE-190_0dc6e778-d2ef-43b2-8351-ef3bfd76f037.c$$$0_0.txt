@@ -1,0 +1,24 @@
+static void goodB2G2()
+{
+    int64_t data;
+    data = 0LL;
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%" SCNd64, &data);
+    }
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < LLONG_MAX)
+        {
+            data++;
+            int64_t result = data;
+            printLongLongLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

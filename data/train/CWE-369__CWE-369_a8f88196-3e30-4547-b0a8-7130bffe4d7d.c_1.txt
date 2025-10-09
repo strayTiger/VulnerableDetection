@@ -1,0 +1,11 @@
+void CWE369_Divide_by_Zero__float_fgets_22_badSink(float data)
+{
+    if(CWE369_Divide_by_Zero__float_fgets_22_badGlobal)
+    {
+        {
+            /* POTENTIAL FLAW: Possibly divide by zero */
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+    }
+}

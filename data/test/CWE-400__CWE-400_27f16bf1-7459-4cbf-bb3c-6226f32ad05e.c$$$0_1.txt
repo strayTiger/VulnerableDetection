@@ -1,0 +1,23 @@
+void CWE400_Resource_Exhaustion__fgets_sleep_66_bad()
+{
+    int count;
+    int countArray[5];
+    /* Initialize count */
+    count = -1;
+    {
+        char inputBuffer[CHAR_ARRAY_SIZE] = "";
+        /* POTENTIAL FLAW: Read count from the console using fgets() */
+        if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+        {
+            /* Convert to int */
+            count = atoi(inputBuffer);
+        }
+        else
+        {
+            printLine("fgets() failed.");
+        }
+    }
+    /* put count in array */
+    countArray[2] = count;
+    CWE400_Resource_Exhaustion__fgets_sleep_66b_badSink(countArray);
+}

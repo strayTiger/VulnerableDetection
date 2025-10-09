@@ -1,0 +1,9 @@
+void CWE617_Reachable_Assertion__fgets_61_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    data = CWE617_Reachable_Assertion__fgets_61b_badSource(data);
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

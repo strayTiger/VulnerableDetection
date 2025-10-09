@@ -1,0 +1,12 @@
+void CWE195_Signed_to_Unsigned_Conversion_Error__negative_strncpy_65_bad()
+{
+    int data;
+    /* define a function pointer */
+    void (*funcPtr) (int) = CWE195_Signed_to_Unsigned_Conversion_Error__negative_strncpy_65b_badSink;
+    /* Initialize data */
+    data = -1;
+    /* FLAW: Use a negative number */
+    data = -1;
+    /* use the function pointer */
+    funcPtr(data);
+}

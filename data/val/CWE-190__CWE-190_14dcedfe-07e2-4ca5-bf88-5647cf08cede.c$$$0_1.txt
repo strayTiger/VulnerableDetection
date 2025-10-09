@@ -1,0 +1,6 @@
+static unsigned int badSource(unsigned int data)
+{
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = UINT_MAX;
+    return data;
+}

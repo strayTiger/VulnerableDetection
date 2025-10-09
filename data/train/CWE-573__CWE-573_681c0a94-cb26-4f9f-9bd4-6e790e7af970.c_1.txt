@@ -1,0 +1,8 @@
+static void badSink(long * data)
+{
+    if(badStatic)
+    {
+        /* POTENTIAL FLAW: Possibly freeing memory twice */
+        free(data);
+    }
+}

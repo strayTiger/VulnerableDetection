@@ -1,0 +1,10 @@
+static void goodB2G2()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0.0F;
+    goodB2G2Static = 1; /* true */
+    goodB2G2Sink(data);
+}

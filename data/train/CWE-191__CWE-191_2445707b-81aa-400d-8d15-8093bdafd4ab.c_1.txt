@@ -1,0 +1,12 @@
+void CWE191_Integer_Underflow__short_min_postdec_42_bad()
+{
+    short data;
+    data = 0;
+    data = badSource(data);
+    {
+        /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+        data--;
+        short result = data;
+        printIntLine(result);
+    }
+}

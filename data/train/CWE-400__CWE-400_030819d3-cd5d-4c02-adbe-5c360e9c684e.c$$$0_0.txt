@@ -1,0 +1,17 @@
+static void goodG2B2()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    if(globalFive==5)
+    {
+        /* FIX: Use a relatively small number */
+        count = 20;
+    }
+    if(globalFive==5)
+    {
+        /* POTENTIAL FLAW: Sleep function using count as the parameter with no validation */
+        SLEEP(count);
+        printLine("Sleep time possibly too long");
+    }
+}

@@ -1,0 +1,9 @@
+void CWE191_Integer_Underflow__short_rand_sub_68_bad()
+{
+    short data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a random value */
+    data = (short)RAND32();
+    CWE191_Integer_Underflow__short_rand_sub_68_badData = data;
+    CWE191_Integer_Underflow__short_rand_sub_68b_badSink();
+}

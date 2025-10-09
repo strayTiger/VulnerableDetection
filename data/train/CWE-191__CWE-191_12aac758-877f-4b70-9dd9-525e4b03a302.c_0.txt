@@ -1,0 +1,6 @@
+static unsigned int goodB2GSource(unsigned int data)
+{
+    /* POTENTIAL FLAW: Use a random value */
+    data = (unsigned int)RAND32();
+    return data;
+}

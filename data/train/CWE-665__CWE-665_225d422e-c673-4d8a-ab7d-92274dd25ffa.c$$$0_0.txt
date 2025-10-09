@@ -1,0 +1,5 @@
+void ceroid_goodyear(char *merrie_pretastes)
+{
+  ++stonesoup_global_variable;;
+  yojuane_olsson(merrie_pretastes);
+}

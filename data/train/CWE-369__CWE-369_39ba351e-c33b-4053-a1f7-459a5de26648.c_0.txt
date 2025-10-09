@@ -1,0 +1,9 @@
+void CWE369_Divide_by_Zero__int_rand_modulo_64b_goodG2BSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    int * dataPtr = (int *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    int data = (*dataPtr);
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 % data);
+}

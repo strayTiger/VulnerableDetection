@@ -1,0 +1,14 @@
+void CWE843_Type_Confusion__short_67_bad()
+{
+    void * data;
+    CWE843_Type_Confusion__short_67_structType myStruct;
+    /* Initialize data */
+    data = NULL;
+    {
+        /* FLAW: Point data to a short */
+        short shortBuffer = 8;
+        data = &shortBuffer;
+    }
+    myStruct.structFirst = data;
+    CWE843_Type_Confusion__short_67b_badSink(myStruct);
+}

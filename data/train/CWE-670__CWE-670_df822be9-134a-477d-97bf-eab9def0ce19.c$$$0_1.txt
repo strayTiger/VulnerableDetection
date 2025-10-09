@@ -1,0 +1,20 @@
+void CWE483_Incorrect_Block_Delimitation__semicolon_14_bad()
+{
+    if(globalFive==5)
+    {
+        {
+            int x = (rand() % 3);
+            int y = 0;
+            /* FLAW: Suspicious semicolon before the if statement brace */
+            if (x == 0);
+            {
+                printLine("x == 0");
+                y = 1;
+            }
+            if (y)
+            {
+                printLine("x was 0\n");
+            }
+        }
+    }
+}

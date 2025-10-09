@@ -1,0 +1,9 @@
+void CWE197_Numeric_Truncation_Error__int_large_to_short_67b_goodG2BSink(CWE197_Numeric_Truncation_Error__int_large_to_short_67_structType myStruct)
+{
+    int data = myStruct.structFirst;
+    {
+        /* POTENTIAL FLAW: Convert data to a short, possibly causing a truncation error */
+        short shortData = (short)data;
+        printShortLine(shortData);
+    }
+}

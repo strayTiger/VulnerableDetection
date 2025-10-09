@@ -1,0 +1,4 @@
+void CWE590_Free_Memory_Not_on_Heap__free_long_declare_54c_goodG2BSink(long * data)
+{
+    CWE590_Free_Memory_Not_on_Heap__free_long_declare_54d_goodG2BSink(data);
+}

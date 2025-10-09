@@ -1,0 +1,8 @@
+static void goodB2G()
+{
+    short data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%hd", &data);
+    goodB2GSink(data);
+}

@@ -1,0 +1,12 @@
+void CWE617_Reachable_Assertion__fixed_66_bad()
+{
+    int data;
+    int dataArray[5];
+    /* Initialize data */
+    data = -1;
+    /* FLAW: Use a value less than the assert value */
+    data = ASSERT_VALUE-1;
+    /* put data in array */
+    dataArray[2] = data;
+    CWE617_Reachable_Assertion__fixed_66b_badSink(dataArray);
+}

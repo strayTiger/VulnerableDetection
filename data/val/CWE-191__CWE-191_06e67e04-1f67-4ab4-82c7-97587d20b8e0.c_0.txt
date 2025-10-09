@@ -1,0 +1,5 @@
+void CWE191_Integer_Underflow__short_min_multiply_34_good()
+{
+    goodG2B();
+    goodB2G();
+}

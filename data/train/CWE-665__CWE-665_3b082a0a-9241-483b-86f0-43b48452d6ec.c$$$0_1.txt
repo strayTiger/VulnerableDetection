@@ -1,0 +1,9 @@
+static wchar_t * badSource(wchar_t * data)
+{
+    if(badStatic)
+    {
+        /* FLAW: Do not initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    return data;
+}

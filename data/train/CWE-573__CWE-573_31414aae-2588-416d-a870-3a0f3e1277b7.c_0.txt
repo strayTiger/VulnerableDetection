@@ -1,0 +1,14 @@
+static void goodG2B()
+{
+    FILE * data;
+    CWE675_Duplicate_Operations_on_Resource__fopen_34_unionType myUnion;
+    data = NULL; /* Initialize data */
+    /* FIX: Open, but do not close the file in the source */
+    data = fopen("GoodSource_fopen.txt", "w+");
+    myUnion.unionFirst = data;
+    {
+        FILE * data = myUnion.unionSecond;
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        fclose(data);
+    }
+}

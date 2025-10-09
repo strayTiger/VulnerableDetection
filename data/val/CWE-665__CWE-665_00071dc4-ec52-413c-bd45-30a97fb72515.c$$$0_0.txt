@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    wchar_t * data;
+    void (*funcPtr) (wchar_t *) = CWE665_Improper_Initialization__wchar_t_ncat_65b_goodG2BSink;
+    wchar_t dataBuffer[100];
+    data = dataBuffer;
+    /* FIX: Properly initialize data */
+    data[0] = L'\0'; /* null terminate */
+    funcPtr(data);
+}

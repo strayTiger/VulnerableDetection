@@ -1,0 +1,14 @@
+static wchar_t * goodG2B1Source(wchar_t * data)
+{
+    if(goodG2B1Static)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Use a fixed file name */
+        wcscat(data, L"Doe, XXXXX");
+    }
+    return data;
+}

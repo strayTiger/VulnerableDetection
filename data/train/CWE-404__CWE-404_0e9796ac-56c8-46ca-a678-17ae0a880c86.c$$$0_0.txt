@@ -1,0 +1,5 @@
+void CWE590_Free_Memory_Not_on_Heap__free_wchar_t_declare_08_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

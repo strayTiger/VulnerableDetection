@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__int64_t_rand_add_11_bad()
+{
+    int64_t data;
+    data = 0LL;
+    if(globalReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Use a random value */
+        data = (int64_t)RAND64();
+    }
+    if(globalReturnsTrue())
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            int64_t result = data + 1;
+            printLongLongLine(result);
+        }
+    }
+}

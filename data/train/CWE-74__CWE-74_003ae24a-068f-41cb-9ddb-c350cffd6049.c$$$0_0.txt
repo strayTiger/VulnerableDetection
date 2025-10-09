@@ -1,0 +1,13 @@
+static void goodB2G()
+{
+    wchar_t * data;
+    wchar_t dataBuffer[100] = L"";
+    data = dataBuffer;
+    data = goodB2GSource(data);
+    {
+        wchar_t dest[100] = L"";
+        /* FIX: Specify the format disallowing a format string vulnerability */
+        SNPRINTF(dest, 100-1, L"%s", data);
+        printWLine(dest);
+    }
+}

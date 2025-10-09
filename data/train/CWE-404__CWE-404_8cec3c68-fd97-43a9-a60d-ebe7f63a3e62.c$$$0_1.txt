@@ -1,0 +1,8 @@
+void CWE401_Memory_Leak__wchar_t_calloc_61_bad()
+{
+    wchar_t * data;
+    data = NULL;
+    data = CWE401_Memory_Leak__wchar_t_calloc_61b_badSource(data);
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

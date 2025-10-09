@@ -1,0 +1,9 @@
+static void goodB2GSink()
+{
+    FILE * data = CWE404_Improper_Resource_Shutdown__fopen_w32_close_45_goodB2GData;
+    if (data != NULL)
+    {
+        /* FIX: Close the file using fclose() */
+        fclose(data);
+    }
+}

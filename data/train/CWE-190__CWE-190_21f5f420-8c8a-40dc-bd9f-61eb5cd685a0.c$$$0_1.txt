@@ -1,0 +1,11 @@
+void CWE190_Integer_Overflow__int_max_postinc_67_bad()
+{
+    int data;
+    CWE190_Integer_Overflow__int_max_postinc_67_structType myStruct;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum value for this type */
+    data = INT_MAX;
+    myStruct.structFirst = data;
+    CWE190_Integer_Overflow__int_max_postinc_67b_badSink(myStruct);
+}

@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    HANDLE data;
+    data = INVALID_HANDLE_VALUE; /* Initialize data */
+    data = CWE675_Duplicate_Operations_on_Resource__w32CreateFile_61b_goodB2GSource(data);
+    /* Do nothing */
+    /* FIX: Don't close the file in the sink */
+    ; /* empty statement needed for some flow variants */
+}

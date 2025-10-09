@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__int_calloc_54d_goodB2GSink(int * data)
+{
+    CWE401_Memory_Leak__int_calloc_54e_goodB2GSink(data);
+}

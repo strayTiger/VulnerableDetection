@@ -1,0 +1,8 @@
+void CWE197_Numeric_Truncation_Error__int_fgets_to_char_53d_goodG2BSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: Convert data to a char, possibly causing a truncation error */
+        char charData = (char)data;
+        printHexCharLine(charData);
+    }
+}

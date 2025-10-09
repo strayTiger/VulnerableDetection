@@ -1,0 +1,22 @@
+void CWE400_Resource_Exhaustion__fscanf_for_loop_22_goodB2G1Sink(int count)
+{
+    if(CWE400_Resource_Exhaustion__fscanf_for_loop_22_goodB2G1Global)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            size_t i = 0;
+            /* FIX: Validate count before using it as the for loop variant */
+            if (count > 0 && count <= 20)
+            {
+                for (i = 0; i < (size_t)count; i++)
+                {
+                    printLine("Hello");
+                }
+            }
+        }
+    }
+}

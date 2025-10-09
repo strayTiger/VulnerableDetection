@@ -1,0 +1,5 @@
+void CWE369_Divide_by_Zero__int_fscanf_divide_65b_badSink(int data)
+{
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 / data);
+}

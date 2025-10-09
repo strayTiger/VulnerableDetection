@@ -1,0 +1,18 @@
+static void goodB2G()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    data = CWE190_Integer_Overflow__int_max_postinc_61b_goodB2GSource(data);
+    /* FIX: Add a check to prevent an overflow from occurring */
+    if (data < INT_MAX)
+    {
+        data++;
+        int result = data;
+        printIntLine(result);
+    }
+    else
+    {
+        printLine("data value is too large to perform arithmetic safely.");
+    }
+}

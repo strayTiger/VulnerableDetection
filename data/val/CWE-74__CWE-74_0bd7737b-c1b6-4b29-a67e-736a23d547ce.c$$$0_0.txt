@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    wchar_t * data;
+    wchar_t dataBuffer[100] = L"";
+    data = dataBuffer;
+    /* FIX: Use a fixed string that does not contain a format specifier */
+    wcscpy(data, L"fixedstringtest");
+    CWE134_Uncontrolled_Format_String__wchar_t_connect_socket_vprintf_54b_goodG2BSink(data);
+}

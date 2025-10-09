@@ -1,0 +1,18 @@
+void CWE617_Reachable_Assertion__fscanf_12_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    if(globalReturnsTrueOrFalse())
+    {
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%d", &data);
+    }
+    else
+    {
+        /* FIX: Use a value greater than the assert value */
+        data = ASSERT_VALUE+1;
+    }
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

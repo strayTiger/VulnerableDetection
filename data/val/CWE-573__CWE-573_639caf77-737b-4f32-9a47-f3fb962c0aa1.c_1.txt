@@ -1,0 +1,4 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_53c_badSink(FILE * data)
+{
+    CWE675_Duplicate_Operations_on_Resource__fopen_53d_badSink(data);
+}

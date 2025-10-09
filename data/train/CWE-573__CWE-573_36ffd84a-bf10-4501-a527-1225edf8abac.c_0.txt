@@ -1,0 +1,21 @@
+static void goodG2B2()
+{
+    HANDLE data;
+    data = INVALID_HANDLE_VALUE; /* Initialize data */
+    if(5==5)
+    {
+        /* FIX: Open, but do not close the file in the source */
+        data = CreateFile("GoodSource_w32CreateFile.txt",
+                          (GENERIC_WRITE|GENERIC_READ),
+                          0,
+                          NULL,
+                          OPEN_ALWAYS,
+                          FILE_ATTRIBUTE_NORMAL,
+                          NULL);
+    }
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        CloseHandle(data);
+    }
+}

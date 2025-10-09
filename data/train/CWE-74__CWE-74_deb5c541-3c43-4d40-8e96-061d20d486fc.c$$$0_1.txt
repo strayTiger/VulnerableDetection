@@ -1,0 +1,10 @@
+void CWE78_OS_Command_Injection__wchar_t_connect_socket_system_63b_badSink(wchar_t * * dataPtr)
+{
+    wchar_t * data = *dataPtr;
+    /* POTENTIAL FLAW: Execute command in data possibly leading to command injection */
+    if (SYSTEM(data) != 0)
+    {
+        printLine("command execution failed!");
+        exit(1);
+    }
+}

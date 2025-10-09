@@ -1,0 +1,21 @@
+static void goodB2G()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    goto source;
+source:
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0;
+    goto sink;
+sink:
+    /* FIX: test for a zero denominator */
+    if( data != 0 )
+    {
+        printIntLine(100 % data);
+    }
+    else
+    {
+        printLine("This would result in a divide by zero");
+    }
+}

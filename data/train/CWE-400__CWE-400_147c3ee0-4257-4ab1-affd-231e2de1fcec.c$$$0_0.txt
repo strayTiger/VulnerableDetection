@@ -1,0 +1,20 @@
+static void goodB2G()
+{
+    int i,k;
+    char * data;
+    data = NULL;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Allocate memory on the heap */
+        data = (char *)malloc(100*sizeof(char));
+        if (data == NULL) {exit(-1);}
+        /* Initialize and make use of data */
+        strcpy(data, "A String");
+        printLine(data);
+    }
+    for(k = 0; k < 1; k++)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

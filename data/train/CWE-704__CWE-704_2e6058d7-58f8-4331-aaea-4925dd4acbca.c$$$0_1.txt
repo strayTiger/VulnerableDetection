@@ -1,0 +1,4 @@
+void CWE197_Numeric_Truncation_Error__int_large_to_short_54d_badSink(int data)
+{
+    CWE197_Numeric_Truncation_Error__int_large_to_short_54e_badSink(data);
+}

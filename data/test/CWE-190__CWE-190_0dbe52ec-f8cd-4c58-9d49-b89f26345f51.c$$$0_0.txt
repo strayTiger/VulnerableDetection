@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__char_max_multiply_54b_goodG2BSink(char data)
+{
+    CWE190_Integer_Overflow__char_max_multiply_54c_goodG2BSink(data);
+}

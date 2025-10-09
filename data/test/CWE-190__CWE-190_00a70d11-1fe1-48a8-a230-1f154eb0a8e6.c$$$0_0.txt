@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    char data;
+    void (*funcPtr) (char) = CWE190_Integer_Overflow__char_fscanf_square_65b_goodG2BSink;
+    data = ' ';
+    /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+    data = 2;
+    funcPtr(data);
+}

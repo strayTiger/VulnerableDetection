@@ -1,0 +1,8 @@
+static wchar_t * badSource(wchar_t * data)
+{
+    data = (wchar_t *)malloc(100*sizeof(wchar_t));
+    if (data == NULL) {exit(-1);}
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    return data;
+}

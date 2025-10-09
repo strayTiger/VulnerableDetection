@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__char_calloc_66b_goodG2BSink(char * dataArray[])
+{
+    char * data = dataArray[2];
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

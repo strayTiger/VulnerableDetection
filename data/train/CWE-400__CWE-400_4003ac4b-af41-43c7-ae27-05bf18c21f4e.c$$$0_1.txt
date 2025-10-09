@@ -1,0 +1,10 @@
+char * CWE401_Memory_Leak__char_malloc_61b_badSource(char * data)
+{
+    /* POTENTIAL FLAW: Allocate memory on the heap */
+    data = (char *)malloc(100*sizeof(char));
+    if (data == NULL) {exit(-1);}
+    /* Initialize and make use of data */
+    strcpy(data, "A String");
+    printLine(data);
+    return data;
+}

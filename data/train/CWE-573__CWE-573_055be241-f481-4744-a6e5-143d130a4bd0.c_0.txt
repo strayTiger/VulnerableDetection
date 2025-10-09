@@ -1,0 +1,12 @@
+static void goodB2G2()
+{
+    wchar_t * data;
+    /* Initialize data */
+    data = NULL;
+    data = (wchar_t *)malloc(100*sizeof(wchar_t));
+    if (data == NULL) {exit(-1);}
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    goodB2G2Static = 1; /* true */
+    goodB2G2Sink(data);
+}

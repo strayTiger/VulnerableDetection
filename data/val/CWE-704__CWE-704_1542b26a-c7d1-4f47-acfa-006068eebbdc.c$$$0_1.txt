@@ -1,0 +1,17 @@
+void CWE843_Type_Confusion__char_17_bad()
+{
+    int i;
+    void * data;
+    /* Initialize data */
+    data = NULL;
+    for(i = 0; i < 1; i++)
+    {
+        {
+            /* FLAW: Point data to a char */
+            char charBuffer = 'a';
+            data = &charBuffer;
+        }
+    }
+    /* POTENTIAL FLAW: Attempt to access data as an int */
+    printIntLine(*((int*)data));
+}

@@ -1,0 +1,11 @@
+static void good2()
+{
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* FIX: check for the correct return value */
+        if (putwchar((wchar_t)L'A') == WEOF)
+        {
+            printLine("putwchar failed!");
+        }
+    }
+}

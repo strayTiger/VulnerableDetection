@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__malloc_realloc_wchar_t_15_good()
+{
+    good1();
+    good2();
+}

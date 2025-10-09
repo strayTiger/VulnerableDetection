@@ -1,0 +1,5 @@
+void CWE400_Resource_Exhaustion__fgets_sleep_68_good()
+{
+    goodG2B();
+    goodB2G();
+}

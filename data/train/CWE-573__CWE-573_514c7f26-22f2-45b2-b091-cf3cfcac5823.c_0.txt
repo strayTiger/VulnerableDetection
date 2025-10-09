@@ -1,0 +1,12 @@
+static void good2()
+{
+    if(globalFive==5)
+    {
+        {
+            char dest[DEST_SIZE];
+            /* FIX: Use the correct number of arguments */
+            sprintf(dest, "%s %s", SOURCE_STRING, SOURCE_STRING);
+            printLine(dest);
+        }
+    }
+}

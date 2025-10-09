@@ -1,0 +1,12 @@
+void CWE190_Integer_Overflow__char_max_postinc_22_badSink(char data)
+{
+    if(CWE190_Integer_Overflow__char_max_postinc_22_badGlobal)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            char result = data;
+            printHexCharLine(result);
+        }
+    }
+}

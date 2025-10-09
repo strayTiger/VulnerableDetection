@@ -1,0 +1,16 @@
+static void good1()
+{
+    if(GLOBAL_CONST_FIVE!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: check for the correct return value */
+        if (fwrite((wchar_t *)L"string", sizeof(wchar_t), wcslen(L"string"), stdout) != wcslen(L"string"))
+        {
+            printLine("fwrite failed!");
+        }
+    }
+}

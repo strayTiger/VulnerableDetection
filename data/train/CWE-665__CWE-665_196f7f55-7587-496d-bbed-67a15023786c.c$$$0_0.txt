@@ -1,0 +1,18 @@
+static void goodB2G2()
+{
+    double * data;
+    if(staticFive==5)
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    if(staticFive==5)
+    {
+        /* FIX: Ensure data is initialized before use */
+        /* initialize both the pointer and the data pointed to */
+        data = (double *)malloc(sizeof(double));
+        if (data == NULL) {exit(-1);}
+        *data = 5.0;
+        printDoubleLine(*data);
+    }
+}

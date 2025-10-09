@@ -1,0 +1,29 @@
+static void goodB2G()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    count = CWE400_Resource_Exhaustion__fgets_fwrite_61b_goodB2GSource(count);
+    {
+        size_t i = 0;
+        FILE *pFile = NULL;
+        const char *filename = "output_good.txt";
+        /* FIX: Validate count before using it as the for loop variant to write to a file */
+        if (count > 0 && count <= 20)
+        {
+            pFile = fopen(filename, "w+");
+            if (pFile == NULL)
+            {
+                exit(1);
+            }
+            for (i = 0; i < (size_t)count; i++)
+            {
+                if (strlen(SENTENCE) != fwrite(SENTENCE, sizeof(char), strlen(SENTENCE), pFile)) exit(1);
+            }
+            if (pFile)
+            {
+                fclose(pFile);
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+static void goodB2G2()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console using fscanf() */
+        fscanf (stdin, "%f", &data);
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        /* FIX: Check for value of or near zero before dividing */
+        if(fabs(data) > 0.000001)
+        {
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

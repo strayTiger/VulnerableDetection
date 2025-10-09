@@ -1,0 +1,14 @@
+void CWE400_Resource_Exhaustion__listen_socket_sleep_68b_goodB2GSink()
+{
+    int count = CWE400_Resource_Exhaustion__listen_socket_sleep_68_goodB2GData;
+    /* FIX: Validate count before using it as a parameter in the sleep function */
+    if (count > 0 && count <= 2000)
+    {
+        SLEEP(count);
+        printLine("Sleep time OK");
+    }
+    else
+    {
+        printLine("Sleep time too long");
+    }
+}

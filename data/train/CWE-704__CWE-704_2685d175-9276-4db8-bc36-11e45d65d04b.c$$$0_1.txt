@@ -1,0 +1,12 @@
+void CWE197_Numeric_Truncation_Error__int_large_to_short_66_bad()
+{
+    int data;
+    int dataArray[5];
+    /* Initialize data */
+    data = -1;
+    /* FLAW: Use a number larger than SHRT_MAX */
+    data = SHRT_MAX + 5;
+    /* put data in array */
+    dataArray[2] = data;
+    CWE197_Numeric_Truncation_Error__int_large_to_short_66b_badSink(dataArray);
+}

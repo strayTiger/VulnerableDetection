@@ -1,0 +1,4 @@
+void CWE775_Missing_Release_of_File_Descriptor_or_Handle__fopen_no_close_52b_badSink(FILE * data)
+{
+    CWE775_Missing_Release_of_File_Descriptor_or_Handle__fopen_no_close_52c_badSink(data);
+}

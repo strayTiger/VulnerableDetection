@@ -1,0 +1,11 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_67_bad()
+{
+    FILE * data;
+    CWE675_Duplicate_Operations_on_Resource__fopen_67_structType myStruct;
+    data = NULL; /* Initialize data */
+    data = fopen("BadSource_fopen.txt", "w+");
+    /* POTENTIAL FLAW: Close the file in the source */
+    fclose(data);
+    myStruct.structFirst = data;
+    CWE675_Duplicate_Operations_on_Resource__fopen_67b_badSink(myStruct);
+}

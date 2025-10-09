@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__unsigned_int_fscanf_square_05_bad()
+{
+    unsigned int data;
+    data = 0;
+    if(staticTrue)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%u", &data);
+    }
+    if(staticTrue)
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > UINT_MAX, this will overflow */
+            unsigned int result = data * data;
+            printUnsignedLine(result);
+        }
+    }
+}

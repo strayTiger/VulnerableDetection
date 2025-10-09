@@ -1,0 +1,11 @@
+static void goodB2G()
+{
+    int data;
+    CWE190_Integer_Overflow__int_rand_square_67_structType myStruct;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    myStruct.structFirst = data;
+    CWE190_Integer_Overflow__int_rand_square_67b_goodB2GSink(myStruct);
+}

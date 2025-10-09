@@ -1,0 +1,9 @@
+static void goodB2G2Sink(int data)
+{
+    if(goodB2G2Static)
+    {
+        /* Do nothing */
+        /* FIX: Don't close the file in the sink */
+        ; /* empty statement needed for some flow variants */
+    }
+}

@@ -1,0 +1,12 @@
+static void good1()
+{
+    int k;
+    for(k = 0; k < 1; k++)
+    {
+        /* FIX: check for the correct return value */
+        if (putchar((int)'A') == EOF)
+        {
+            printLine("putchar failed!");
+        }
+    }
+}

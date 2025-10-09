@@ -1,0 +1,6 @@
+short CWE197_Numeric_Truncation_Error__short_fscanf_61b_goodG2BSource(short data)
+{
+    /* FIX: Use a positive integer less than CHAR_MAX*/
+    data = CHAR_MAX-5;
+    return data;
+}

@@ -1,0 +1,11 @@
+static void badSink(char data)
+{
+    if(badStatic)
+    {
+        {
+            /* POTENTIAL FLAW: Subtracting 1 from data could cause an underflow */
+            char result = data - 1;
+            printHexCharLine(result);
+        }
+    }
+}

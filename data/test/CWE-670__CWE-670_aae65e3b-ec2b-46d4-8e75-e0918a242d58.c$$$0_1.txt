@@ -1,0 +1,17 @@
+void CWE480_Use_of_Incorrect_Operator__basic_15_bad()
+{
+    switch(6)
+    {
+    case 6:
+        /* FLAW: This will never be true becuase the () was omitted.  Also INCIDENTAL CWE 570 Expression Is Always False */
+        if(helperBad == NULL)
+        {
+            printLine("Got a NULL");
+        }
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

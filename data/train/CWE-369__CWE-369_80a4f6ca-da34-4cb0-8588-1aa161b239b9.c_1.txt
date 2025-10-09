@@ -1,0 +1,19 @@
+void CWE369_Divide_by_Zero__float_zero_08_bad()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Set data to zero */
+        data = 0.0F;
+    }
+    if(staticReturnsTrue())
+    {
+        {
+            /* POTENTIAL FLAW: Possibly divide by zero */
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+    }
+}

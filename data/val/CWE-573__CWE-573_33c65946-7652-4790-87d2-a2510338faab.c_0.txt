@@ -1,0 +1,4 @@
+void CWE325_Missing_Required_Cryptographic_Step__w32_CryptCreateHash_18_good()
+{
+    good1();
+}

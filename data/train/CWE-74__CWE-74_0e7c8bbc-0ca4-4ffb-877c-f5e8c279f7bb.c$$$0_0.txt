@@ -1,0 +1,10 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_connect_socket_vprintf_65b_goodB2GVaSink(wchar_t * data, ...)
+{
+    {
+        va_list args;
+        va_start(args, data);
+        /* FIX: Specify the format disallowing a format string vulnerability */
+        vwprintf(L"%s", args);
+        va_end(args);
+    }
+}

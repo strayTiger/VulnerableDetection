@@ -1,0 +1,17 @@
+static void goodB2G2Sink(int data)
+{
+    if(goodB2G2Static)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < INT_MAX)
+        {
+            data++;
+            int result = data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

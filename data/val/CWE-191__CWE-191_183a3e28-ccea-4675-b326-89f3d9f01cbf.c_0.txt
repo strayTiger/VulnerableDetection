@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int data;
+    void (*funcPtr) (int) = CWE191_Integer_Underflow__int_rand_predec_65b_goodG2BSink;
+    /* Initialize data */
+    data = 0;
+    /* FIX: Use a small, non-zero value that will not cause an integer underflow in the sinks */
+    data = -2;
+    funcPtr(data);
+}

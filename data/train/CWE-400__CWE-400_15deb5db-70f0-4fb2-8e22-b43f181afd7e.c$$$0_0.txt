@@ -1,0 +1,12 @@
+static void goodB2G()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    data = goodB2GSource(data);
+    /* FIX: If the file is still opened, close it */
+    if (data != -1)
+    {
+        CLOSE(data);
+    }
+}

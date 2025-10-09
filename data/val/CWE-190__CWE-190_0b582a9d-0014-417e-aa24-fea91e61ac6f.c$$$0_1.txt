@@ -1,0 +1,17 @@
+void CWE190_Integer_Overflow__char_fscanf_add_34_bad()
+{
+    char data;
+    CWE190_Integer_Overflow__char_fscanf_add_34_unionType myUnion;
+    data = ' ';
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%c", &data);
+    myUnion.unionFirst = data;
+    {
+        char data = myUnion.unionSecond;
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            char result = data + 1;
+            printHexCharLine(result);
+        }
+    }
+}

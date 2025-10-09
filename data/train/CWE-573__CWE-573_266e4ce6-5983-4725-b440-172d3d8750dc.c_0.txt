@@ -1,0 +1,22 @@
+static void goodB2G1()
+{
+    FILE * data;
+    data = NULL; /* Initialize data */
+    if(staticFive==5)
+    {
+        data = fopen("BadSource_fopen.txt", "w+");
+        /* POTENTIAL FLAW: Close the file in the source */
+        fclose(data);
+    }
+    if(staticFive!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* Do nothing */
+        /* FIX: Don't close the file in the sink */
+        ; /* empty statement needed for some flow variants */
+    }
+}

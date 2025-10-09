@@ -1,0 +1,27 @@
+static void goodB2G()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    while(1)
+    {
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%d", &data);
+        break;
+    }
+    while(1)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < INT_MAX)
+        {
+            ++data;
+            int result = data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+        break;
+    }
+}

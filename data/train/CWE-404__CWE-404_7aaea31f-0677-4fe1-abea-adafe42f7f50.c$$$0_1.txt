@@ -1,0 +1,7 @@
+void CWE401_Memory_Leak__char_malloc_66b_badSink(char * dataArray[])
+{
+    /* copy data out of dataArray */
+    char * data = dataArray[2];
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

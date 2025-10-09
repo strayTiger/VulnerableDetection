@@ -1,0 +1,7 @@
+void CWE415_Double_Free__malloc_free_char_67b_goodB2GSink(CWE415_Double_Free__malloc_free_char_67_structType myStruct)
+{
+    char * data = myStruct.structFirst;
+    /* do nothing */
+    /* FIX: Don't attempt to free the memory */
+    ; /* empty statement needed for some flow variants */
+}

@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__strdup_wchar_t_53c_goodG2BSink(wchar_t * data)
+{
+    CWE401_Memory_Leak__strdup_wchar_t_53d_goodG2BSink(data);
+}

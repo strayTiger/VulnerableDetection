@@ -1,0 +1,4 @@
+void CWE483_Incorrect_Block_Delimitation__if_without_braces_multiple_lines_01_good()
+{
+    good1();
+}

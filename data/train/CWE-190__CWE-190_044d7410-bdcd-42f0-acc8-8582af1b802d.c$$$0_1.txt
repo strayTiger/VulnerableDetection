@@ -1,0 +1,22 @@
+void CWE190_Integer_Overflow__char_fscanf_multiply_32_bad()
+{
+    char data;
+    char *dataPtr1 = &data;
+    char *dataPtr2 = &data;
+    data = ' ';
+    {
+        char data = *dataPtr1;
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%c", &data);
+        *dataPtr1 = data;
+    }
+    {
+        char data = *dataPtr2;
+        if(data > 0) /* ensure we won't have an underflow */
+        {
+            /* POTENTIAL FLAW: if (data*2) > CHAR_MAX, this will overflow */
+            char result = data * 2;
+            printHexCharLine(result);
+        }
+    }
+}

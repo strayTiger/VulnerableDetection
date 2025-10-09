@@ -1,0 +1,12 @@
+static void goodG2B()
+{
+    int64_t * data;
+    void (*funcPtr) (int64_t *) = CWE401_Memory_Leak__int64_t_realloc_65b_goodG2BSink;
+    data = NULL;
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (int64_t *)ALLOCA(100*sizeof(int64_t));
+    /* Initialize and make use of data */
+    data[0] = 5LL;
+    printLongLongLine(data[0]);
+    funcPtr(data);
+}

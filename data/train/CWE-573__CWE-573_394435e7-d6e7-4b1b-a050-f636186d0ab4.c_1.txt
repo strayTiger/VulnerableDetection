@@ -1,0 +1,27 @@
+void CWE675_Duplicate_Operations_on_Resource__open_12_bad()
+{
+    int data;
+    data = -1; /* Initialize data */
+    if(globalReturnsTrueOrFalse())
+    {
+        data = OPEN("BadSource_open.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
+        /* POTENTIAL FLAW: Close the file in the source */
+        CLOSE(data);
+    }
+    else
+    {
+        /* FIX: Open, but do not close the file in the source */
+        data = OPEN("GoodSource_open.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
+    }
+    if(globalReturnsTrueOrFalse())
+    {
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        CLOSE(data);
+    }
+    else
+    {
+        /* Do nothing */
+        /* FIX: Don't close the file in the sink */
+        ; /* empty statement needed for some flow variants */
+    }
+}

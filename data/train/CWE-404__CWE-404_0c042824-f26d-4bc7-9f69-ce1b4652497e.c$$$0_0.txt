@@ -1,0 +1,12 @@
+void CWE775_Missing_Release_of_File_Descriptor_or_Handle__fopen_no_close_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    FILE * * dataPtr = (FILE * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    FILE * data = (*dataPtr);
+    /* FIX: If the file is still opened, close it */
+    if (data != NULL)
+    {
+        fclose(data);
+    }
+}

@@ -1,0 +1,4 @@
+void CWE90_LDAP_Injection__w32_char_connect_socket_54d_badSink(char * data)
+{
+    CWE90_LDAP_Injection__w32_char_connect_socket_54e_badSink(data);
+}

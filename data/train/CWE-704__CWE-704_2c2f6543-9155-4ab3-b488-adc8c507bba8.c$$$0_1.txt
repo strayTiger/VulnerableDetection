@@ -1,0 +1,12 @@
+void CWE197_Numeric_Truncation_Error__short_listen_socket_42_bad()
+{
+    short data;
+    /* Initialize data */
+    data = -1;
+    data = badSource(data);
+    {
+        /* POTENTIAL FLAW: Convert data to a char, possibly causing a truncation error */
+        char charData = (char)data;
+        printHexCharLine(charData);
+    }
+}

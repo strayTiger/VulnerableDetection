@@ -1,0 +1,5 @@
+void badass_huntsmen(char **coper_vagabonds)
+{
+  ++stonesoup_global_variable;;
+  vacuities_rhinaria(coper_vagabonds);
+}

@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a positive integer less than CHAR_MAX*/
+    data = CHAR_MAX-5;
+    CWE197_Numeric_Truncation_Error__int_large_to_char_68_goodG2BData = data;
+    CWE197_Numeric_Truncation_Error__int_large_to_char_68b_goodG2BSink();
+}

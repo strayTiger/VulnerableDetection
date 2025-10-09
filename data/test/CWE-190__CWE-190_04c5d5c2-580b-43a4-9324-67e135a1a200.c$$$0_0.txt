@@ -1,0 +1,22 @@
+static void goodG2B()
+{
+    char data;
+    char *dataPtr1 = &data;
+    char *dataPtr2 = &data;
+    data = ' ';
+    {
+        char data = *dataPtr1;
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+        *dataPtr1 = data;
+    }
+    {
+        char data = *dataPtr2;
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            ++data;
+            char result = data;
+            printHexCharLine(result);
+        }
+    }
+}

@@ -1,0 +1,4 @@
+void CWE194_Unexpected_Sign_Extension__rand_malloc_54c_goodG2BSink(short data)
+{
+    CWE194_Unexpected_Sign_Extension__rand_malloc_54d_goodG2BSink(data);
+}

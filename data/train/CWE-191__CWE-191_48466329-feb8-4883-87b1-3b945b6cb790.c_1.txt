@@ -1,0 +1,6 @@
+static short badSource(short data)
+{
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = SHRT_MIN;
+    return data;
+}

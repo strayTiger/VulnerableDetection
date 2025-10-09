@@ -1,0 +1,6 @@
+int CWE369_Divide_by_Zero__int_rand_divide_61b_goodB2GSource(int data)
+{
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    return data;
+}

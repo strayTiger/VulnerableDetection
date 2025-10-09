@@ -1,0 +1,8 @@
+void CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_54e_goodB2GSink(int data)
+{
+    if (data != -1)
+    {
+        /* FIX: Close the file using close() */
+        CLOSE(data);
+    }
+}

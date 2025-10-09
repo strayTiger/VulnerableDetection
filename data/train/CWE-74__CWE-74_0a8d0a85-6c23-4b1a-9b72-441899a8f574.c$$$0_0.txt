@@ -1,0 +1,6 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_console_printf_66b_goodG2BSink(wchar_t * dataArray[])
+{
+    wchar_t * data = dataArray[2];
+    /* POTENTIAL FLAW: Do not specify the format allowing a possible format string vulnerability */
+    wprintf(data);
+}

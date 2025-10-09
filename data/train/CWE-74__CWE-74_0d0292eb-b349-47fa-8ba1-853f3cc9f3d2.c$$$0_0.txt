@@ -1,0 +1,7 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_connect_socket_w32_vsnprintf_04_good()
+{
+    goodG2B1();
+    goodG2B2();
+    goodB2G1();
+    goodB2G2();
+}

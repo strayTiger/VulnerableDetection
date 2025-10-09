@@ -1,0 +1,4 @@
+void CWE590_Free_Memory_Not_on_Heap__free_struct_static_52b_goodG2BSink(twoIntsStruct * data)
+{
+    CWE590_Free_Memory_Not_on_Heap__free_struct_static_52c_goodG2BSink(data);
+}

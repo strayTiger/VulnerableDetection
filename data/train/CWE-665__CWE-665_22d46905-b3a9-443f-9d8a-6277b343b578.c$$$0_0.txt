@@ -1,0 +1,7 @@
+void CWE457_Use_of_Uninitialized_Variable__double_array_declare_partial_init_04_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

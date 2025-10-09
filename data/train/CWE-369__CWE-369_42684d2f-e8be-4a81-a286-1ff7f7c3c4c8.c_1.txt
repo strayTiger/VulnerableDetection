@@ -1,0 +1,16 @@
+void CWE369_Divide_by_Zero__int_fscanf_divide_02_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    if(1)
+    {
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%d", &data);
+    }
+    if(1)
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 / data);
+    }
+}

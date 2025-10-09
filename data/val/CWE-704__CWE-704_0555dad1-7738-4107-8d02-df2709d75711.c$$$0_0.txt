@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    short data;
+    void (*funcPtr) (short) = CWE197_Numeric_Truncation_Error__short_listen_socket_65b_goodG2BSink;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a positive integer less than CHAR_MAX*/
+    data = CHAR_MAX-5;
+    funcPtr(data);
+}

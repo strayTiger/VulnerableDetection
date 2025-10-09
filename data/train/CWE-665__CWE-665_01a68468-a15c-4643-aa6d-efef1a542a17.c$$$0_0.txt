@@ -1,0 +1,6 @@
+size_t CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_connect_socket_61b_goodG2BSource(size_t data)
+{
+    /* FIX: Use a relatively small number for memory allocation */
+    data = 20;
+    return data;
+}

@@ -1,0 +1,5 @@
+void CWE400_Resource_Exhaustion__listen_socket_for_loop_65_good()
+{
+    goodG2B();
+    goodB2G();
+}

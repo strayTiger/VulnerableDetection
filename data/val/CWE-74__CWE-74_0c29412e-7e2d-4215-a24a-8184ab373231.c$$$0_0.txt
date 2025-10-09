@@ -1,0 +1,21 @@
+static void goodG2B1()
+{
+    char * data;
+    char dataBuffer[100] = "";
+    data = dataBuffer;
+    if(staticReturnsFalse())
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Use a fixed string that does not contain a format specifier */
+        strcpy(data, "fixedstringtest");
+    }
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Do not specify the format allowing a possible format string vulnerability */
+        fprintf(stdout, data);
+    }
+}

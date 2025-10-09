@@ -1,0 +1,15 @@
+void CWE457_Use_of_Uninitialized_Variable__struct_11_bad()
+{
+    twoIntsStruct data;
+    if(globalReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    if(globalReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        printIntLine(data.intOne);
+        printIntLine(data.intTwo);
+    }
+}

@@ -1,0 +1,6 @@
+void CWE457_Use_of_Uninitialized_Variable__char_pointer_63b_badSink(char * * dataPtr)
+{
+    char * data = *dataPtr;
+    /* POTENTIAL FLAW: Use data without initializing it */
+    printLine(data);
+}

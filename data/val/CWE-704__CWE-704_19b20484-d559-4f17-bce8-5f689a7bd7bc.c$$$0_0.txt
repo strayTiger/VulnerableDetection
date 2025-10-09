@@ -1,0 +1,12 @@
+static void goodG2B()
+{
+    void * data;
+    /* Initialize data */
+    data = NULL;
+    {
+        /* FIX: Point data to an int */
+        int intBuffer = 8;
+        data = &intBuffer;
+    }
+    CWE843_Type_Confusion__char_63b_goodG2BSink(&data);
+}

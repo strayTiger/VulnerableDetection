@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__strdup_char_66b_goodB2GSink(char * dataArray[])
+{
+    char * data = dataArray[2];
+    /* FIX: Deallocate memory initialized in the source */
+    free(data);
+}

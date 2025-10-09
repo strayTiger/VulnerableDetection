@@ -1,0 +1,6 @@
+static void goodG2BSink()
+{
+    int data = CWE369_Divide_by_Zero__int_fgets_divide_45_goodG2BData;
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 / data);
+}

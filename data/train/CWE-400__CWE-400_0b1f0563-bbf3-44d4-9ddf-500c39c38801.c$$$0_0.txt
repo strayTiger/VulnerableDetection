@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    /* FIX: Use a relatively small number */
+    count = 20;
+    CWE400_Resource_Exhaustion__connect_socket_fwrite_22_goodG2BGlobal = 1; /* true */
+    CWE400_Resource_Exhaustion__connect_socket_fwrite_22_goodG2BSink(count);
+}

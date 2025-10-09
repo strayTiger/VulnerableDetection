@@ -1,0 +1,10 @@
+static void goodB2G1()
+{
+    size_t data;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = rand();
+    goodB2G1Static = 0; /* false */
+    goodB2G1Sink(data);
+}

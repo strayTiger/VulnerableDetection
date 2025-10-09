@@ -1,0 +1,11 @@
+static void goodB2G()
+{
+    int data;
+    CWE675_Duplicate_Operations_on_Resource__open_67_structType myStruct;
+    data = -1; /* Initialize data */
+    data = OPEN("BadSource_open.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
+    /* POTENTIAL FLAW: Close the file in the source */
+    CLOSE(data);
+    myStruct.structFirst = data;
+    CWE675_Duplicate_Operations_on_Resource__open_67b_goodB2GSink(myStruct);
+}

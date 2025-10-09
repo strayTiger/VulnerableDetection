@@ -1,0 +1,7 @@
+void CWE590_Free_Memory_Not_on_Heap__free_wchar_t_declare_66b_goodG2BSink(wchar_t * dataArray[])
+{
+    wchar_t * data = dataArray[2];
+    printWLine(data);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

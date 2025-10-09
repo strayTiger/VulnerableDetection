@@ -1,0 +1,16 @@
+void CWE401_Memory_Leak__strdup_wchar_t_44_bad()
+{
+    wchar_t * data;
+    /* define a function pointer */
+    void (*funcPtr) (wchar_t *) = badSink;
+    data = NULL;
+    {
+        wchar_t myString[] = L"myString";
+        /* POTENTIAL FLAW: Allocate memory from the heap using a function that requires free() for deallocation */
+        data = wcsdup(myString);
+        /* Use data */
+        printWLine(data);
+    }
+    /* use the function pointer */
+    funcPtr(data);
+}

@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    twoIntsStruct * data;
+    /* Initialize data */
+    data = NULL;
+    data = (twoIntsStruct *)malloc(100*sizeof(twoIntsStruct));
+    /* FIX: Do NOT free data in the source - the bad sink frees data */
+    CWE415_Double_Free__malloc_free_struct_68_goodG2BData = data;
+    CWE415_Double_Free__malloc_free_struct_68b_goodG2BSink();
+}

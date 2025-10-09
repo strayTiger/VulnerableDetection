@@ -1,0 +1,4 @@
+void CWE191_Integer_Underflow__int64_t_rand_postdec_54c_goodG2BSink(int64_t data)
+{
+    CWE191_Integer_Underflow__int64_t_rand_postdec_54d_goodG2BSink(data);
+}

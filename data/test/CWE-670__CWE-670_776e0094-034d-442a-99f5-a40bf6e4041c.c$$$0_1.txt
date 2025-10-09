@@ -1,0 +1,25 @@
+void CWE481_Assigning_Instead_of_Comparing__basic_12_bad()
+{
+    if(globalReturnsTrueOrFalse())
+    {
+        {
+            int intRand = rand();
+            /* FLAW: should be == and INCIDENTIAL CWE 571 Expression Is Always True */
+            if(intRand = 5)
+            {
+                printLine("i was 5");
+            }
+        }
+    }
+    else
+    {
+        {
+            int intRand = rand();
+            /* FIX: used == instead of = */
+            if(intRand == 5)
+            {
+                printLine("i was 5");
+            }
+        }
+    }
+}

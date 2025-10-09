@@ -1,0 +1,6 @@
+char CWE190_Integer_Overflow__char_fscanf_preinc_61b_goodB2GSource(char data)
+{
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%c", &data);
+    return data;
+}

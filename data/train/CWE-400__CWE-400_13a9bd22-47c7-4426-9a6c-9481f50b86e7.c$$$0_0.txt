@@ -1,0 +1,41 @@
+static void goodB2G1()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Set count to a random value */
+        count = RAND32();
+    }
+    if(STATIC_CONST_FALSE)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            size_t i = 0;
+            FILE *pFile = NULL;
+            const char *filename = "output_good.txt";
+            /* FIX: Validate count before using it as the for loop variant to write to a file */
+            if (count > 0 && count <= 20)
+            {
+                pFile = fopen(filename, "w+");
+                if (pFile == NULL)
+                {
+                    exit(1);
+                }
+                for (i = 0; i < (size_t)count; i++)
+                {
+                    if (strlen(SENTENCE) != fwrite(SENTENCE, sizeof(char), strlen(SENTENCE), pFile)) exit(1);
+                }
+                if (pFile)
+                {
+                    fclose(pFile);
+                }
+            }
+        }
+    }
+}

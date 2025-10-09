@@ -1,0 +1,4 @@
+void CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_54d_goodB2GSink(int data)
+{
+    CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_54e_goodB2GSink(data);
+}

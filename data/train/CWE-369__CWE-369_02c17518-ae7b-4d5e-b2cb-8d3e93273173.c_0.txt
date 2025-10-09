@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__int_listen_socket_divide_54c_goodB2GSink(int data)
+{
+    CWE369_Divide_by_Zero__int_listen_socket_divide_54d_goodB2GSink(data);
+}

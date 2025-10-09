@@ -1,0 +1,27 @@
+static void goodG2B1()
+{
+    FILE * data;
+    data = NULL; /* Initialize data */
+    switch(5)
+    {
+    case 6:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    default:
+        /* FIX: Open, but do not close the file in the source */
+        data = fopen("GoodSource_fopen.txt", "w+");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        fclose(data);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

@@ -1,0 +1,6 @@
+static int goodG2BSource(int data)
+{
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    return data;
+}

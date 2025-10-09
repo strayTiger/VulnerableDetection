@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__char_realloc_01_good()
+{
+    goodG2B();
+    goodB2G();
+}

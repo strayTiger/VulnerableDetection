@@ -1,0 +1,22 @@
+void CWE843_Type_Confusion__char_32_bad()
+{
+    void * data;
+    void * *dataPtr1 = &data;
+    void * *dataPtr2 = &data;
+    /* Initialize data */
+    data = NULL;
+    {
+        void * data = *dataPtr1;
+        {
+            /* FLAW: Point data to a char */
+            char charBuffer = 'a';
+            data = &charBuffer;
+        }
+        *dataPtr1 = data;
+    }
+    {
+        void * data = *dataPtr2;
+        /* POTENTIAL FLAW: Attempt to access data as an int */
+        printIntLine(*((int*)data));
+    }
+}

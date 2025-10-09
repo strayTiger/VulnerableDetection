@@ -1,0 +1,10 @@
+void CWE457_Use_of_Uninitialized_Variable__int_pointer_63b_goodB2GSink(int * * dataPtr)
+{
+    int * data = *dataPtr;
+    /* FIX: Ensure data is initialized before use */
+    /* initialize both the pointer and the data pointed to */
+    data = (int *)malloc(sizeof(int));
+    if (data == NULL) {exit(-1);}
+    *data = 5;
+    printIntLine(*data);
+}

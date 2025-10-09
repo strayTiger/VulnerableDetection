@@ -1,0 +1,4 @@
+void CWE191_Integer_Underflow__char_rand_sub_54b_badSink(char data)
+{
+    CWE191_Integer_Underflow__char_rand_sub_54c_badSink(data);
+}

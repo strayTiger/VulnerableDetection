@@ -1,0 +1,5 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_environment_vfprintf_67b_goodB2GSink(CWE134_Uncontrolled_Format_String__wchar_t_environment_vfprintf_67_structType myStruct)
+{
+    wchar_t * data = myStruct.structFirst;
+    goodB2GVaSink(data, data);
+}

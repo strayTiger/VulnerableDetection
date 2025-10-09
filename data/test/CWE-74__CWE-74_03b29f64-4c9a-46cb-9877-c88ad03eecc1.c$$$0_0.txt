@@ -1,0 +1,9 @@
+char * CWE78_OS_Command_Injection__char_file_w32_spawnvp_22_goodG2B2Source(char * data)
+{
+    if(CWE78_OS_Command_Injection__char_file_w32_spawnvp_22_goodG2B2Global)
+    {
+        /* FIX: Append a fixed string to data (not user / external input) */
+        strcat(data, "*.*");
+    }
+    return data;
+}

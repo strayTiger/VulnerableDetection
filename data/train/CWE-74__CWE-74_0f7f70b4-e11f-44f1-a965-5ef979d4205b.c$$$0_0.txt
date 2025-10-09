@@ -1,0 +1,4 @@
+void CWE78_OS_Command_Injection__char_environment_w32_spawnlp_54d_goodG2BSink(char * data)
+{
+    CWE78_OS_Command_Injection__char_environment_w32_spawnlp_54e_goodG2BSink(data);
+}

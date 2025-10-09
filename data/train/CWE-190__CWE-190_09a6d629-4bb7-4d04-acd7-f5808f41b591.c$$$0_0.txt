@@ -1,0 +1,19 @@
+static void goodG2B2()
+{
+    short data;
+    data = 0;
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    if(STATIC_CONST_FIVE==5)
+    {
+        if(data > 0) /* ensure we won't have an underflow */
+        {
+            /* POTENTIAL FLAW: if (data*2) > SHRT_MAX, this will overflow */
+            short result = data * 2;
+            printIntLine(result);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+static void goodB2G()
+{
+    int k;
+    HANDLE data;
+    /* Initialize data */
+    data = INVALID_HANDLE_VALUE;
+    /* POTENTIAL FLAW: Open a file without closing it */
+    data = CreateFile("BadSource_w32CreateFile.txt",
+                      (GENERIC_WRITE|GENERIC_READ),
+                      0,
+                      NULL,
+                      OPEN_ALWAYS,
+                      FILE_ATTRIBUTE_NORMAL,
+                      NULL);
+    for(k = 0; k < 1; k++)
+    {
+        /* FIX: If the file is still opened, close it */
+        if (data != INVALID_HANDLE_VALUE)
+        {
+            CloseHandle(data);
+        }
+    }
+}

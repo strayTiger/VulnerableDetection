@@ -1,0 +1,8 @@
+static void goodG2B()
+{
+    struct _twoIntsStruct * data;
+    data = NULL;
+    data = CWE401_Memory_Leak__struct_twoIntsStruct_realloc_61b_goodG2BSource(data);
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

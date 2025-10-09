@@ -1,0 +1,8 @@
+void CWE191_Integer_Underflow__unsigned_int_rand_predec_41_bad()
+{
+    unsigned int data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a random value */
+    data = (unsigned int)RAND32();
+    badSink(data);
+}

@@ -1,0 +1,6 @@
+static void goodG2BSink(int64_t * data)
+{
+    printLongLongLine(data[0]);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

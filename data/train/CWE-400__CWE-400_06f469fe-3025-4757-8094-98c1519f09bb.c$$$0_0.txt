@@ -1,0 +1,13 @@
+void CWE400_Resource_Exhaustion__rand_sleep_53d_goodB2GSink(int count)
+{
+    /* FIX: Validate count before using it as a parameter in the sleep function */
+    if (count > 0 && count <= 2000)
+    {
+        SLEEP(count);
+        printLine("Sleep time OK");
+    }
+    else
+    {
+        printLine("Sleep time too long");
+    }
+}

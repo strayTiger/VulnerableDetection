@@ -1,0 +1,23 @@
+static void goodG2B1()
+{
+    int64_t data;
+    data = 0LL;
+    if(globalReturnsFalse())
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    if(globalReturnsTrue())
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > LLONG_MAX, this will overflow */
+            int64_t result = data * data;
+            printLongLongLine(result);
+        }
+    }
+}

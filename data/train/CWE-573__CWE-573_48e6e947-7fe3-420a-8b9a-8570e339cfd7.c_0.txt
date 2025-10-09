@@ -1,0 +1,19 @@
+static void goodB2G2()
+{
+    long * data;
+    /* Initialize data */
+    data = NULL;
+    if(1)
+    {
+        data = (long *)malloc(100*sizeof(long));
+        if (data == NULL) {exit(-1);}
+        /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+        free(data);
+    }
+    if(1)
+    {
+        /* do nothing */
+        /* FIX: Don't attempt to free the memory */
+        ; /* empty statement needed for some flow variants */
+    }
+}

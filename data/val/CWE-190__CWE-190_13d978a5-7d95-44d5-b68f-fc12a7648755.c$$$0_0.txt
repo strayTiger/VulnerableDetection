@@ -1,0 +1,23 @@
+static void goodB2G2()
+{
+    short data;
+    data = 0;
+    if(globalReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Use the maximum size of the data type */
+        data = SHRT_MAX;
+    }
+    if(globalReturnsTrue())
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < SHRT_MAX)
+        {
+            short result = data + 1;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

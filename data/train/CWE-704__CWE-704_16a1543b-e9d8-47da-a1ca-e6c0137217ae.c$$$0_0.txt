@@ -1,0 +1,4 @@
+void CWE197_Numeric_Truncation_Error__short_listen_socket_54b_goodG2BSink(short data)
+{
+    CWE197_Numeric_Truncation_Error__short_listen_socket_54c_goodG2BSink(data);
+}

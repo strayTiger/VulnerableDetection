@@ -1,0 +1,10 @@
+void CWE191_Integer_Underflow__int_fgets_predec_66b_goodG2BSink(int dataArray[])
+{
+    int data = dataArray[2];
+    {
+        /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+        --data;
+        int result = data;
+        printIntLine(result);
+    }
+}

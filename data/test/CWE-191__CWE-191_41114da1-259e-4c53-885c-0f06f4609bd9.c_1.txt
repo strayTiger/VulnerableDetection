@@ -1,0 +1,6 @@
+unsigned int CWE191_Integer_Underflow__unsigned_int_rand_predec_61b_badSource(unsigned int data)
+{
+    /* POTENTIAL FLAW: Use a random value */
+    data = (unsigned int)RAND32();
+    return data;
+}

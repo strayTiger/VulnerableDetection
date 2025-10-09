@@ -1,0 +1,8 @@
+void CWE415_Double_Free__malloc_free_long_22_goodG2BSink(long * data)
+{
+    if(CWE415_Double_Free__malloc_free_long_22_goodG2BGlobal)
+    {
+        /* POTENTIAL FLAW: Possibly freeing memory twice */
+        free(data);
+    }
+}

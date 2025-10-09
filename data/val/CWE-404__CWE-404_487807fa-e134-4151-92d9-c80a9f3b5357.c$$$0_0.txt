@@ -1,0 +1,4 @@
+void CWE404_Improper_Resource_Shutdown__open_fclose_53c_goodB2GSink(int data)
+{
+    CWE404_Improper_Resource_Shutdown__open_fclose_53d_goodB2GSink(data);
+}

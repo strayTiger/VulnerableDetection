@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    twoIntsStruct * data;
+    /* Initialize data */
+    data = NULL;
+    data = goodG2BSource(data);
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

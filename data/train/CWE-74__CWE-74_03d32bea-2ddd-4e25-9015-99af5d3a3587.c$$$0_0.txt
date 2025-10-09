@@ -1,0 +1,20 @@
+static void goodG2B2()
+{
+    char * data;
+    char dataBuffer[100] = "";
+    data = dataBuffer;
+    if(staticReturnsTrue())
+    {
+        /* FIX: Use a fixed string that does not contain a format specifier */
+        strcpy(data, "fixedstringtest");
+    }
+    if(staticReturnsTrue())
+    {
+        {
+            char dest[100] = "";
+            /* POTENTIAL FLAW: Do not specify the format allowing a possible format string vulnerability */
+            SNPRINTF(dest, 100-1, data);
+            printLine(dest);
+        }
+    }
+}

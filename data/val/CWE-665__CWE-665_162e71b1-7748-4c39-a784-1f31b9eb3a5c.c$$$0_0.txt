@@ -1,0 +1,30 @@
+static void goodG2B2()
+{
+    twoIntsStruct * data;
+    data = (twoIntsStruct *)malloc(10*sizeof(twoIntsStruct));
+    if (data == NULL) {exit(-1);}
+    if(STATIC_CONST_TRUE)
+    {
+        /* FIX: Completely initialize data */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i].intOne = i;
+                data[i].intTwo = i;
+            }
+        }
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printIntLine(data[i].intOne);
+                printIntLine(data[i].intTwo);
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+void CWE457_Use_of_Uninitialized_Variable__int_pointer_12_bad()
+{
+    int * data;
+    if(globalReturnsTrueOrFalse())
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    else
+    {
+        /* FIX: Initialize data */
+        /* initialize both the pointer and the data pointed to */
+        data = (int *)malloc(sizeof(int));
+        if (data == NULL) {exit(-1);}
+        *data = 5;
+    }
+    if(globalReturnsTrueOrFalse())
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        printIntLine(*data);
+    }
+    else
+    {
+        /* FIX: Ensure data is initialized before use */
+        /* initialize both the pointer and the data pointed to */
+        data = (int *)malloc(sizeof(int));
+        if (data == NULL) {exit(-1);}
+        *data = 5;
+        printIntLine(*data);
+    }
+}

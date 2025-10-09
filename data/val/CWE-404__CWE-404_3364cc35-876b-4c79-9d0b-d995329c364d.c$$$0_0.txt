@@ -1,0 +1,12 @@
+static void goodG2B()
+{
+    wchar_t * data;
+    data = NULL;
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (wchar_t *)ALLOCA(100*sizeof(wchar_t));
+    /* Initialize and make use of data */
+    wcscpy(data, L"A String");
+    printWLine(data);
+    CWE401_Memory_Leak__wchar_t_realloc_68_goodG2BData = data;
+    CWE401_Memory_Leak__wchar_t_realloc_68b_goodG2BSink();
+}

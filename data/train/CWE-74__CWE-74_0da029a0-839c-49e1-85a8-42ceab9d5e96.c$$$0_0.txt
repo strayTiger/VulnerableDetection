@@ -1,0 +1,4 @@
+void CWE78_OS_Command_Injection__char_file_w32_spawnv_41_good()
+{
+    goodG2B();
+}

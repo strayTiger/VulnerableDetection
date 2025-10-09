@@ -1,0 +1,5 @@
+void CWE675_Duplicate_Operations_on_Resource__w32CreateFile_01_good()
+{
+    goodG2B();
+    goodB2G();
+}

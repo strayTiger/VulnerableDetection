@@ -1,0 +1,6 @@
+void CWE775_Missing_Release_of_File_Descriptor_or_Handle__open_no_close_63b_badSink(int * dataPtr)
+{
+    int data = *dataPtr;
+    /* FLAW: No attempt to close the file */
+    ; /* empty statement needed for some flow variants */
+}

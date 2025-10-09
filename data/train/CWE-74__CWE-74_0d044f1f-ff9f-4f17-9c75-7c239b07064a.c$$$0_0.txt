@@ -1,0 +1,10 @@
+static void goodB2GSink()
+{
+    wchar_t * data = CWE134_Uncontrolled_Format_String__wchar_t_console_snprintf_45_goodB2GData;
+    {
+        wchar_t dest[100] = L"";
+        /* FIX: Specify the format disallowing a format string vulnerability */
+        SNPRINTF(dest, 100-1, L"%s", data);
+        printWLine(dest);
+    }
+}

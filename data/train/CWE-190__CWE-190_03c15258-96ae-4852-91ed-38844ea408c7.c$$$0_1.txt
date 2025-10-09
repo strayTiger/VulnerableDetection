@@ -1,0 +1,9 @@
+static void badSink(short data)
+{
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        data++;
+        short result = data;
+        printIntLine(result);
+    }
+}

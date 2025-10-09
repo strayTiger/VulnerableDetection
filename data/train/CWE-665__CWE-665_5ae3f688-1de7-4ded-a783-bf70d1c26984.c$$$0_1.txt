@@ -1,0 +1,18 @@
+void CWE665_Improper_Initialization__wchar_t_ncat_21_bad()
+{
+    wchar_t * data;
+    wchar_t dataBuffer[100];
+    data = dataBuffer;
+    badStatic = 1; /* true */
+    data = badSource(data);
+    {
+        size_t sourceLen;
+        wchar_t source[100];
+        wmemset(source, L'C', 100-1); /* fill with L'C's */
+        source[100-1] = L'\0'; /* null terminate */
+        sourceLen = wcslen(source);
+        /* POTENTIAL FLAW: If data is not initialized properly, wcsncat() may not function correctly */
+        wcsncat(data, source, sourceLen);
+        printWLine(data);
+    }
+}

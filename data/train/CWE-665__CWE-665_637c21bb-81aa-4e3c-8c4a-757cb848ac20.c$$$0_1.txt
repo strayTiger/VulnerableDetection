@@ -1,0 +1,16 @@
+void CWE457_Use_of_Uninitialized_Variable__wchar_t_pointer_16_bad()
+{
+    wchar_t * data;
+    while(1)
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+        break;
+    }
+    while(1)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        printWLine(data);
+        break;
+    }
+}

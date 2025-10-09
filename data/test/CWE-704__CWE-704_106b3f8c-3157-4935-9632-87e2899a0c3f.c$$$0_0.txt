@@ -1,0 +1,9 @@
+static short goodG2B2Source(short data)
+{
+    if(goodG2B2Static)
+    {
+        /* FIX: Use a positive integer less than &InitialDataSize&*/
+        data = 100-1;
+    }
+    return data;
+}

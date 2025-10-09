@@ -1,0 +1,4 @@
+void CWE617_Reachable_Assertion__rand_67_good()
+{
+    goodG2B();
+}

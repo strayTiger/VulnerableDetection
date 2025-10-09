@@ -1,0 +1,12 @@
+void CWE190_Integer_Overflow__short_fscanf_square_64b_badSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    short * dataPtr = (short *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    short data = (*dataPtr);
+    {
+        /* POTENTIAL FLAW: if (data*data) > SHRT_MAX, this will overflow */
+        short result = data * data;
+        printIntLine(result);
+    }
+}

@@ -1,0 +1,24 @@
+void CWE190_Integer_Overflow__int_max_multiply_22_goodB2G1Sink(int data)
+{
+    if(CWE190_Integer_Overflow__int_max_multiply_22_goodB2G1Global)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        if(data > 0) /* ensure we won't have an underflow */
+        {
+            /* FIX: Add a check to prevent an overflow from occurring */
+            if (data < (INT_MAX/2))
+            {
+                int result = data * 2;
+                printIntLine(result);
+            }
+            else
+            {
+                printLine("data value is too large to perform arithmetic safely.");
+            }
+        }
+    }
+}

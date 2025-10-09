@@ -1,0 +1,5 @@
+void CWE194_Unexpected_Sign_Extension__negative_memcpy_03_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

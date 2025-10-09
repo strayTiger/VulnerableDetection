@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int count;
+    void (*funcPtr) (int) = goodG2BSink;
+    /* Initialize count */
+    count = -1;
+    /* FIX: Use a relatively small number */
+    count = 20;
+    funcPtr(count);
+}

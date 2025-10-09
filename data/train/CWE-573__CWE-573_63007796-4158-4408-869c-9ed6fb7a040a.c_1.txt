@@ -1,0 +1,5 @@
+static void badSink(char * data)
+{
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

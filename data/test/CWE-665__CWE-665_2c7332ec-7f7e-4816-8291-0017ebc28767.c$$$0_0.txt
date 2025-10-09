@@ -1,0 +1,35 @@
+static void goodB2G2()
+{
+    int * data;
+    int dataUninitArray[10];
+    data = dataUninitArray;
+    if(1)
+    {
+        /* POTENTIAL FLAW: Partially initialize data */
+        {
+            int i;
+            for(i=0; i<(10/2); i++)
+            {
+                data[i] = i;
+            }
+        }
+    }
+    if(1)
+    {
+        /* FIX: Ensure data is initialized before use */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = i;
+            }
+        }
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printIntLine(data[i]);
+            }
+        }
+    }
+}

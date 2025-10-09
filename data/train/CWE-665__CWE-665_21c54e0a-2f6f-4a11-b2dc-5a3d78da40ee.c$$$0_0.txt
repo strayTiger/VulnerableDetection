@@ -1,0 +1,6 @@
+static size_t goodG2BSource(size_t data)
+{
+    /* FIX: Use a relatively small number for memory allocation */
+    data = 20;
+    return data;
+}

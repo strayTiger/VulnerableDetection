@@ -1,0 +1,24 @@
+static void goodB2G2()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Set count to a random value */
+        count = RAND32();
+    }
+    if(staticReturnsTrue())
+    {
+        /* FIX: Validate count before using it as a parameter in the sleep function */
+        if (count > 0 && count <= 2000)
+        {
+            SLEEP(count);
+            printLine("Sleep time OK");
+        }
+        else
+        {
+            printLine("Sleep time too long");
+        }
+    }
+}

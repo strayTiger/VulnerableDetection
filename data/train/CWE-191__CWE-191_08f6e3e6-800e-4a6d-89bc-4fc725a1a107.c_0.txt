@@ -1,0 +1,9 @@
+void CWE191_Integer_Underflow__int_fscanf_predec_53d_goodG2BSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+        --data;
+        int result = data;
+        printIntLine(result);
+    }
+}

@@ -1,0 +1,6 @@
+static void goodG2BSink()
+{
+    void * data = CWE588_Attempt_to_Access_Child_of_Non_Structure_Pointer__struct_45_goodG2BData;
+    /* POTENTIAL FLAW: Attempt to print a struct when data may be a non-struct data type */
+    printStructLine((twoIntsStruct *)data);
+}

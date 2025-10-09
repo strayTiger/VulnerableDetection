@@ -1,0 +1,21 @@
+void CWE190_Integer_Overflow__int64_t_fscanf_postinc_16_bad()
+{
+    int64_t data;
+    data = 0LL;
+    while(1)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%" SCNd64, &data);
+        break;
+    }
+    while(1)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            int64_t result = data;
+            printLongLongLine(result);
+        }
+        break;
+    }
+}

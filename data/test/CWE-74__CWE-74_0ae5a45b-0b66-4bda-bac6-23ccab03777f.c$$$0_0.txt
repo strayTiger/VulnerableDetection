@@ -1,0 +1,8 @@
+static void goodB2G()
+{
+    char * data;
+    char dataBuffer[100] = "";
+    data = dataBuffer;
+    data = goodB2GSource(data);
+    goodB2GVaSink(data, data);
+}

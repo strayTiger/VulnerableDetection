@@ -1,0 +1,17 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_17_bad()
+{
+    int i,j;
+    FILE * data;
+    data = NULL; /* Initialize data */
+    for(i = 0; i < 1; i++)
+    {
+        data = fopen("BadSource_fopen.txt", "w+");
+        /* POTENTIAL FLAW: Close the file in the source */
+        fclose(data);
+    }
+    for(j = 0; j < 1; j++)
+    {
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        fclose(data);
+    }
+}

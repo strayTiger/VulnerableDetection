@@ -1,0 +1,30 @@
+static void goodB2G1()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Read count from the console using fscanf() */
+        fscanf(stdin, "%d", &count);
+    }
+    if(5!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            size_t i = 0;
+            /* FIX: Validate count before using it as the for loop variant */
+            if (count > 0 && count <= 20)
+            {
+                for (i = 0; i < (size_t)count; i++)
+                {
+                    printLine("Hello");
+                }
+            }
+        }
+    }
+}

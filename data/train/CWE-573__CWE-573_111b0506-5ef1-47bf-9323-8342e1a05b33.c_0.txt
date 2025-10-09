@@ -1,0 +1,7 @@
+void CWE415_Double_Free__malloc_free_int_66b_goodB2GSink(int * dataArray[])
+{
+    int * data = dataArray[2];
+    /* do nothing */
+    /* FIX: Don't attempt to free the memory */
+    ; /* empty statement needed for some flow variants */
+}

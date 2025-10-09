@@ -1,0 +1,5 @@
+void CWE90_LDAP_Injection__w32_char_listen_socket_13_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

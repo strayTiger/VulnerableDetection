@@ -1,0 +1,10 @@
+void CWE617_Reachable_Assertion__fixed_22_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    CWE617_Reachable_Assertion__fixed_22_badGlobal = 1; /* true */
+    data = CWE617_Reachable_Assertion__fixed_22_badSource(data);
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

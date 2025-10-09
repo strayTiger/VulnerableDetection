@@ -1,0 +1,5 @@
+void CWE685_Function_Call_With_Incorrect_Number_of_Arguments__basic_04_good()
+{
+    good1();
+    good2();
+}

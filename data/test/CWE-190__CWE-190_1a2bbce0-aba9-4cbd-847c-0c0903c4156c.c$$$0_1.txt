@@ -1,0 +1,17 @@
+void CWE190_Integer_Overflow__short_max_postinc_18_bad()
+{
+    short data;
+    data = 0;
+    goto source;
+source:
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = SHRT_MAX;
+    goto sink;
+sink:
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        data++;
+        short result = data;
+        printIntLine(result);
+    }
+}

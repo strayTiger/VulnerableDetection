@@ -1,0 +1,26 @@
+static void goodB2G()
+{
+    int i,k;
+    int count;
+    /* Initialize count */
+    count = -1;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Read count from the console using fscanf() */
+        fscanf(stdin, "%d", &count);
+    }
+    for(k = 0; k < 1; k++)
+    {
+        {
+            size_t i = 0;
+            /* FIX: Validate count before using it as the for loop variant */
+            if (count > 0 && count <= 20)
+            {
+                for (i = 0; i < (size_t)count; i++)
+                {
+                    printLine("Hello");
+                }
+            }
+        }
+    }
+}

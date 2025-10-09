@@ -1,0 +1,9 @@
+void CWE191_Integer_Underflow__char_rand_sub_45_bad()
+{
+    char data;
+    data = ' ';
+    /* POTENTIAL FLAW: Use a random value */
+    data = (char)RAND32();
+    CWE191_Integer_Underflow__char_rand_sub_45_badData = data;
+    badSink();
+}

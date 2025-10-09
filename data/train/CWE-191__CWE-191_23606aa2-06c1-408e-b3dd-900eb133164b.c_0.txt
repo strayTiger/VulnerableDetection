@@ -1,0 +1,9 @@
+void CWE191_Integer_Underflow__int_fscanf_sub_68b_goodG2BSink()
+{
+    int data = CWE191_Integer_Underflow__int_fscanf_sub_68_goodG2BData;
+    {
+        /* POTENTIAL FLAW: Subtracting 1 from data could cause an underflow */
+        int result = data - 1;
+        printIntLine(result);
+    }
+}

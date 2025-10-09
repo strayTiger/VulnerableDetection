@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    short data;
+    CWE190_Integer_Overflow__short_max_square_67_structType myStruct;
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = SHRT_MAX;
+    myStruct.structFirst = data;
+    CWE190_Integer_Overflow__short_max_square_67b_goodB2GSink(myStruct);
+}

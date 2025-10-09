@@ -1,0 +1,15 @@
+void CWE617_Reachable_Assertion__rand_34_bad()
+{
+    int data;
+    CWE617_Reachable_Assertion__rand_34_unionType myUnion;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    myUnion.unionFirst = data;
+    {
+        int data = myUnion.unionSecond;
+        /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+        assert(data > ASSERT_VALUE);
+    }
+}

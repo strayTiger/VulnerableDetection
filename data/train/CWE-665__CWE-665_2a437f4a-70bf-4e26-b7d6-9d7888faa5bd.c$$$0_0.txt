@@ -1,0 +1,4 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_fgets_52b_goodB2GSink(size_t data)
+{
+    CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_fgets_52c_goodB2GSink(data);
+}

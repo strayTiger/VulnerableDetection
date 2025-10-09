@@ -1,0 +1,33 @@
+static void goodG2B1()
+{
+    HANDLE data;
+    data = INVALID_HANDLE_VALUE; /* Initialize data */
+    switch(5)
+    {
+    case 6:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    default:
+        /* FIX: Open, but do not close the file in the source */
+        data = CreateFile("GoodSource_w32CreateFile.txt",
+                          (GENERIC_WRITE|GENERIC_READ),
+                          0,
+                          NULL,
+                          OPEN_ALWAYS,
+                          FILE_ATTRIBUTE_NORMAL,
+                          NULL);
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        CloseHandle(data);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

@@ -1,0 +1,6 @@
+int CWE190_Integer_Overflow__int_rand_multiply_61b_badSource(int data)
+{
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    return data;
+}

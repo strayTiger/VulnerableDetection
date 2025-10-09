@@ -1,0 +1,6 @@
+char CWE190_Integer_Overflow__char_max_preinc_61b_badSource(char data)
+{
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = CHAR_MAX;
+    return data;
+}

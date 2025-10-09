@@ -1,0 +1,22 @@
+void CWE197_Numeric_Truncation_Error__int_fgets_to_short_67_bad()
+{
+    int data;
+    CWE197_Numeric_Truncation_Error__int_fgets_to_short_67_structType myStruct;
+    /* Initialize data */
+    data = -1;
+    {
+        char inputBuffer[CHAR_ARRAY_SIZE] = "";
+        /* POTENTIAL FLAW: Read data from the console using fgets() */
+        if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+        {
+            /* Convert to int */
+            data = atoi(inputBuffer);
+        }
+        else
+        {
+            printLine("fgets() failed.");
+        }
+    }
+    myStruct.structFirst = data;
+    CWE197_Numeric_Truncation_Error__int_fgets_to_short_67b_badSink(myStruct);
+}

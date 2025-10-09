@@ -1,0 +1,12 @@
+static void goodG2BSink(int data)
+{
+    if(goodG2BStatic)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            ++data;
+            int result = data;
+            printIntLine(result);
+        }
+    }
+}

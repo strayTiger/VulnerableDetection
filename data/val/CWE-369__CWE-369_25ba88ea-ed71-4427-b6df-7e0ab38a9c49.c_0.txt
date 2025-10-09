@@ -1,0 +1,5 @@
+static void goodG2BSink(int data)
+{
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 / data);
+}

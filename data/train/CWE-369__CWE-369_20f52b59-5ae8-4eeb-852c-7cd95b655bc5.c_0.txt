@@ -1,0 +1,5 @@
+void CWE369_Divide_by_Zero__int_listen_socket_modulo_12_good()
+{
+    goodB2G();
+    goodG2B();
+}

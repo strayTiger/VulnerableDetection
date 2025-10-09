@@ -1,0 +1,9 @@
+int CWE195_Signed_to_Unsigned_Conversion_Error__negative_memmove_22_badSource(int data)
+{
+    if(CWE195_Signed_to_Unsigned_Conversion_Error__negative_memmove_22_badGlobal)
+    {
+        /* FLAW: Use a negative number */
+        data = -1;
+    }
+    return data;
+}

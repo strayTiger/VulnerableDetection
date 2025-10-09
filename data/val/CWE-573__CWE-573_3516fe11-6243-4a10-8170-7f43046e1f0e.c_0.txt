@@ -1,0 +1,5 @@
+void CWE415_Double_Free__malloc_free_long_42_good()
+{
+    goodB2G();
+    goodG2B();
+}

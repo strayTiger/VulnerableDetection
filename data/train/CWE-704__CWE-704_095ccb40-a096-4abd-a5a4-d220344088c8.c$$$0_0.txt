@@ -1,0 +1,8 @@
+static void goodG2BSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: Convert data to a short, possibly causing a truncation error */
+        short shortData = (short)data;
+        printShortLine(shortData);
+    }
+}

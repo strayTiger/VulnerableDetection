@@ -1,0 +1,31 @@
+void CWE190_Integer_Overflow__int_fgets_square_17_bad()
+{
+    int i,j;
+    int data;
+    /* Initialize data */
+    data = 0;
+    for(i = 0; i < 1; i++)
+    {
+        {
+            char inputBuffer[CHAR_ARRAY_SIZE] = "";
+            /* POTENTIAL FLAW: Read data from the console using fgets() */
+            if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+            {
+                /* Convert to int */
+                data = atoi(inputBuffer);
+            }
+            else
+            {
+                printLine("fgets() failed.");
+            }
+        }
+    }
+    for(j = 0; j < 1; j++)
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > INT_MAX, this will overflow */
+            int result = data * data;
+            printIntLine(result);
+        }
+    }
+}

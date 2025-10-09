@@ -1,0 +1,9 @@
+void CWE401_Memory_Leak__strdup_char_61_bad()
+{
+    char * data;
+    data = NULL;
+    data = CWE401_Memory_Leak__strdup_char_61b_badSource(data);
+    /* POTENTIAL FLAW: No deallocation of memory */
+    /* no deallocation */
+    ; /* empty statement needed for some flow variants */
+}

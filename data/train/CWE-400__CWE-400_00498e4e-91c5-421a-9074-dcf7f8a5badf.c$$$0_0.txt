@@ -1,0 +1,8 @@
+void CWE401_Memory_Leak__wchar_t_malloc_22_goodB2G2Sink(wchar_t * data)
+{
+    if(CWE401_Memory_Leak__wchar_t_malloc_22_goodB2G2Global)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

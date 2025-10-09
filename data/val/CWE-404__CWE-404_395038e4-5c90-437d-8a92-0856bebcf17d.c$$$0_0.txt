@@ -1,0 +1,9 @@
+void CWE401_Memory_Leak__char_realloc_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    char * * dataPtr = (char * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    char * data = (*dataPtr);
+    /* FIX: Deallocate memory */
+    free(data);
+}

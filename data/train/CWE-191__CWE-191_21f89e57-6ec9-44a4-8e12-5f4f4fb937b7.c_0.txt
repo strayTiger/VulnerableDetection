@@ -1,0 +1,6 @@
+static char goodB2GSource(char data)
+{
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%c", &data);
+    return data;
+}

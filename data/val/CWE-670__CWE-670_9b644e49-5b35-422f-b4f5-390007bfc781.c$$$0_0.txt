@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    int data;
+    int dataArray[5];
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    dataArray[2] = data;
+    CWE617_Reachable_Assertion__connect_socket_66b_goodG2BSink(dataArray);
+}

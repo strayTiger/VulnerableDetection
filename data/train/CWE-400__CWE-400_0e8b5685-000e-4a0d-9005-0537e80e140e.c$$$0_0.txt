@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__int_realloc_52b_goodG2BSink(int * data)
+{
+    CWE401_Memory_Leak__int_realloc_52c_goodG2BSink(data);
+}

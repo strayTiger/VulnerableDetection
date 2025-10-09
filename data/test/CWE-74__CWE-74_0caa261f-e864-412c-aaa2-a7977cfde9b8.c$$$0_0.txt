@@ -1,0 +1,5 @@
+void CWE78_OS_Command_Injection__char_console_execl_03_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

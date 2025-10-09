@@ -1,0 +1,28 @@
+static void goodB2G2()
+{
+    double * data;
+    data = (double *)ALLOCA(10*sizeof(double));
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        /* FIX: Ensure data is initialized before use */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = (double)i;
+            }
+        }
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printDoubleLine(data[i]);
+            }
+        }
+    }
+}

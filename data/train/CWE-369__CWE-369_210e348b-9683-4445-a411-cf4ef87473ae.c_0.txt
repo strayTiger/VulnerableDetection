@@ -1,0 +1,13 @@
+static void goodB2GSink()
+{
+    int data = CWE369_Divide_by_Zero__int_zero_modulo_45_goodB2GData;
+    /* FIX: test for a zero denominator */
+    if( data != 0 )
+    {
+        printIntLine(100 % data);
+    }
+    else
+    {
+        printLine("This would result in a divide by zero");
+    }
+}

@@ -1,0 +1,4 @@
+void CWE78_OS_Command_Injection__char_connect_socket_w32_execv_52b_goodG2BSink(char * data)
+{
+    CWE78_OS_Command_Injection__char_connect_socket_w32_execv_52c_goodG2BSink(data);
+}

@@ -1,0 +1,9 @@
+void CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_67b_goodB2GSink(CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_67_structType myStruct)
+{
+    int data = myStruct.structFirst;
+    if (data != -1)
+    {
+        /* FIX: Close the file using close() */
+        CLOSE(data);
+    }
+}

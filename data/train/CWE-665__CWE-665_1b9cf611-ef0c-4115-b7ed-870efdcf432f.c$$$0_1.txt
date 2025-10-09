@@ -1,0 +1,12 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_char_rand_66_bad()
+{
+    size_t data;
+    size_t dataArray[5];
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = rand();
+    /* put data in array */
+    dataArray[2] = data;
+    CWE789_Uncontrolled_Mem_Alloc__malloc_char_rand_66b_badSink(dataArray);
+}

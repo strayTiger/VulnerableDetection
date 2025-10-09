@@ -1,0 +1,6 @@
+void CWE457_Use_of_Uninitialized_Variable__long_63b_badSink(long * dataPtr)
+{
+    long data = *dataPtr;
+    /* POTENTIAL FLAW: Use data without initializing it */
+    printLongLine(data);
+}

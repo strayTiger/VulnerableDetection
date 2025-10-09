@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__struct_twoIntsStruct_malloc_63b_goodB2GSink(struct _twoIntsStruct * * dataPtr)
+{
+    struct _twoIntsStruct * data = *dataPtr;
+    /* FIX: Deallocate memory */
+    free(data);
+}

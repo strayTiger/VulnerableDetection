@@ -1,0 +1,5 @@
+void CWE400_Resource_Exhaustion__connect_socket_sleep_12_good()
+{
+    goodB2G();
+    goodG2B();
+}

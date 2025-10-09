@@ -1,0 +1,16 @@
+void CWE369_Divide_by_Zero__int_zero_divide_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    int * dataPtr = (int *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    int data = (*dataPtr);
+    /* FIX: test for a zero denominator */
+    if( data != 0 )
+    {
+        printIntLine(100 / data);
+    }
+    else
+    {
+        printLine("This would result in a divide by zero");
+    }
+}

@@ -1,0 +1,17 @@
+static void goodB2G()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    data = CWE369_Divide_by_Zero__float_fgets_61b_goodB2GSource(data);
+    /* FIX: Check for value of or near zero before dividing */
+    if(fabs(data) > 0.000001)
+    {
+        int result = (int)(100.0 / data);
+        printIntLine(result);
+    }
+    else
+    {
+        printLine("This would result in a divide by zero");
+    }
+}

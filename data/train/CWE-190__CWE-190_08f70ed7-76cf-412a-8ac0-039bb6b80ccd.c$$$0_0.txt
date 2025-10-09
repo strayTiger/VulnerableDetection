@@ -1,0 +1,10 @@
+void CWE190_Integer_Overflow__unsigned_int_max_postinc_68b_goodG2BSink()
+{
+    unsigned int data = CWE190_Integer_Overflow__unsigned_int_max_postinc_68_goodG2BData;
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        data++;
+        unsigned int result = data;
+        printUnsignedLine(result);
+    }
+}

@@ -1,0 +1,15 @@
+static void goodB2G2Sink(int data)
+{
+    if(goodB2G2Static)
+    {
+        /* FIX: test for a zero denominator */
+        if( data != 0 )
+        {
+            printIntLine(100 / data);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

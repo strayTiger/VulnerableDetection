@@ -1,0 +1,13 @@
+static void goodG2B()
+{
+    char * data;
+    char * dataArray[5];
+    data = NULL;
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (char *)ALLOCA(100*sizeof(char));
+    /* Initialize and make use of data */
+    strcpy(data, "A String");
+    printLine(data);
+    dataArray[2] = data;
+    CWE401_Memory_Leak__char_malloc_66b_goodG2BSink(dataArray);
+}

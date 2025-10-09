@@ -1,0 +1,16 @@
+static void goodB2G2Sink(float data)
+{
+    if(goodB2G2Static)
+    {
+        /* FIX: Check for value of or near zero before dividing */
+        if(fabs(data) > 0.000001)
+        {
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

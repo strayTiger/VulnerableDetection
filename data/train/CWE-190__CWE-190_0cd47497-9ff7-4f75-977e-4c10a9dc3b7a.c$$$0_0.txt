@@ -1,0 +1,16 @@
+void CWE190_Integer_Overflow__int64_t_max_multiply_52c_goodB2GSink(int64_t data)
+{
+    if(data > 0) /* ensure we won't have an underflow */
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < (LLONG_MAX/2))
+        {
+            int64_t result = data * 2;
+            printLongLongLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

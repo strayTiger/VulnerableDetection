@@ -1,0 +1,11 @@
+void CWE195_Signed_to_Unsigned_Conversion_Error__rand_memcpy_67_bad()
+{
+    int data;
+    CWE195_Signed_to_Unsigned_Conversion_Error__rand_memcpy_67_structType myStruct;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    myStruct.structFirst = data;
+    CWE195_Signed_to_Unsigned_Conversion_Error__rand_memcpy_67b_badSink(myStruct);
+}

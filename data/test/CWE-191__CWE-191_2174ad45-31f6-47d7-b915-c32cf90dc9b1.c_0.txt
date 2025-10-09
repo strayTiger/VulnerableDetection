@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    short data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%hd", &data);
+    CWE191_Integer_Underflow__short_fscanf_sub_45_goodB2GData = data;
+    goodB2GSink();
+}

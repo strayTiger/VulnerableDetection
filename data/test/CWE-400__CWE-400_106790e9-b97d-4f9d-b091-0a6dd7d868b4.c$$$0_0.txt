@@ -1,0 +1,19 @@
+static void goodB2G2()
+{
+    int64_t * data;
+    data = NULL;
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Allocate memory on the heap */
+        data = (int64_t *)calloc(100, sizeof(int64_t));
+        if (data == NULL) {exit(-1);}
+        /* Initialize and make use of data */
+        data[0] = 5LL;
+        printLongLongLine(data[0]);
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

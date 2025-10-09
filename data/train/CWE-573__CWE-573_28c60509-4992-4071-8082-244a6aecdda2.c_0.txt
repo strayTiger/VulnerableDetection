@@ -1,0 +1,7 @@
+void CWE415_Double_Free__malloc_free_char_10_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

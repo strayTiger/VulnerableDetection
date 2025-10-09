@@ -1,0 +1,34 @@
+static void goodB2G2()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    if(1)
+    {
+        {
+            char inputBuffer[CHAR_ARRAY_SIZE] = "";
+            /* POTENTIAL FLAW: Read data from the console using fgets() */
+            if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+            {
+                /* Convert to int */
+                data = atoi(inputBuffer);
+            }
+            else
+            {
+                printLine("fgets() failed.");
+            }
+        }
+    }
+    if(1)
+    {
+        /* FIX: test for a zero denominator */
+        if( data != 0 )
+        {
+            printIntLine(100 / data);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

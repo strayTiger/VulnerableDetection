@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    int64_t * data;
+    CWE415_Double_Free__malloc_free_int64_t_67_structType myStruct;
+    /* Initialize data */
+    data = NULL;
+    data = (int64_t *)malloc(100*sizeof(int64_t));
+    /* FIX: Do NOT free data in the source - the bad sink frees data */
+    myStruct.structFirst = data;
+    CWE415_Double_Free__malloc_free_int64_t_67b_goodG2BSink(myStruct);
+}

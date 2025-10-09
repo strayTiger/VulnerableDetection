@@ -1,0 +1,14 @@
+void CWE369_Divide_by_Zero__int_rand_divide_18_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    goto source;
+source:
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    goto sink;
+sink:
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 / data);
+}

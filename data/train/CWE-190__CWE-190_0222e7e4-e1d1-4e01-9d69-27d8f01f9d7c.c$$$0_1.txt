@@ -1,0 +1,10 @@
+static void badSink()
+{
+    short data = CWE190_Integer_Overflow__short_rand_preinc_45_badData;
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        ++data;
+        short result = data;
+        printIntLine(result);
+    }
+}

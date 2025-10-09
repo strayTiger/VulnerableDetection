@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    char * data;
+    char dataBuffer[100] = "";
+    data = dataBuffer;
+    data = CWE134_Uncontrolled_Format_String__char_console_fprintf_61b_goodB2GSource(data);
+    /* FIX: Specify the format disallowing a format string vulnerability */
+    fprintf(stdout, "%s\n", data);
+}

@@ -1,0 +1,28 @@
+static void goodB2G1()
+{
+    int64_t data;
+    data = 0LL;
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Use the maximum size of the data type */
+        data = LLONG_MAX;
+    }
+    if(STATIC_CONST_FALSE)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < LLONG_MAX)
+        {
+            int64_t result = data + 1;
+            printLongLongLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

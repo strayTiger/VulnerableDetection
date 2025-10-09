@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__unsigned_int_rand_preinc_54c_goodB2GSink(unsigned int data)
+{
+    CWE190_Integer_Overflow__unsigned_int_rand_preinc_54d_goodB2GSink(data);
+}

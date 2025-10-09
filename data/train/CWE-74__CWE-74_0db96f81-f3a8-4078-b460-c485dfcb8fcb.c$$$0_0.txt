@@ -1,0 +1,15 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_console_w32_vsnprintf_22_goodB2G2_vasink(wchar_t * data, ...)
+{
+    if(CWE134_Uncontrolled_Format_String__wchar_t_console_w32_vsnprintf_22_goodB2G2Global)
+    {
+        {
+            wchar_t dest[100] = L"";
+            va_list args;
+            va_start(args, data);
+            /* FIX: Specify the format disallowing a format string vulnerability */
+            _vsnwprintf(dest, 100-1, L"%s", args);
+            va_end(args);
+            printWLine(dest);
+        }
+    }
+}

@@ -1,0 +1,12 @@
+static void goodG2B()
+{
+    int * data;
+    data = NULL;
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (int *)ALLOCA(100*sizeof(int));
+    /* Initialize and make use of data */
+    data[0] = 5;
+    printIntLine(data[0]);
+    CWE401_Memory_Leak__int_calloc_68_goodG2BData = data;
+    CWE401_Memory_Leak__int_calloc_68b_goodG2BSink();
+}

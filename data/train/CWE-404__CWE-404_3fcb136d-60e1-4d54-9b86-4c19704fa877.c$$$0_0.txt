@@ -1,0 +1,8 @@
+void CWE401_Memory_Leak__struct_twoIntsStruct_calloc_22_goodB2G2Sink(struct _twoIntsStruct * data)
+{
+    if(CWE401_Memory_Leak__struct_twoIntsStruct_calloc_22_goodB2G2Global)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

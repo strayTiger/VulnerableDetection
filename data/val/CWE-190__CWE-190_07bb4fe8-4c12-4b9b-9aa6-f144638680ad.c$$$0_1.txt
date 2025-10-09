@@ -1,0 +1,8 @@
+static void badSink(int64_t data)
+{
+    {
+        /* POTENTIAL FLAW: if (data*data) > LLONG_MAX, this will overflow */
+        int64_t result = data * data;
+        printLongLongLine(result);
+    }
+}

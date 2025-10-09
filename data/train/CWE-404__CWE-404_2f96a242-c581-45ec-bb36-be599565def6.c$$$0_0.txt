@@ -1,0 +1,11 @@
+static void goodB2G2Sink(HANDLE data)
+{
+    if(goodB2G2Static)
+    {
+        if (data != INVALID_HANDLE_VALUE)
+        {
+            /* FIX: Close the file using CloseHandle() */
+            CloseHandle(data);
+        }
+    }
+}

@@ -1,0 +1,29 @@
+static void goodB2G1()
+{
+    unsigned int data;
+    data = 0;
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Use the maximum size of the data type */
+        data = UINT_MAX;
+    }
+    if(STATIC_CONST_FIVE!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < UINT_MAX)
+        {
+            data++;
+            unsigned int result = data;
+            printUnsignedLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

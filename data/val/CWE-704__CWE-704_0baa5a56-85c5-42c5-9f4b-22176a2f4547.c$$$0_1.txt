@@ -1,0 +1,9 @@
+int CWE195_Signed_to_Unsigned_Conversion_Error__rand_memmove_22_badSource(int data)
+{
+    if(CWE195_Signed_to_Unsigned_Conversion_Error__rand_memmove_22_badGlobal)
+    {
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+    }
+    return data;
+}

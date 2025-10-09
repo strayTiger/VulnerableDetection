@@ -1,0 +1,6 @@
+int64_t CWE190_Integer_Overflow__int64_t_fscanf_postinc_61b_badSource(int64_t data)
+{
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%" SCNd64, &data);
+    return data;
+}

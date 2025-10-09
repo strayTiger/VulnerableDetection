@@ -1,0 +1,4 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_console_vfprintf_54e_badSink(wchar_t * data)
+{
+    badVaSink(data, data);
+}

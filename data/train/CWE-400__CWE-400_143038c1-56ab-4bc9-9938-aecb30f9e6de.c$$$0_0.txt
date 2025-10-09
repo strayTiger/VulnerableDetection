@@ -1,0 +1,4 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_char_fgets_54b_goodG2BSink(size_t data)
+{
+    CWE789_Uncontrolled_Mem_Alloc__malloc_char_fgets_54c_goodG2BSink(data);
+}

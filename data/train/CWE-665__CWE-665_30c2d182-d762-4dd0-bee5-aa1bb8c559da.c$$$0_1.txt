@@ -1,0 +1,4 @@
+void CWE665_Improper_Initialization__wchar_t_ncat_52b_badSink(wchar_t * data)
+{
+    CWE665_Improper_Initialization__wchar_t_ncat_52c_badSink(data);
+}

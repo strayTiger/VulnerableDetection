@@ -1,0 +1,19 @@
+void CWE617_Reachable_Assertion__fscanf_32_bad()
+{
+    int data;
+    int *dataPtr1 = &data;
+    int *dataPtr2 = &data;
+    /* Initialize data */
+    data = -1;
+    {
+        int data = *dataPtr1;
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%d", &data);
+        *dataPtr1 = data;
+    }
+    {
+        int data = *dataPtr2;
+        /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+        assert(data > ASSERT_VALUE);
+    }
+}

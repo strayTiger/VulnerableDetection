@@ -1,0 +1,12 @@
+static void good1()
+{
+    while(1)
+    {
+        /* FIX: check for the correct return value */
+        if (!ImpersonateSelf(SecurityImpersonation))
+        {
+            exit(1);
+        }
+        break;
+    }
+}

@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__twoIntsStruct_malloc_66b_goodG2BSink(twoIntsStruct * dataArray[])
+{
+    twoIntsStruct * data = dataArray[2];
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

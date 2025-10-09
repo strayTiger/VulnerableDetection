@@ -1,0 +1,34 @@
+static void goodB2G()
+{
+    float data;
+    CWE369_Divide_by_Zero__float_fgets_34_unionType myUnion;
+    /* Initialize data */
+    data = 0.0F;
+    {
+        char inputBuffer[CHAR_ARRAY_SIZE];
+        /* POTENTIAL FLAW: Use a value input from the console using fgets() */
+        if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+        {
+            /* Convert to float */
+            data = (float)atof(inputBuffer);
+        }
+        else
+        {
+            printLine("fgets() failed.");
+        }
+    }
+    myUnion.unionFirst = data;
+    {
+        float data = myUnion.unionSecond;
+        /* FIX: Check for value of or near zero before dividing */
+        if(fabs(data) > 0.000001)
+        {
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

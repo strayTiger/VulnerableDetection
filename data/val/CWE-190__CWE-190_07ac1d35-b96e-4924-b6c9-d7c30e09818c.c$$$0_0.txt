@@ -1,0 +1,6 @@
+unsigned int CWE190_Integer_Overflow__unsigned_int_max_square_61b_goodG2BSource(unsigned int data)
+{
+    /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+    data = 2;
+    return data;
+}

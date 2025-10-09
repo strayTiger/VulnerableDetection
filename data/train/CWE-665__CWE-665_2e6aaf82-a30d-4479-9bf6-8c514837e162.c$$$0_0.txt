@@ -1,0 +1,4 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_char_connect_socket_53c_goodG2BSink(size_t data)
+{
+    CWE789_Uncontrolled_Mem_Alloc__malloc_char_connect_socket_53d_goodG2BSink(data);
+}

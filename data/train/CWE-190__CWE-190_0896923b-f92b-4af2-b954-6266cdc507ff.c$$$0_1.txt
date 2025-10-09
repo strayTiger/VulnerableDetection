@@ -1,0 +1,8 @@
+void CWE190_Integer_Overflow__unsigned_int_rand_square_54e_badSink(unsigned int data)
+{
+    {
+        /* POTENTIAL FLAW: if (data*data) > UINT_MAX, this will overflow */
+        unsigned int result = data * data;
+        printUnsignedLine(result);
+    }
+}

@@ -1,0 +1,12 @@
+static void goodG2B()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    data = goodG2BSource(data);
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        int result = (int)(100.0 / data);
+        printIntLine(result);
+    }
+}

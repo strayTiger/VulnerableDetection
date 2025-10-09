@@ -1,0 +1,9 @@
+void CWE404_Improper_Resource_Shutdown__w32CreateFile_fclose_63b_goodB2GSink(HANDLE * dataPtr)
+{
+    HANDLE data = *dataPtr;
+    if (data != INVALID_HANDLE_VALUE)
+    {
+        /* FIX: Close the file using CloseHandle() */
+        CloseHandle(data);
+    }
+}

@@ -1,0 +1,22 @@
+void CWE197_Numeric_Truncation_Error__int_rand_to_char_32_bad()
+{
+    int data;
+    int *dataPtr1 = &data;
+    int *dataPtr2 = &data;
+    /* Initialize data */
+    data = -1;
+    {
+        int data = *dataPtr1;
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+        *dataPtr1 = data;
+    }
+    {
+        int data = *dataPtr2;
+        {
+            /* POTENTIAL FLAW: Convert data to a char, possibly causing a truncation error */
+            char charData = (char)data;
+            printHexCharLine(charData);
+        }
+    }
+}

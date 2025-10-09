@@ -1,0 +1,6 @@
+void CWE415_Double_Free__malloc_free_struct_68b_badSink()
+{
+    twoIntsStruct * data = CWE415_Double_Free__malloc_free_struct_68_badData;
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

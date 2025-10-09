@@ -1,0 +1,19 @@
+static void goodG2B2()
+{
+    struct _twoIntsStruct * data;
+    data = NULL;
+    if(globalTrue)
+    {
+        /* FIX: Use memory allocated on the stack with ALLOCA */
+        data = (struct _twoIntsStruct *)ALLOCA(100*sizeof(struct _twoIntsStruct));
+        /* Initialize and make use of data */
+        data[0].intOne = 0;
+        data[0].intTwo = 0;
+        printStructLine((twoIntsStruct *)&data[0]);
+    }
+    if(globalTrue)
+    {
+        /* POTENTIAL FLAW: No deallocation */
+        ; /* empty statement needed for some flow variants */
+    }
+}

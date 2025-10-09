@@ -1,0 +1,6 @@
+short CWE194_Unexpected_Sign_Extension__negative_memcpy_61b_goodG2BSource(short data)
+{
+    /* FIX: Use a positive integer less than &InitialDataSize&*/
+    data = 100-1;
+    return data;
+}

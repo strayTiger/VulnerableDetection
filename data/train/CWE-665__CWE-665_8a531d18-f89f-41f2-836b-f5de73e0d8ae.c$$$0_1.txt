@@ -1,0 +1,7 @@
+void CWE457_Use_of_Uninitialized_Variable__char_pointer_63_bad()
+{
+    char * data;
+    /* POTENTIAL FLAW: Don't initialize data */
+    ; /* empty statement needed for some flow variants */
+    CWE457_Use_of_Uninitialized_Variable__char_pointer_63b_badSink(&data);
+}

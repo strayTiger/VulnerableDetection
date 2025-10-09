@@ -1,0 +1,19 @@
+static void good1()
+{
+    if(globalReturnsTrueOrFalse())
+    {
+        /* FIX: check for the correct return value */
+        if (putc((int)'A', stdout) == EOF)
+        {
+            printLine("putc failed!");
+        }
+    }
+    else
+    {
+        /* FIX: check for the correct return value */
+        if (putc((int)'A', stdout) == EOF)
+        {
+            printLine("putc failed!");
+        }
+    }
+}

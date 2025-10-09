@@ -1,0 +1,4 @@
+void CWE415_Double_Free__malloc_free_int_54b_goodB2GSink(int * data)
+{
+    CWE415_Double_Free__malloc_free_int_54c_goodB2GSink(data);
+}

@@ -1,0 +1,5 @@
+void CWE400_Resource_Exhaustion__fgets_fwrite_32_good()
+{
+    goodG2B();
+    goodB2G();
+}

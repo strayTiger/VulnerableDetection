@@ -1,0 +1,17 @@
+static void goodG2B2()
+{
+    char * data;
+    /* Initialize data */
+    data = NULL;
+    if(globalFive==5)
+    {
+        data = (char *)malloc(100*sizeof(char));
+        if (data == NULL) {exit(-1);}
+        /* FIX: Do NOT free data in the source - the bad sink frees data */
+    }
+    if(globalFive==5)
+    {
+        /* POTENTIAL FLAW: Possibly freeing memory twice */
+        free(data);
+    }
+}

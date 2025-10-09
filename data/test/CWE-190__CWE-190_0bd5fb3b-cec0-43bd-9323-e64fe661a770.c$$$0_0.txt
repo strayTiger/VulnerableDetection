@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    int64_t data;
+    data = 0LL;
+    data = goodG2BSource(data);
+    {
+        /* POTENTIAL FLAW: if (data*data) > LLONG_MAX, this will overflow */
+        int64_t result = data * data;
+        printLongLongLine(result);
+    }
+}

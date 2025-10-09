@@ -1,0 +1,6 @@
+unsigned int CWE190_Integer_Overflow__unsigned_int_max_postinc_61b_badSource(unsigned int data)
+{
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = UINT_MAX;
+    return data;
+}

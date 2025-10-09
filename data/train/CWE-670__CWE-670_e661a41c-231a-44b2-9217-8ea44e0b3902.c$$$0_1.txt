@@ -1,0 +1,12 @@
+void CWE480_Use_of_Incorrect_Operator__basic_16_bad()
+{
+    while(1)
+    {
+        /* FLAW: This will never be true becuase the () was omitted.  Also INCIDENTAL CWE 570 Expression Is Always False */
+        if(helperBad == NULL)
+        {
+            printLine("Got a NULL");
+        }
+        break;
+    }
+}

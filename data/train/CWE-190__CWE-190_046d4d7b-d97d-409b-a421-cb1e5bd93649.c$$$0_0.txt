@@ -1,0 +1,22 @@
+static void goodG2B()
+{
+    short data;
+    short *dataPtr1 = &data;
+    short *dataPtr2 = &data;
+    data = 0;
+    {
+        short data = *dataPtr1;
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+        *dataPtr1 = data;
+    }
+    {
+        short data = *dataPtr2;
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            short result = data;
+            printIntLine(result);
+        }
+    }
+}

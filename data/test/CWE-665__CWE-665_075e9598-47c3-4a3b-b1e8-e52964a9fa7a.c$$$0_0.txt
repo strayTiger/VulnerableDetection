@@ -1,0 +1,28 @@
+static void goodG2B2()
+{
+    double * data;
+    double dataUninitArray[10];
+    data = dataUninitArray;
+    if(staticFive==5)
+    {
+        /* FIX: Completely initialize data */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = (double)i;
+            }
+        }
+    }
+    if(staticFive==5)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printDoubleLine(data[i]);
+            }
+        }
+    }
+}

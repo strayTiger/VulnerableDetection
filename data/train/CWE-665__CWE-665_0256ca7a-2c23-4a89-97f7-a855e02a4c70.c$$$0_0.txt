@@ -1,0 +1,7 @@
+static void goodB2G()
+{
+    int data;
+    /* POTENTIAL FLAW: Don't initialize data */
+    ; /* empty statement needed for some flow variants */
+    CWE457_Use_of_Uninitialized_Variable__int_63b_goodB2GSink(&data);
+}

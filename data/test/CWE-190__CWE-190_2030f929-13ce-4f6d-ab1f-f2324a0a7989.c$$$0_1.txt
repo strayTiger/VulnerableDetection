@@ -1,0 +1,10 @@
+void CWE190_Integer_Overflow__int64_t_max_postinc_68b_badSink()
+{
+    int64_t data = CWE190_Integer_Overflow__int64_t_max_postinc_68_badData;
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        data++;
+        int64_t result = data;
+        printLongLongLine(result);
+    }
+}

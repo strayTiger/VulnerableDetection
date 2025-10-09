@@ -1,0 +1,10 @@
+void CWE191_Integer_Underflow__short_min_predec_66b_goodG2BSink(short dataArray[])
+{
+    short data = dataArray[2];
+    {
+        /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+        --data;
+        short result = data;
+        printIntLine(result);
+    }
+}

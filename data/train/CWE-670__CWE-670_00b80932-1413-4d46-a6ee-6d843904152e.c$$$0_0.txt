@@ -1,0 +1,9 @@
+int CWE617_Reachable_Assertion__connect_socket_22_goodG2B2Source(int data)
+{
+    if(CWE617_Reachable_Assertion__connect_socket_22_goodG2B2Global)
+    {
+        /* FIX: Use a value greater than the assert value */
+        data = ASSERT_VALUE+1;
+    }
+    return data;
+}

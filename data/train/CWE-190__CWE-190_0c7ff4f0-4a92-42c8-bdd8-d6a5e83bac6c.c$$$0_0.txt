@@ -1,0 +1,21 @@
+static void goodB2G()
+{
+    char data;
+    data = ' ';
+    goto source;
+source:
+    /* POTENTIAL FLAW: Use a random value */
+    data = (char)RAND32();
+    goto sink;
+sink:
+    /* FIX: Add a check to prevent an overflow from occurring */
+    if (data < CHAR_MAX)
+    {
+        char result = data + 1;
+        printHexCharLine(result);
+    }
+    else
+    {
+        printLine("data value is too large to perform arithmetic safely.");
+    }
+}

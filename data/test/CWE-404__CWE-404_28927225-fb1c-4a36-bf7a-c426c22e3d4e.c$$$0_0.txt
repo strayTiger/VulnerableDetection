@@ -1,0 +1,11 @@
+void CWE775_Missing_Release_of_File_Descriptor_or_Handle__fopen_no_close_22_goodB2G2Sink(FILE * data)
+{
+    if(CWE775_Missing_Release_of_File_Descriptor_or_Handle__fopen_no_close_22_goodB2G2Global)
+    {
+        /* FIX: If the file is still opened, close it */
+        if (data != NULL)
+        {
+            fclose(data);
+        }
+    }
+}

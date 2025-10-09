@@ -1,0 +1,6 @@
+static FILE * goodB2GSource(FILE * data)
+{
+    /* POTENTIAL FLAW: Open a file without closing it */
+    data = fopen("BadSource_fopen.txt", "w+");
+    return data;
+}

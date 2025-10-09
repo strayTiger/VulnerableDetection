@@ -1,0 +1,10 @@
+void CWE457_Use_of_Uninitialized_Variable__int64_t_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    int64_t * dataPtr = (int64_t *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    int64_t data = (*dataPtr);
+    /* FIX: Ensure data is initialized before use */
+    data = 5LL;
+    printLongLongLine(data);
+}

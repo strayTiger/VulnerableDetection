@@ -1,0 +1,24 @@
+static void goodG2B()
+{
+    void * data;
+    /* Initialize data */
+    data = NULL;
+    if(globalReturnsTrueOrFalse())
+    {
+        {
+            /* FIX: Point data to an int */
+            int intBuffer = 8;
+            data = &intBuffer;
+        }
+    }
+    else
+    {
+        {
+            /* FIX: Point data to an int */
+            int intBuffer = 8;
+            data = &intBuffer;
+        }
+    }
+    /* POTENTIAL FLAW: Attempt to access data as an int */
+    printIntLine(*((int*)data));
+}

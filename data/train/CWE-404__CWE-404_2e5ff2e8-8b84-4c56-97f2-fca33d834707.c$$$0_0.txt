@@ -1,0 +1,5 @@
+void CWE404_Improper_Resource_Shutdown__freopen_w32CloseHandle_06_good()
+{
+    goodB2G1();
+    goodB2G2();
+}

@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__malloc_realloc_twoIntsStruct_13_good()
+{
+    good1();
+    good2();
+}

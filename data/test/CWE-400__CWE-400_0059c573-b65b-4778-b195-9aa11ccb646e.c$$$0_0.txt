@@ -1,0 +1,7 @@
+static void goodG2BSink()
+{
+    int count = CWE400_Resource_Exhaustion__fscanf_sleep_45_goodG2BData;
+    /* POTENTIAL FLAW: Sleep function using count as the parameter with no validation */
+    SLEEP(count);
+    printLine("Sleep time possibly too long");
+}

@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    char * data;
+    /* Initialize data */
+    data = NULL;
+    data = (char *)malloc(100*sizeof(char));
+    /* FIX: Do NOT free data in the source - the bad sink frees data */
+    CWE415_Double_Free__malloc_free_char_68_goodG2BData = data;
+    CWE415_Double_Free__malloc_free_char_68b_goodG2BSink();
+}

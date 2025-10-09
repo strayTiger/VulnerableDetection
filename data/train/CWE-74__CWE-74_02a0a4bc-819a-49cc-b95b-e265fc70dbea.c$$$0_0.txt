@@ -1,0 +1,6 @@
+char CWE464_Addition_of_Data_Structure_Sentinel__basic_61b_goodG2BSource(char data)
+{
+    /* FIX: Set data to be a char */
+    data = 'a';
+    return data;
+}

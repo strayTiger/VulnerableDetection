@@ -1,0 +1,8 @@
+static void goodB2G()
+{
+    short data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a random value */
+    data = (short)RAND32();
+    goodB2GSink(data);
+}

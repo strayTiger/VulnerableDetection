@@ -1,0 +1,7 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_file_fprintf_13_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

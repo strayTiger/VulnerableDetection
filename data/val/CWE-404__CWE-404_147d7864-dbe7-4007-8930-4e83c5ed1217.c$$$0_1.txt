@@ -1,0 +1,11 @@
+void CWE404_Improper_Resource_Shutdown__w32CreateFile_fclose_22_badSink(HANDLE data)
+{
+    if(CWE404_Improper_Resource_Shutdown__w32CreateFile_fclose_22_badGlobal)
+    {
+        if (data != INVALID_HANDLE_VALUE)
+        {
+            /* FLAW: Attempt to close the file using fclose() instead of CloseHandle() */
+            fclose((FILE *)data);
+        }
+    }
+}

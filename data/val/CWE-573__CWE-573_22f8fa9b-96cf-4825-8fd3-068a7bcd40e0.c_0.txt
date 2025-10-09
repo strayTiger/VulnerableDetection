@@ -1,0 +1,5 @@
+static void goodG2BSink(long * data)
+{
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

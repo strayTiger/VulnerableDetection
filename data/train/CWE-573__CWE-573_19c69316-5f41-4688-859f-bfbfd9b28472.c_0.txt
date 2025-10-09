@@ -1,0 +1,9 @@
+static void goodB2G2Sink(int * data)
+{
+    if(goodB2G2Static)
+    {
+        /* do nothing */
+        /* FIX: Don't attempt to free the memory */
+        ; /* empty statement needed for some flow variants */
+    }
+}

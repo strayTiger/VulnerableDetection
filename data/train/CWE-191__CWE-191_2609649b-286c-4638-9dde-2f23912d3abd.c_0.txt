@@ -1,0 +1,6 @@
+short CWE191_Integer_Underflow__short_fscanf_predec_61b_goodB2GSource(short data)
+{
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%hd", &data);
+    return data;
+}

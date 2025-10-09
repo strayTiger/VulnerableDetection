@@ -1,0 +1,15 @@
+void CWE775_Missing_Release_of_File_Descriptor_or_Handle__open_no_close_34_bad()
+{
+    int data;
+    CWE775_Missing_Release_of_File_Descriptor_or_Handle__open_no_close_34_unionType myUnion;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Open a file without closing it */
+    data = OPEN("BadSource_open.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
+    myUnion.unionFirst = data;
+    {
+        int data = myUnion.unionSecond;
+        /* FLAW: No attempt to close the file */
+        ; /* empty statement needed for some flow variants */
+    }
+}

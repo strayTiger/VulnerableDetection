@@ -1,0 +1,15 @@
+static void goodG2B()
+{
+    char * data;
+    CWE134_Uncontrolled_Format_String__char_console_fprintf_34_unionType myUnion;
+    char dataBuffer[100] = "";
+    data = dataBuffer;
+    /* FIX: Use a fixed string that does not contain a format specifier */
+    strcpy(data, "fixedstringtest");
+    myUnion.unionFirst = data;
+    {
+        char * data = myUnion.unionSecond;
+        /* POTENTIAL FLAW: Do not specify the format allowing a possible format string vulnerability */
+        fprintf(stdout, data);
+    }
+}

@@ -1,0 +1,23 @@
+static void goodG2B1()
+{
+    char data;
+    data = ' ';
+    if(globalReturnsFalse())
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    if(globalReturnsTrue())
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > CHAR_MAX, this will overflow */
+            char result = data * data;
+            printHexCharLine(result);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+static float goodG2BSource(float data)
+{
+    /* FIX: Use a hardcoded number that won't a divide by zero */
+    data = 2.0F;
+    return data;
+}

@@ -1,0 +1,7 @@
+void CWE400_Resource_Exhaustion__listen_socket_sleep_67b_goodG2BSink(CWE400_Resource_Exhaustion__listen_socket_sleep_67_structType myStruct)
+{
+    int count = myStruct.structFirst;
+    /* POTENTIAL FLAW: Sleep function using count as the parameter with no validation */
+    SLEEP(count);
+    printLine("Sleep time possibly too long");
+}

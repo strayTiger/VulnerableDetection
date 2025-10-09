@@ -1,0 +1,16 @@
+static void goodG2B()
+{
+    char * data;
+    data = NULL;
+    goto source;
+source:
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (char *)ALLOCA(100*sizeof(char));
+    /* Initialize and make use of data */
+    strcpy(data, "A String");
+    printLine(data);
+    goto sink;
+sink:
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

@@ -1,0 +1,19 @@
+static void goodG2B()
+{
+    int * data;
+    while(1)
+    {
+        /* FIX: Initialize data */
+        /* initialize both the pointer and the data pointed to */
+        data = (int *)malloc(sizeof(int));
+        if (data == NULL) {exit(-1);}
+        *data = 5;
+        break;
+    }
+    while(1)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        printIntLine(*data);
+        break;
+    }
+}

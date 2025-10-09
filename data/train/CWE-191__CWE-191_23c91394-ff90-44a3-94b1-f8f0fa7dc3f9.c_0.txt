@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    short data;
+    void (*funcPtr) (short) = goodB2GSink;
+    data = 0;
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%hd", &data);
+    funcPtr(data);
+}

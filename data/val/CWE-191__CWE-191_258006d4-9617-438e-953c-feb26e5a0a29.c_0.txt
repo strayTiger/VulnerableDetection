@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    char data;
+    data = ' ';
+    /* POTENTIAL FLAW: Use a random value */
+    data = (char)RAND32();
+    CWE191_Integer_Underflow__char_rand_postdec_68_goodB2GData = data;
+    CWE191_Integer_Underflow__char_rand_postdec_68b_goodB2GSink();
+}

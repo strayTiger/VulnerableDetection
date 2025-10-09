@@ -1,0 +1,17 @@
+void CWE190_Integer_Overflow__unsigned_int_rand_postinc_22_goodB2G2Sink(unsigned int data)
+{
+    if(CWE190_Integer_Overflow__unsigned_int_rand_postinc_22_goodB2G2Global)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < UINT_MAX)
+        {
+            data++;
+            unsigned int result = data;
+            printUnsignedLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

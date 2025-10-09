@@ -1,0 +1,6 @@
+static int goodG2BSource(int data)
+{
+    /* FIX: Use a positive integer less than CHAR_MAX*/
+    data = CHAR_MAX-5;
+    return data;
+}

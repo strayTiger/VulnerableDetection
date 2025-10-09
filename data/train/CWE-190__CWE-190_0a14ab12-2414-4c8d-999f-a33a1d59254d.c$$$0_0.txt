@@ -1,0 +1,6 @@
+int CWE190_Integer_Overflow__int_fscanf_add_61b_goodG2BSource(int data)
+{
+    /* FIX: Use a small, non-zero value that will not cause an integer overflow in the sinks */
+    data = 2;
+    return data;
+}

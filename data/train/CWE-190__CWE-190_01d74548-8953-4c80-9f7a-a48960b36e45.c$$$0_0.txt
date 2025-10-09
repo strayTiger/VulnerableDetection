@@ -1,0 +1,35 @@
+static void goodB2G2()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    if(globalReturnsTrue())
+    {
+        {
+            char inputBuffer[CHAR_ARRAY_SIZE] = "";
+            /* POTENTIAL FLAW: Read data from the console using fgets() */
+            if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+            {
+                /* Convert to int */
+                data = atoi(inputBuffer);
+            }
+            else
+            {
+                printLine("fgets() failed.");
+            }
+        }
+    }
+    if(globalReturnsTrue())
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data > INT_MIN && abs(data) < (long)sqrt((double)INT_MAX))
+        {
+            int result = data * data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

@@ -1,0 +1,6 @@
+static int64_t goodB2GSource(int64_t data)
+{
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%" SCNd64, &data);
+    return data;
+}

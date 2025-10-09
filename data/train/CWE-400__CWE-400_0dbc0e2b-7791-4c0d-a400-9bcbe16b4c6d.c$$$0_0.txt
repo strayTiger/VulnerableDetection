@@ -1,0 +1,19 @@
+static void goodB2G2()
+{
+    char * data;
+    data = NULL;
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Allocate memory on the heap */
+        data = (char *)calloc(100, sizeof(char));
+        if (data == NULL) {exit(-1);}
+        /* Initialize and make use of data */
+        strcpy(data, "A String");
+        printLine(data);
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

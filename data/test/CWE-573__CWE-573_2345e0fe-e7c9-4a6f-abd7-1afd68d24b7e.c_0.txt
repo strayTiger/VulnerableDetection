@@ -1,0 +1,17 @@
+static void goodB2G()
+{
+    wchar_t * data;
+    /* Initialize data */
+    data = NULL;
+    data = (wchar_t *)malloc(100*sizeof(wchar_t));
+    if (data == NULL) {exit(-1);}
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    {
+        wchar_t * dataCopy = data;
+        wchar_t * data = dataCopy;
+        /* do nothing */
+        /* FIX: Don't attempt to free the memory */
+        ; /* empty statement needed for some flow variants */
+    }
+}

@@ -1,0 +1,5 @@
+void CWE197_Numeric_Truncation_Error__short_listen_socket_03_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

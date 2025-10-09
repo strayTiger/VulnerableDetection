@@ -1,0 +1,4 @@
+void CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_53c_badSink(int data)
+{
+    CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_53d_badSink(data);
+}

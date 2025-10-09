@@ -1,0 +1,6 @@
+static short badSource(short data)
+{
+    /* FLAW: Use a negative number */
+    data = -1;
+    return data;
+}

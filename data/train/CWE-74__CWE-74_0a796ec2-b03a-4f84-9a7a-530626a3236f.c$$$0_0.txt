@@ -1,0 +1,10 @@
+void CWE134_Uncontrolled_Format_String__char_connect_socket_snprintf_66b_goodB2GSink(char * dataArray[])
+{
+    char * data = dataArray[2];
+    {
+        char dest[100] = "";
+        /* FIX: Specify the format disallowing a format string vulnerability */
+        SNPRINTF(dest, 100-1, "%s", data);
+        printLine(dest);
+    }
+}

@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    short data;
+    short dataArray[5];
+    data = 0;
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = SHRT_MIN;
+    dataArray[2] = data;
+    CWE191_Integer_Underflow__short_min_multiply_66b_goodB2GSink(dataArray);
+}

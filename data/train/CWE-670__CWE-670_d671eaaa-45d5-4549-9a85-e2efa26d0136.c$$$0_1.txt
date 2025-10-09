@@ -1,0 +1,11 @@
+void CWE617_Reachable_Assertion__fixed_67_bad()
+{
+    int data;
+    CWE617_Reachable_Assertion__fixed_67_structType myStruct;
+    /* Initialize data */
+    data = -1;
+    /* FLAW: Use a value less than the assert value */
+    data = ASSERT_VALUE-1;
+    myStruct.structFirst = data;
+    CWE617_Reachable_Assertion__fixed_67b_badSink(myStruct);
+}

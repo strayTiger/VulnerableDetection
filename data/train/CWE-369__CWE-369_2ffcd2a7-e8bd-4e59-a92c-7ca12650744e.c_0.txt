@@ -1,0 +1,6 @@
+void CWE369_Divide_by_Zero__float_listenSocket_21_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B();
+}

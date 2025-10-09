@@ -1,0 +1,19 @@
+static void good1()
+{
+    if(STATIC_CONST_FALSE)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            wchar_t dataBuffer[100] = L"";
+            wchar_t * data = dataBuffer;
+            wcscpy(data, L"abcdefghijklmnopqrstuvwxyz");
+            /* FIX: Copy overlapping memory regions using memmove() */
+            memmove(data + 6, data + 4, 10*sizeof(wchar_t));
+            printWLine(data);
+        }
+    }
+}

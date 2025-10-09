@@ -1,0 +1,29 @@
+static void goodB2G1()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console using fscanf() */
+        fscanf (stdin, "%f", &data);
+    }
+    if(5!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Check for value of or near zero before dividing */
+        if(fabs(data) > 0.000001)
+        {
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

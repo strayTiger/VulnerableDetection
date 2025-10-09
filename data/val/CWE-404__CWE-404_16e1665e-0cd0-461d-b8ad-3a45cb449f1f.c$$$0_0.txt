@@ -1,0 +1,13 @@
+static void goodB2G1Sink(twoIntsStruct * data)
+{
+    if(goodB2G1Static)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

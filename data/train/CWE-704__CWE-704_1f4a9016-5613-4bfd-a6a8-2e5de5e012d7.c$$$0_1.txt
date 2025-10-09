@@ -1,0 +1,9 @@
+static short badSource(short data)
+{
+    if(badStatic)
+    {
+        /* FLAW: Use a random number */
+        data = (short)RAND32();
+    }
+    return data;
+}

@@ -1,0 +1,14 @@
+short CWE194_Unexpected_Sign_Extension__fgets_memmove_22_goodG2B1Source(short data)
+{
+    if(CWE194_Unexpected_Sign_Extension__fgets_memmove_22_goodG2B1Global)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Use a positive integer less than &InitialDataSize&*/
+        data = 100-1;
+    }
+    return data;
+}

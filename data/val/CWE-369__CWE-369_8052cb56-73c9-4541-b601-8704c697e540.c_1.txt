@@ -1,0 +1,6 @@
+float CWE369_Divide_by_Zero__float_zero_61b_badSource(float data)
+{
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0.0F;
+    return data;
+}

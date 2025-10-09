@@ -1,0 +1,11 @@
+static void good2()
+{
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* FIX: check for the correct return value */
+        if (fwrite((char *)"string", sizeof(char), strlen("string"), stdout) != strlen("string"))
+        {
+            printLine("fwrite failed!");
+        }
+    }
+}

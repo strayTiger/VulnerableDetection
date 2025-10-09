@@ -1,0 +1,14 @@
+static void goodG2B()
+{
+    HANDLE data;
+    data = INVALID_HANDLE_VALUE; /* Initialize data */
+    /* FIX: Open, but do not close the file in the source */
+    data = CreateFile("GoodSource_w32CreateFile.txt",
+                      (GENERIC_WRITE|GENERIC_READ),
+                      0,
+                      NULL,
+                      OPEN_ALWAYS,
+                      FILE_ATTRIBUTE_NORMAL,
+                      NULL);
+    CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53b_goodG2BSink(data);
+}

@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__strdup_char_53c_goodB2GSink(char * data)
+{
+    CWE401_Memory_Leak__strdup_char_53d_goodB2GSink(data);
+}

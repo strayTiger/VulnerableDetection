@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0;
+    CWE369_Divide_by_Zero__int_zero_divide_68_goodB2GData = data;
+    CWE369_Divide_by_Zero__int_zero_divide_68b_goodB2GSink();
+}

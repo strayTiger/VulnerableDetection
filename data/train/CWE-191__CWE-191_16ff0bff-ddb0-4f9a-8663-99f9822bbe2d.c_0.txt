@@ -1,0 +1,4 @@
+void CWE191_Integer_Underflow__char_fscanf_predec_54b_goodG2BSink(char data)
+{
+    CWE191_Integer_Underflow__char_fscanf_predec_54c_goodG2BSink(data);
+}

@@ -1,0 +1,5 @@
+void CWE617_Reachable_Assertion__zero_04_good()
+{
+    good1();
+    good2();
+}

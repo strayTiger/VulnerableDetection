@@ -1,0 +1,6 @@
+static short goodB2GSource(short data)
+{
+    /* POTENTIAL FLAW: Use a random value */
+    data = (short)RAND32();
+    return data;
+}

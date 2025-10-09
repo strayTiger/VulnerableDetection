@@ -1,0 +1,4 @@
+void CWE843_Type_Confusion__short_68_good()
+{
+    goodG2B();
+}

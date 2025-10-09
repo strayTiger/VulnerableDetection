@@ -1,0 +1,11 @@
+void CWE190_Integer_Overflow__char_fscanf_add_22_badSink(char data)
+{
+    if(CWE190_Integer_Overflow__char_fscanf_add_22_badGlobal)
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            char result = data + 1;
+            printHexCharLine(result);
+        }
+    }
+}

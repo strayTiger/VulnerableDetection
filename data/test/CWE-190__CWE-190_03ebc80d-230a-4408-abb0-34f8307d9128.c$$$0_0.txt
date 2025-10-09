@@ -1,0 +1,24 @@
+static void goodG2B1()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    if(STATIC_CONST_FALSE)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Use a small, non-zero value that will not cause an integer overflow in the sinks */
+        data = 2;
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > INT_MAX, this will overflow */
+            int result = data * data;
+            printIntLine(result);
+        }
+    }
+}

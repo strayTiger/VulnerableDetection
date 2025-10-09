@@ -1,0 +1,6 @@
+static void goodB2GSink()
+{
+    char * data = CWE401_Memory_Leak__char_realloc_45_goodB2GData;
+    /* FIX: Deallocate memory */
+    free(data);
+}

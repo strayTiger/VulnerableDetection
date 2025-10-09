@@ -1,0 +1,4 @@
+void CWE590_Free_Memory_Not_on_Heap__free_int64_t_static_54b_goodG2BSink(int64_t * data)
+{
+    CWE590_Free_Memory_Not_on_Heap__free_int64_t_static_54c_goodG2BSink(data);
+}

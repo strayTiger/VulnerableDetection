@@ -1,0 +1,9 @@
+int CWE195_Signed_to_Unsigned_Conversion_Error__fscanf_malloc_22_badSource(int data)
+{
+    if(CWE195_Signed_to_Unsigned_Conversion_Error__fscanf_malloc_22_badGlobal)
+    {
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%d", &data);
+    }
+    return data;
+}

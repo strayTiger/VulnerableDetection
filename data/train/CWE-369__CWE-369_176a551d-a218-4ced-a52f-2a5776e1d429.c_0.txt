@@ -1,0 +1,6 @@
+void CWE369_Divide_by_Zero__int_fgets_divide_66b_goodG2BSink(int dataArray[])
+{
+    int data = dataArray[2];
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 / data);
+}

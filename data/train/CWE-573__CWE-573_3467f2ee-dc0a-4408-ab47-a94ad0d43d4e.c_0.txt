@@ -1,0 +1,5 @@
+void CWE253_Incorrect_Check_of_Function_Return_Value__wchar_t_fscanf_13_good()
+{
+    good1();
+    good2();
+}

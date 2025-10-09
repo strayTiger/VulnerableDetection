@@ -1,0 +1,10 @@
+static void badSink()
+{
+    int data = CWE190_Integer_Overflow__int_connect_socket_postinc_45_badData;
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        data++;
+        int result = data;
+        printIntLine(result);
+    }
+}

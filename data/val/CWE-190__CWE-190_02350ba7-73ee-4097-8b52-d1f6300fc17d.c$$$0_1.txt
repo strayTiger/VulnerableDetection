@@ -1,0 +1,19 @@
+void CWE190_Integer_Overflow__unsigned_int_fscanf_preinc_06_bad()
+{
+    unsigned int data;
+    data = 0;
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%u", &data);
+    }
+    if(STATIC_CONST_FIVE==5)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            ++data;
+            unsigned int result = data;
+            printUnsignedLine(result);
+        }
+    }
+}

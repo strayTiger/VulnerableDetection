@@ -1,0 +1,29 @@
+void CWE400_Resource_Exhaustion__fscanf_sleep_15_bad()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    switch(6)
+    {
+    case 6:
+        /* POTENTIAL FLAW: Read count from the console using fscanf() */
+        fscanf(stdin, "%d", &count);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        /* POTENTIAL FLAW: Sleep function using count as the parameter with no validation */
+        SLEEP(count);
+        printLine("Sleep time possibly too long");
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

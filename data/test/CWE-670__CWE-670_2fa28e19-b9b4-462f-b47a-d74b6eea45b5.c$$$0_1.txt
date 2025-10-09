@@ -1,0 +1,25 @@
+void CWE482_Comparing_Instead_of_Assigning__basic_12_bad()
+{
+    if(globalReturnsTrueOrFalse())
+    {
+        {
+            int intBadSink = 0;
+            /* Print original value to avoid any unused variable incidentals */
+            printIntLine(intBadSink);
+            /* FLAW: meant to assign 5 to intBadSink.  Maintenance note: may generate a compiler warning, this is intentional */
+            intBadSink == 5;
+            printIntLine(intBadSink);
+        }
+    }
+    else
+    {
+        {
+            int intGoodSink = 0;
+            /* Print original value to avoid any unused variable incidentals */
+            printIntLine(intGoodSink);
+            /* FIX: use = instead of == */
+            intGoodSink = 5;
+            printIntLine(intGoodSink);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    int data;
+    CWE617_Reachable_Assertion__listen_socket_67_structType myStruct;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    myStruct.structFirst = data;
+    CWE617_Reachable_Assertion__listen_socket_67b_goodG2BSink(myStruct);
+}

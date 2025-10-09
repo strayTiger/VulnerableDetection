@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    int count;
+    CWE400_Resource_Exhaustion__rand_fwrite_67_structType myStruct;
+    /* Initialize count */
+    count = -1;
+    /* FIX: Use a relatively small number */
+    count = 20;
+    myStruct.structFirst = count;
+    CWE400_Resource_Exhaustion__rand_fwrite_67b_goodG2BSink(myStruct);
+}

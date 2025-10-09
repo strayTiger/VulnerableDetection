@@ -1,0 +1,9 @@
+void CWE197_Numeric_Truncation_Error__int_rand_to_char_41_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    CWE197_Numeric_Truncation_Error__int_rand_to_char_41_badSink(data);
+}

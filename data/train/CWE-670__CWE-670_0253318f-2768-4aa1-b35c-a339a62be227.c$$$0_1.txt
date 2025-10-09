@@ -1,0 +1,15 @@
+void CWE483_Incorrect_Block_Delimitation__if_without_braces_single_line_01_bad()
+{
+    int x,y;
+    
+    x = (rand() % 3);
+    y = 0;
+    
+    /* FLAW: forgot to put these two statements within braces (on the same line) */
+    if (x == 0) printLine("x == 0"); y = 1;
+    
+    if (y) 
+    {
+        printLine("x was 0\n");
+    }
+}

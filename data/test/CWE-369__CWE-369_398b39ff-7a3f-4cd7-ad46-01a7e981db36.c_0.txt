@@ -1,0 +1,10 @@
+static void goodB2G2()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    /* POTENTIAL FLAW: Use a value input from the console using fscanf() */
+    fscanf (stdin, "%f", &data);
+    CWE369_Divide_by_Zero__float_fscanf_22_goodB2G2Global = 1; /* true */
+    CWE369_Divide_by_Zero__float_fscanf_22_goodB2G2Sink(data);
+}

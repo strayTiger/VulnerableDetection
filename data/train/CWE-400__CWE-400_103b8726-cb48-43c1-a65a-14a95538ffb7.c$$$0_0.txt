@@ -1,0 +1,25 @@
+static void goodB2G1()
+{
+    char * data;
+    data = NULL;
+    if(5==5)
+    {
+        {
+            char myString[] = "myString";
+            /* POTENTIAL FLAW: Allocate memory from the heap using a function that requires free() for deallocation */
+            data = strdup(myString);
+            /* Use data */
+            printLine(data);
+        }
+    }
+    if(5!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Deallocate memory initialized in the source */
+        free(data);
+    }
+}

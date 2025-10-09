@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    int data;
+    void (*funcPtr) (int) = goodB2GSink;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Read data from the console using fscanf() */
+    fscanf(stdin, "%d", &data);
+    funcPtr(data);
+}

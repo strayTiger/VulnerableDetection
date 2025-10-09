@@ -1,0 +1,18 @@
+static void goodG2B()
+{
+    int h,j;
+    int * data;
+    for(h = 0; h < 1; h++)
+    {
+        /* FIX: Initialize data */
+        /* initialize both the pointer and the data pointed to */
+        data = (int *)malloc(sizeof(int));
+        if (data == NULL) {exit(-1);}
+        *data = 5;
+    }
+    for(j = 0; j < 1; j++)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        printIntLine(*data);
+    }
+}

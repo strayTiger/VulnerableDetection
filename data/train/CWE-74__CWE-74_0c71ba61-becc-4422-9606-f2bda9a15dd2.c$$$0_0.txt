@@ -1,0 +1,27 @@
+static void goodG2B2()
+{
+    wchar_t * data;
+    wchar_t dataBuffer[100] = L"";
+    data = dataBuffer;
+    switch(6)
+    {
+    case 6:
+        /* FIX: Use a fixed string that does not contain a format specifier */
+        wcscpy(data, L"fixedstringtest");
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        goodG2B2VaSinkB(data, data);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

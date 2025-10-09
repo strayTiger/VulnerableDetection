@@ -1,0 +1,8 @@
+void CWE197_Numeric_Truncation_Error__int_fgets_to_short_54e_badSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: Convert data to a short, possibly causing a truncation error */
+        short shortData = (short)data;
+        printShortLine(shortData);
+    }
+}

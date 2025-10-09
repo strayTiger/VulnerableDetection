@@ -1,0 +1,6 @@
+static int goodG2BSource(int data)
+{
+    /* FIX: Use a value not equal to zero */
+    data = 7;
+    return data;
+}

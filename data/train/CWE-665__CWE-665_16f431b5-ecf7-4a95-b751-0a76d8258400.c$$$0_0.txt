@@ -1,0 +1,14 @@
+static void goodG2B()
+{
+    int * data;
+    data = (int *)malloc(10*sizeof(int));
+    /* FIX: Completely initialize data */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            data[i] = i;
+        }
+    }
+    CWE457_Use_of_Uninitialized_Variable__int_array_malloc_no_init_63b_goodG2BSink(&data);
+}

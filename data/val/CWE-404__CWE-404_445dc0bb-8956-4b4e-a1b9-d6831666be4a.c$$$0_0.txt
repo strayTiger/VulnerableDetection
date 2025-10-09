@@ -1,0 +1,8 @@
+void CWE404_Improper_Resource_Shutdown__open_fclose_52c_goodB2GSink(int data)
+{
+    if (data != -1)
+    {
+        /* FIX: Close the file using close() */
+        CLOSE(data);
+    }
+}

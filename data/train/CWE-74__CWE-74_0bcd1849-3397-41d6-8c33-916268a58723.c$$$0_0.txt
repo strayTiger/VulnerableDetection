@@ -1,0 +1,20 @@
+static void goodB2G1_vasink(wchar_t * data, ...)
+{
+    if(goodB2G1Static)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            wchar_t dest[100] = L"";
+            va_list args;
+            va_start(args, data);
+            /* FIX: Specify the format disallowing a format string vulnerability */
+            _vsnwprintf(dest, 100-1, L"%s", args);
+            va_end(args);
+            printWLine(dest);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+static short goodG2BSource(short data)
+{
+    /* FIX: Use a positive integer less than &InitialDataSize&*/
+    data = 100-1;
+    return data;
+}

@@ -1,0 +1,16 @@
+static void goodB2G2()
+{
+    FILE * data;
+    /* Initialize data */
+    data = NULL;
+    /* POTENTIAL FLAW: Open a file - need to make sure it is closed properly in the sink */
+    data = fopen("BadSource_fopen.txt", "w+");
+    if(globalFive==5)
+    {
+        if (data != NULL)
+        {
+            /* FIX: Close the file using fclose() */
+            fclose(data);
+        }
+    }
+}

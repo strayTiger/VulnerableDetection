@@ -1,0 +1,5 @@
+void CWE190_Integer_Overflow__short_fscanf_preinc_44_good()
+{
+    goodG2B();
+    goodB2G();
+}

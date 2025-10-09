@@ -1,0 +1,4 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_connect_socket_snprintf_53b_goodG2BSink(wchar_t * data)
+{
+    CWE134_Uncontrolled_Format_String__wchar_t_connect_socket_snprintf_53c_goodG2BSink(data);
+}

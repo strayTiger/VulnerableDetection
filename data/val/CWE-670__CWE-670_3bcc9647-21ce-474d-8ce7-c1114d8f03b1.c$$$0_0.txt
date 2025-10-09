@@ -1,0 +1,4 @@
+void CWE617_Reachable_Assertion__connect_socket_63_good()
+{
+    goodG2B();
+}

@@ -1,0 +1,5 @@
+void CWE369_Divide_by_Zero__int_fgets_divide_54e_badSink(int data)
+{
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 / data);
+}

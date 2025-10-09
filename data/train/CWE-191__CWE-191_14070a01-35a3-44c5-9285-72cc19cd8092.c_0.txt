@@ -1,0 +1,7 @@
+void CWE191_Integer_Underflow__int64_t_min_postdec_13_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

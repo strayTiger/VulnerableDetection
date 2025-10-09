@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__wchar_t_malloc_66b_goodG2BSink(wchar_t * dataArray[])
+{
+    wchar_t * data = dataArray[2];
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

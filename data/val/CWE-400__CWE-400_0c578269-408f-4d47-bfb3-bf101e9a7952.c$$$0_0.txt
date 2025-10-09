@@ -1,0 +1,14 @@
+static void goodB2GSink(int count)
+{
+    {
+        size_t i = 0;
+        /* FIX: Validate count before using it as the for loop variant */
+        if (count > 0 && count <= 20)
+        {
+            for (i = 0; i < (size_t)count; i++)
+            {
+                printLine("Hello");
+            }
+        }
+    }
+}

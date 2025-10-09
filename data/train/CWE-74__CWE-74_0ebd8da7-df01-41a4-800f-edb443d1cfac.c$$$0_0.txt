@@ -1,0 +1,5 @@
+void CWE134_Uncontrolled_Format_String__char_listen_socket_fprintf_53_good()
+{
+    goodG2B();
+    goodB2G();
+}

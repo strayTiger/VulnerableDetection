@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    wchar_t * data;
+    void (*funcPtr) (wchar_t *) = CWE134_Uncontrolled_Format_String__wchar_t_file_fprintf_65b_goodG2BSink;
+    wchar_t dataBuffer[100] = L"";
+    data = dataBuffer;
+    /* FIX: Use a fixed string that does not contain a format specifier */
+    wcscpy(data, L"fixedstringtest");
+    funcPtr(data);
+}

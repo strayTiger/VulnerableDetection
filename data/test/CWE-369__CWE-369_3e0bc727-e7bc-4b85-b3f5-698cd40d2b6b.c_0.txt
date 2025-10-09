@@ -1,0 +1,5 @@
+void CWE369_Divide_by_Zero__int_fgets_modulo_41_good()
+{
+    goodB2G();
+    goodG2B();
+}

@@ -1,0 +1,12 @@
+void CWE190_Integer_Overflow__unsigned_int_fscanf_postinc_22_goodG2BSink(unsigned int data)
+{
+    if(CWE190_Integer_Overflow__unsigned_int_fscanf_postinc_22_goodG2BGlobal)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            unsigned int result = data;
+            printUnsignedLine(result);
+        }
+    }
+}

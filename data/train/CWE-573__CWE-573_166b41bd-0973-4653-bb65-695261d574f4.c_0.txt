@@ -1,0 +1,4 @@
+void CWE688_Function_Call_With_Incorrect_Variable_or_Reference_as_Argument__basic_01_good()
+{
+    good1();
+}

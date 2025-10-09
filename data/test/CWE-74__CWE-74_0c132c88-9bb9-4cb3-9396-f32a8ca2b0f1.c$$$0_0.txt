@@ -1,0 +1,13 @@
+static void goodB2G()
+{
+    char * data;
+    char dataBuffer[100] = "";
+    data = dataBuffer;
+    data = goodB2GSource(data);
+    {
+        char dest[100] = "";
+        /* FIX: Specify the format disallowing a format string vulnerability */
+        SNPRINTF(dest, 100-1, "%s", data);
+        printLine(dest);
+    }
+}

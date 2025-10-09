@@ -1,0 +1,11 @@
+static void goodB2G()
+{
+    int data;
+    int dataArray[5];
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Read data from the console using fscanf() */
+    fscanf(stdin, "%d", &data);
+    dataArray[2] = data;
+    CWE369_Divide_by_Zero__int_fscanf_modulo_66b_goodB2GSink(dataArray);
+}

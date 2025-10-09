@@ -1,0 +1,21 @@
+static void goodG2B()
+{
+    unsigned int data;
+    unsigned int *dataPtr1 = &data;
+    unsigned int *dataPtr2 = &data;
+    data = 0;
+    {
+        unsigned int data = *dataPtr1;
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+        *dataPtr1 = data;
+    }
+    {
+        unsigned int data = *dataPtr2;
+        {
+            /* POTENTIAL FLAW: if (data*data) > UINT_MAX, this will overflow */
+            unsigned int result = data * data;
+            printUnsignedLine(result);
+        }
+    }
+}

@@ -1,0 +1,16 @@
+static void goodB2G1Sink(FILE * data)
+{
+    if(goodB2G1Static)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        if (data != NULL)
+        {
+            /* FIX: Close the file using fclose() */
+            fclose(data);
+        }
+    }
+}

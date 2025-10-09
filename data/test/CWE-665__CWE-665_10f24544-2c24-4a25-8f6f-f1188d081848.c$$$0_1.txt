@@ -1,0 +1,29 @@
+void CWE457_Use_of_Uninitialized_Variable__int_array_declare_partial_init_17_bad()
+{
+    int i,j;
+    int * data;
+    int dataUninitArray[10];
+    data = dataUninitArray;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Partially initialize data */
+        {
+            int i;
+            for(i=0; i<(10/2); i++)
+            {
+                data[i] = i;
+            }
+        }
+    }
+    for(j = 0; j < 1; j++)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printIntLine(data[i]);
+            }
+        }
+    }
+}

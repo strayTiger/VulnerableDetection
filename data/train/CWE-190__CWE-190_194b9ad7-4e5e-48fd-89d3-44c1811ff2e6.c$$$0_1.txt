@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__unsigned_int_max_preinc_34_bad()
+{
+    unsigned int data;
+    CWE190_Integer_Overflow__unsigned_int_max_preinc_34_unionType myUnion;
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = UINT_MAX;
+    myUnion.unionFirst = data;
+    {
+        unsigned int data = myUnion.unionSecond;
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            ++data;
+            unsigned int result = data;
+            printUnsignedLine(result);
+        }
+    }
+}

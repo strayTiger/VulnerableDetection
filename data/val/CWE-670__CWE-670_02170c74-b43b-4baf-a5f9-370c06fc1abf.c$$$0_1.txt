@@ -1,0 +1,15 @@
+void CWE481_Assigning_Instead_of_Comparing__basic_17_bad()
+{
+    int j;
+    for(j = 0; j < 1; j++)
+    {
+        {
+            int intRand = rand();
+            /* FLAW: should be == and INCIDENTIAL CWE 571 Expression Is Always True */
+            if(intRand = 5)
+            {
+                printLine("i was 5");
+            }
+        }
+    }
+}

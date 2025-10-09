@@ -1,0 +1,6 @@
+FILE * CWE675_Duplicate_Operations_on_Resource__freopen_61b_goodG2BSource(FILE * data)
+{
+    /* FIX: Open, but do not close the file in the source */
+    data = fopen("GoodSource_fopen.txt", "w+");
+    return data;
+}

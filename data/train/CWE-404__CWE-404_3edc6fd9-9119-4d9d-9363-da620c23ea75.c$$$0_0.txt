@@ -1,0 +1,9 @@
+static void goodB2GSink()
+{
+    HANDLE data = CWE404_Improper_Resource_Shutdown__w32CreateFile_close_45_goodB2GData;
+    if (data != INVALID_HANDLE_VALUE)
+    {
+        /* FIX: Close the file using CloseHandle() */
+        CloseHandle(data);
+    }
+}

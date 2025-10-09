@@ -1,0 +1,10 @@
+void CWE191_Integer_Underflow__char_fscanf_postdec_66b_goodG2BSink(char dataArray[])
+{
+    char data = dataArray[2];
+    {
+        /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+        data--;
+        char result = data;
+        printHexCharLine(result);
+    }
+}

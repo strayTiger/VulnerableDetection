@@ -1,0 +1,26 @@
+void CWE194_Unexpected_Sign_Extension__fscanf_memmove_17_bad()
+{
+    int i;
+    short data;
+    /* Initialize data */
+    data = 0;
+    for(i = 0; i < 1; i++)
+    {
+        /* FLAW: Use a value input from the console using fscanf() */
+        fscanf (stdin, "%hd", &data);
+    }
+    {
+        char source[100];
+        char dest[100] = "";
+        memset(source, 'A', 100-1);
+        source[100-1] = '\0';
+        if (data < 100)
+        {
+            /* POTENTIAL FLAW: data is interpreted as an unsigned int - if its value is negative,
+             * the sign extension could result in a very large number */
+            memmove(dest, source, data);
+            dest[data] = '\0'; /* NULL terminate */
+        }
+        printLine(dest);
+    }
+}

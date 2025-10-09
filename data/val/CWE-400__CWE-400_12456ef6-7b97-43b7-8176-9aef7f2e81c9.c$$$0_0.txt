@@ -1,0 +1,5 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_rand_52_good()
+{
+    goodG2B();
+    goodB2G();
+}

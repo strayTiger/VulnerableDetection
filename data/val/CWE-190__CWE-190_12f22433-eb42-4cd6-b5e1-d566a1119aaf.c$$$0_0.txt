@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__char_rand_preinc_53b_goodB2GSink(char data)
+{
+    CWE190_Integer_Overflow__char_rand_preinc_53c_goodB2GSink(data);
+}

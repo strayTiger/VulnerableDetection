@@ -1,0 +1,20 @@
+static void goodB2G()
+{
+    int64_t data;
+    data = 0LL;
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = LLONG_MAX;
+    if(data > 0) /* ensure we won't have an underflow */
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < (LLONG_MAX/2))
+        {
+            int64_t result = data * 2;
+            printLongLongLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

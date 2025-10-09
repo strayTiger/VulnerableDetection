@@ -1,0 +1,8 @@
+void CWE404_Improper_Resource_Shutdown__freopen_w32CloseHandle_65b_goodB2GSink(FILE * data)
+{
+    if (data != NULL)
+    {
+        /* FIX: Close the file using fclose() */
+        fclose(data);
+    }
+}

@@ -1,0 +1,6 @@
+void CWE415_Double_Free__malloc_free_wchar_t_22_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B();
+}

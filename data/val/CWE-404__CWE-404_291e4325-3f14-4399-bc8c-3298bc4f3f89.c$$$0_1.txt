@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__int_malloc_54c_badSink(int * data)
+{
+    CWE401_Memory_Leak__int_malloc_54d_badSink(data);
+}

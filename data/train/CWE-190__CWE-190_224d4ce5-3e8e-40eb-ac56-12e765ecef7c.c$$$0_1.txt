@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__char_max_postinc_53b_badSink(char data)
+{
+    CWE190_Integer_Overflow__char_max_postinc_53c_badSink(data);
+}

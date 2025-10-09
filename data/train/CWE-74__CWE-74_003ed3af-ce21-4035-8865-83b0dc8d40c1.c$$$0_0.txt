@@ -1,0 +1,5 @@
+void CWE90_LDAP_Injection__w32_wchar_t_connect_socket_14_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

@@ -1,0 +1,4 @@
+void CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53c_badSink(HANDLE data)
+{
+    CWE675_Duplicate_Operations_on_Resource__w32CreateFile_53d_badSink(data);
+}

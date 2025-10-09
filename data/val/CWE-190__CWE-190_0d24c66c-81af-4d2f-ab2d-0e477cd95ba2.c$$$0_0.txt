@@ -1,0 +1,22 @@
+static void goodB2G()
+{
+    char data;
+    data = ' ';
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = CHAR_MAX;
+    {
+        char dataCopy = data;
+        char data = dataCopy;
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < CHAR_MAX)
+        {
+            ++data;
+            char result = data;
+            printHexCharLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

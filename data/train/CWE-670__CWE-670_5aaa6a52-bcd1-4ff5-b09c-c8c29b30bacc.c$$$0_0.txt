@@ -1,0 +1,4 @@
+void CWE617_Reachable_Assertion__fscanf_53b_goodG2BSink(int data)
+{
+    CWE617_Reachable_Assertion__fscanf_53c_goodG2BSink(data);
+}

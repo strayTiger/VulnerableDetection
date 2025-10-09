@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    twoIntsStruct * data;
+    /* Initialize data */
+    data = NULL;
+    data = CWE415_Double_Free__malloc_free_struct_61b_goodB2GSource(data);
+    /* do nothing */
+    /* FIX: Don't attempt to free the memory */
+    ; /* empty statement needed for some flow variants */
+}

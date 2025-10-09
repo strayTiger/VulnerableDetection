@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    short data;
+    void (*funcPtr) (short) = goodG2BSink;
+    /* Initialize data */
+    data = 0;
+    /* FIX: Use a positive integer less than &InitialDataSize&*/
+    data = 100-1;
+    funcPtr(data);
+}

@@ -1,0 +1,4 @@
+void CWE617_Reachable_Assertion__connect_socket_52b_badSink(int data)
+{
+    CWE617_Reachable_Assertion__connect_socket_52c_badSink(data);
+}

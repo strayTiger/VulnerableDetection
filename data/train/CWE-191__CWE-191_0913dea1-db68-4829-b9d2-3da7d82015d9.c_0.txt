@@ -1,0 +1,9 @@
+static void goodB2G2()
+{
+    char data;
+    data = ' ';
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = CHAR_MIN;
+    CWE191_Integer_Underflow__char_min_predec_22_goodB2G2Global = 1; /* true */
+    CWE191_Integer_Underflow__char_min_predec_22_goodB2G2Sink(data);
+}

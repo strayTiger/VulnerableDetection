@@ -1,0 +1,12 @@
+void CWE190_Integer_Overflow__int64_t_max_multiply_61_bad()
+{
+    int64_t data;
+    data = 0LL;
+    data = CWE190_Integer_Overflow__int64_t_max_multiply_61b_badSource(data);
+    if(data > 0) /* ensure we won't have an underflow */
+    {
+        /* POTENTIAL FLAW: if (data*2) > LLONG_MAX, this will overflow */
+        int64_t result = data * 2;
+        printLongLongLine(result);
+    }
+}

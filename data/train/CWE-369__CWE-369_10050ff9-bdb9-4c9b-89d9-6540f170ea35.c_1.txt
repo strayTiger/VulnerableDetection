@@ -1,0 +1,16 @@
+void CWE369_Divide_by_Zero__int_zero_divide_04_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Set data to zero */
+        data = 0;
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 / data);
+    }
+}

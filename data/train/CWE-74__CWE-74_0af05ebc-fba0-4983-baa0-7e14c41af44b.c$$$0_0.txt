@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    char * data;
+    char dataBuffer[100] = "";
+    data = dataBuffer;
+    /* FIX: Use a fixed string that does not contain a format specifier */
+    strcpy(data, "fixedstringtest");
+    goodG2BSink(data);
+}

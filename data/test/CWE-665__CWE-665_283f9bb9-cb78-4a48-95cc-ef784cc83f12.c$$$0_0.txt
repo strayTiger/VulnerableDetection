@@ -1,0 +1,28 @@
+static void goodG2B2()
+{
+    int * data;
+    data = (int *)malloc(10*sizeof(int));
+    if (data == NULL) {exit(-1);}
+    if(globalTrue)
+    {
+        /* FIX: Completely initialize data */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = i;
+            }
+        }
+    }
+    if(globalTrue)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printIntLine(data[i]);
+            }
+        }
+    }
+}

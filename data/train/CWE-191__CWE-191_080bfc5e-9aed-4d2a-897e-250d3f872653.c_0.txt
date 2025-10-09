@@ -1,0 +1,5 @@
+void CWE191_Integer_Underflow__unsigned_int_rand_predec_12_good()
+{
+    goodB2G();
+    goodG2B();
+}

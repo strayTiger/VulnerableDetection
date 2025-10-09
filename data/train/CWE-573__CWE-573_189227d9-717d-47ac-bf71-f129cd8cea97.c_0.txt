@@ -1,0 +1,10 @@
+static void good1()
+{
+    goto sink;
+sink:
+    /* FIX: check for the correct return value */
+    if (fputs("string", stdout) == EOF)
+    {
+        printLine("fputs failed!");
+    }
+}

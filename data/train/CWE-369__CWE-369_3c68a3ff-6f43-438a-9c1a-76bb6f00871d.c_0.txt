@@ -1,0 +1,5 @@
+void CWE369_Divide_by_Zero__int_fgets_modulo_53d_goodG2BSink(int data)
+{
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 % data);
+}

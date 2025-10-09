@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__int_realloc_66b_goodB2GSink(int * dataArray[])
+{
+    int * data = dataArray[2];
+    /* FIX: Deallocate memory */
+    free(data);
+}

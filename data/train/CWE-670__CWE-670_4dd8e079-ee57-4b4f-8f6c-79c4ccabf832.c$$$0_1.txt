@@ -1,0 +1,4 @@
+void CWE617_Reachable_Assertion__fgets_54b_badSink(int data)
+{
+    CWE617_Reachable_Assertion__fgets_54c_badSink(data);
+}

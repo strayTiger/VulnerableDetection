@@ -1,0 +1,4 @@
+void CWE191_Integer_Underflow__unsigned_int_rand_sub_53c_goodB2GSink(unsigned int data)
+{
+    CWE191_Integer_Underflow__unsigned_int_rand_sub_53d_goodB2GSink(data);
+}

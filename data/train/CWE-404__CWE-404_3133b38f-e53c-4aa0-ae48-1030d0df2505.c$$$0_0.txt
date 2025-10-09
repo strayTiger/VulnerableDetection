@@ -1,0 +1,7 @@
+void CWE590_Free_Memory_Not_on_Heap__free_int_declare_66b_goodG2BSink(int * dataArray[])
+{
+    int * data = dataArray[2];
+    printIntLine(data[0]);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

@@ -1,0 +1,9 @@
+void CWE190_Integer_Overflow__short_fscanf_multiply_68_bad()
+{
+    short data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%hd", &data);
+    CWE190_Integer_Overflow__short_fscanf_multiply_68_badData = data;
+    CWE190_Integer_Overflow__short_fscanf_multiply_68b_badSink();
+}

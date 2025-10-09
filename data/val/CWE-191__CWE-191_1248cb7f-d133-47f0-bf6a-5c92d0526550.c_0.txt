@@ -1,0 +1,7 @@
+void CWE191_Integer_Underflow__int_rand_multiply_10_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

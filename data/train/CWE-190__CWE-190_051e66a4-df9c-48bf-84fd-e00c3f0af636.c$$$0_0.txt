@@ -1,0 +1,19 @@
+static void goodG2B2()
+{
+    int64_t data;
+    data = 0LL;
+    if(globalReturnsTrue())
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    if(globalReturnsTrue())
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            int64_t result = data;
+            printLongLongLine(result);
+        }
+    }
+}

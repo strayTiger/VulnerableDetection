@@ -1,0 +1,6 @@
+void CWE190_Integer_Overflow__char_rand_preinc_22_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B();
+}

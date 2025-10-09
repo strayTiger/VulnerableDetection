@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    char * data;
+    char dataBuffer[100];
+    data = dataBuffer;
+    /* FIX: Properly initialize data */
+    data[0] = '\0'; /* null terminate */
+    CWE665_Improper_Initialization__char_ncat_53b_goodG2BSink(data);
+}

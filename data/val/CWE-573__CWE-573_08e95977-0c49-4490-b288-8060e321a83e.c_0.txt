@@ -1,0 +1,7 @@
+void CWE675_Duplicate_Operations_on_Resource__open_07_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

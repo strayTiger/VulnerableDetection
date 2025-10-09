@@ -1,0 +1,8 @@
+static void goodB2GSink(FILE * data)
+{
+    if (data != NULL)
+    {
+        /* FIX: Close the file using fclose() */
+        fclose(data);
+    }
+}

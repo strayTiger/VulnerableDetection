@@ -1,0 +1,18 @@
+static void goodG2B2()
+{
+    int64_t * data;
+    data = NULL;
+    if(staticReturnsTrue())
+    {
+        /* FIX: Use memory allocated on the stack with ALLOCA */
+        data = (int64_t *)ALLOCA(100*sizeof(int64_t));
+        /* Initialize and make use of data */
+        data[0] = 5LL;
+        printLongLongLine(data[0]);
+    }
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: No deallocation */
+        ; /* empty statement needed for some flow variants */
+    }
+}

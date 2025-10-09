@@ -1,0 +1,9 @@
+int CWE617_Reachable_Assertion__rand_22_badSource(int data)
+{
+    if(CWE617_Reachable_Assertion__rand_22_badGlobal)
+    {
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+    }
+    return data;
+}

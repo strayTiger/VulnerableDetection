@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__int64_t_calloc_67b_goodG2BSink(CWE401_Memory_Leak__int64_t_calloc_67_structType myStruct)
+{
+    int64_t * data = myStruct.structFirst;
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

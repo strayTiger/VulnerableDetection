@@ -1,0 +1,9 @@
+void CWE401_Memory_Leak__strdup_wchar_t_42_bad()
+{
+    wchar_t * data;
+    data = NULL;
+    data = badSource(data);
+    /* POTENTIAL FLAW: No deallocation of memory */
+    /* no deallocation */
+    ; /* empty statement needed for some flow variants */
+}

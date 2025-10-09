@@ -1,0 +1,28 @@
+static void goodG2B()
+{
+    int h,j;
+    int * data;
+    data = (int *)ALLOCA(10*sizeof(int));
+    for(h = 0; h < 1; h++)
+    {
+        /* FIX: Completely initialize data */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = i;
+            }
+        }
+    }
+    for(j = 0; j < 1; j++)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printIntLine(data[i]);
+            }
+        }
+    }
+}

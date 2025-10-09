@@ -1,0 +1,5 @@
+void CWE482_Comparing_Instead_of_Assigning__basic_08_good()
+{
+    good1();
+    good2();
+}

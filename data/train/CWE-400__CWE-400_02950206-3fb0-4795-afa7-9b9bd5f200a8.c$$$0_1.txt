@@ -1,0 +1,12 @@
+void CWE400_Resource_Exhaustion__rand_for_loop_66_bad()
+{
+    int count;
+    int countArray[5];
+    /* Initialize count */
+    count = -1;
+    /* POTENTIAL FLAW: Set count to a random value */
+    count = RAND32();
+    /* put count in array */
+    countArray[2] = count;
+    CWE400_Resource_Exhaustion__rand_for_loop_66b_badSink(countArray);
+}

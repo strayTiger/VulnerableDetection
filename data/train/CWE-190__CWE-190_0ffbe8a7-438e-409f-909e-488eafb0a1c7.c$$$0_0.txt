@@ -1,0 +1,8 @@
+void CWE190_Integer_Overflow__short_max_square_54e_goodG2BSink(short data)
+{
+    {
+        /* POTENTIAL FLAW: if (data*data) > SHRT_MAX, this will overflow */
+        short result = data * data;
+        printIntLine(result);
+    }
+}

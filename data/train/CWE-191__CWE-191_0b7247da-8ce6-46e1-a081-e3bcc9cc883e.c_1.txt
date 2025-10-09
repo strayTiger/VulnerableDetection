@@ -1,0 +1,9 @@
+void CWE191_Integer_Underflow__unsigned_int_min_predec_45_bad()
+{
+    unsigned int data;
+    data = 0;
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = 0;
+    CWE191_Integer_Underflow__unsigned_int_min_predec_45_badData = data;
+    badSink();
+}

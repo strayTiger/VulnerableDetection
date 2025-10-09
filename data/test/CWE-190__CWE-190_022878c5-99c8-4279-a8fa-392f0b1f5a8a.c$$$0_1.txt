@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__short_rand_square_54d_badSink(short data)
+{
+    CWE190_Integer_Overflow__short_rand_square_54e_badSink(data);
+}

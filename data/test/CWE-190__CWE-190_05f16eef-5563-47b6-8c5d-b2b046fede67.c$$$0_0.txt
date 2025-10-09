@@ -1,0 +1,27 @@
+static void goodB2G()
+{
+    short data;
+    short *dataPtr1 = &data;
+    short *dataPtr2 = &data;
+    data = 0;
+    {
+        short data = *dataPtr1;
+        /* POTENTIAL FLAW: Use the maximum size of the data type */
+        data = SHRT_MAX;
+        *dataPtr1 = data;
+    }
+    {
+        short data = *dataPtr2;
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < SHRT_MAX)
+        {
+            ++data;
+            short result = data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

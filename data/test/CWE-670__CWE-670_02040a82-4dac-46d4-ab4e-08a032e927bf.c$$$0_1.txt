@@ -1,0 +1,19 @@
+void CWE617_Reachable_Assertion__fixed_32_bad()
+{
+    int data;
+    int *dataPtr1 = &data;
+    int *dataPtr2 = &data;
+    /* Initialize data */
+    data = -1;
+    {
+        int data = *dataPtr1;
+        /* FLAW: Use a value less than the assert value */
+        data = ASSERT_VALUE-1;
+        *dataPtr1 = data;
+    }
+    {
+        int data = *dataPtr2;
+        /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+        assert(data > ASSERT_VALUE);
+    }
+}

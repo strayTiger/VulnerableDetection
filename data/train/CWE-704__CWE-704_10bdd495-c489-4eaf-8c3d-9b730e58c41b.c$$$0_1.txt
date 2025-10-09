@@ -1,0 +1,13 @@
+void CWE197_Numeric_Truncation_Error__int_fgets_to_char_21_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    badStatic = 1; /* true */
+    data = badSource(data);
+    {
+        /* POTENTIAL FLAW: Convert data to a char, possibly causing a truncation error */
+        char charData = (char)data;
+        printHexCharLine(charData);
+    }
+}

@@ -1,0 +1,9 @@
+int CWE195_Signed_to_Unsigned_Conversion_Error__negative_memmove_22_goodG2B2Source(int data)
+{
+    if(CWE195_Signed_to_Unsigned_Conversion_Error__negative_memmove_22_goodG2B2Global)
+    {
+        /* FIX: Use a positive integer less than &InitialDataSize&*/
+        data = 100-1;
+    }
+    return data;
+}

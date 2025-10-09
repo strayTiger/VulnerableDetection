@@ -1,0 +1,7 @@
+void CWE415_Double_Free__malloc_free_struct_66b_badSink(twoIntsStruct * dataArray[])
+{
+    /* copy data out of dataArray */
+    twoIntsStruct * data = dataArray[2];
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

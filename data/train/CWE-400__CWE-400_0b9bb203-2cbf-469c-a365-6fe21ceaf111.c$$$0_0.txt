@@ -1,0 +1,9 @@
+void CWE775_Missing_Release_of_File_Descriptor_or_Handle__w32CreateFile_no_close_68b_goodB2GSink()
+{
+    HANDLE data = CWE775_Missing_Release_of_File_Descriptor_or_Handle__w32CreateFile_no_close_68_badDataForGoodSink;
+    /* FIX: If the file is still opened, close it */
+    if (data != INVALID_HANDLE_VALUE)
+    {
+        CloseHandle(data);
+    }
+}

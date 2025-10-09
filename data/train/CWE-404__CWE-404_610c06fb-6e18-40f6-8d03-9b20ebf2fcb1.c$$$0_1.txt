@@ -1,0 +1,12 @@
+void CWE404_Improper_Resource_Shutdown__freopen_w32_close_61_bad()
+{
+    FILE * data;
+    /* Initialize data */
+    data = NULL;
+    data = CWE404_Improper_Resource_Shutdown__freopen_w32_close_61b_badSource(data);
+    if (data != NULL)
+    {
+        /* FLAW: Attempt to close the file using close() instead of fclose() */
+        _close((int)data);
+    }
+}

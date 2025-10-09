@@ -1,0 +1,24 @@
+static void goodG2B1()
+{
+    char data;
+    data = ' ';
+    if(staticFive!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    if(staticFive==5)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            char result = data;
+            printHexCharLine(result);
+        }
+    }
+}

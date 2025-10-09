@@ -1,0 +1,9 @@
+static void goodB2G1()
+{
+    unsigned int data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%u", &data);
+    goodB2G1Static = 0; /* false */
+    goodB2G1Sink(data);
+}

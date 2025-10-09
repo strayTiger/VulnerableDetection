@@ -1,0 +1,19 @@
+static void goodG2B2()
+{
+    unsigned int data;
+    data = 0;
+    if(globalFive==5)
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    if(globalFive==5)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            unsigned int result = data;
+            printUnsignedLine(result);
+        }
+    }
+}

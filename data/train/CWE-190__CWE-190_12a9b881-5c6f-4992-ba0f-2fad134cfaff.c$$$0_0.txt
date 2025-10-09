@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__short_rand_square_54c_goodG2BSink(short data)
+{
+    CWE190_Integer_Overflow__short_rand_square_54d_goodG2BSink(data);
+}

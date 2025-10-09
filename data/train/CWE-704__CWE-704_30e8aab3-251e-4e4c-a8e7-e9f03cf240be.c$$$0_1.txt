@@ -1,0 +1,6 @@
+int CWE195_Signed_to_Unsigned_Conversion_Error__negative_strncpy_61b_badSource(int data)
+{
+    /* FLAW: Use a negative number */
+    data = -1;
+    return data;
+}

@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__short_max_add_10_bad()
+{
+    short data;
+    data = 0;
+    if(globalTrue)
+    {
+        /* POTENTIAL FLAW: Use the maximum size of the data type */
+        data = SHRT_MAX;
+    }
+    if(globalTrue)
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            short result = data + 1;
+            printIntLine(result);
+        }
+    }
+}

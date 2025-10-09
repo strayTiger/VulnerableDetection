@@ -1,0 +1,4 @@
+void CWE588_Attempt_to_Access_Child_of_Non_Structure_Pointer__struct_54d_goodG2BSink(void * data)
+{
+    CWE588_Attempt_to_Access_Child_of_Non_Structure_Pointer__struct_54e_goodG2BSink(data);
+}

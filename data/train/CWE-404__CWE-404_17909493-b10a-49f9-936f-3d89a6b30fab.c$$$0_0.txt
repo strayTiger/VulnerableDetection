@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__twoIntsStruct_calloc_67b_goodB2GSink(CWE401_Memory_Leak__twoIntsStruct_calloc_67_structType myStruct)
+{
+    twoIntsStruct * data = myStruct.structFirst;
+    /* FIX: Deallocate memory */
+    free(data);
+}

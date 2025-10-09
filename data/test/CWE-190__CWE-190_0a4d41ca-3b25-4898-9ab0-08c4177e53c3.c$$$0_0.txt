@@ -1,0 +1,16 @@
+void CWE190_Integer_Overflow__char_fscanf_multiply_51b_goodB2GSink(char data)
+{
+    if(data > 0) /* ensure we won't have an underflow */
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < (CHAR_MAX/2))
+        {
+            char result = data * 2;
+            printHexCharLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

@@ -1,0 +1,15 @@
+static void goodG2B()
+{
+    int * data;
+    int dataUninitArray[10];
+    data = dataUninitArray;
+    /* FIX: Completely initialize data */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            data[i] = i;
+        }
+    }
+    CWE457_Use_of_Uninitialized_Variable__int_array_declare_no_init_64b_goodG2BSink(&data);
+}

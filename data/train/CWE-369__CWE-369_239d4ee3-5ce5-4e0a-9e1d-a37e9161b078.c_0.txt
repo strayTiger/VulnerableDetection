@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__int_fscanf_divide_52b_goodB2GSink(int data)
+{
+    CWE369_Divide_by_Zero__int_fscanf_divide_52c_goodB2GSink(data);
+}

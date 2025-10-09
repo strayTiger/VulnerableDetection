@@ -1,0 +1,16 @@
+void CWE190_Integer_Overflow__short_fscanf_square_18_bad()
+{
+    short data;
+    data = 0;
+    goto source;
+source:
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%hd", &data);
+    goto sink;
+sink:
+    {
+        /* POTENTIAL FLAW: if (data*data) > SHRT_MAX, this will overflow */
+        short result = data * data;
+        printIntLine(result);
+    }
+}

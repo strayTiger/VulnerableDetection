@@ -1,0 +1,6 @@
+int CWE369_Divide_by_Zero__int_listen_socket_divide_61b_goodG2BSource(int data)
+{
+    /* FIX: Use a value not equal to zero */
+    data = 7;
+    return data;
+}

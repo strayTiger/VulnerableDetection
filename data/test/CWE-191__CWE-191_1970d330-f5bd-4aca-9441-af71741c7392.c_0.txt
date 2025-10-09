@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    short data;
+    data = 0;
+    data = goodG2BSource(data);
+    {
+        /* POTENTIAL FLAW: Subtracting 1 from data could cause an underflow */
+        short result = data - 1;
+        printIntLine(result);
+    }
+}

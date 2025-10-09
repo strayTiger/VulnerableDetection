@@ -1,0 +1,11 @@
+static void good2()
+{
+    if(STATIC_CONST_TRUE)
+    {
+        /* FIX: add () to function call */
+        if(helperGood() == NULL) /* this will sometimes be true (depending on the rand() in helperGood) */
+        {
+            printLine("Got a NULL");
+        }
+    }
+}

@@ -1,0 +1,14 @@
+static void good2()
+{
+    if(staticTrue)
+    {
+        {
+            int intRand = rand();
+            /* FIX: used == instead of = */
+            if(intRand == 5)
+            {
+                printLine("i was 5");
+            }
+        }
+    }
+}

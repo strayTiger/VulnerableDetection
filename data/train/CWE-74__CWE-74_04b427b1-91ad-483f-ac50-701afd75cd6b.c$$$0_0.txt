@@ -1,0 +1,9 @@
+static wchar_t * goodG2B2Source(wchar_t * data)
+{
+    if(goodG2B2Static)
+    {
+        /* FIX: Append a fixed string to data (not user / external input) */
+        wcscat(data, L"*.*");
+    }
+    return data;
+}

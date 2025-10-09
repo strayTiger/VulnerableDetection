@@ -1,0 +1,9 @@
+void CWE190_Integer_Overflow__char_fscanf_preinc_65b_badSink(char data)
+{
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        ++data;
+        char result = data;
+        printHexCharLine(result);
+    }
+}

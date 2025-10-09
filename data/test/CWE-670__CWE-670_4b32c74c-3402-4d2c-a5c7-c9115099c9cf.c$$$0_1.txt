@@ -1,0 +1,12 @@
+void CWE617_Reachable_Assertion__fscanf_65_bad()
+{
+    int data;
+    /* define a function pointer */
+    void (*funcPtr) (int) = CWE617_Reachable_Assertion__fscanf_65b_badSink;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Read data from the console using fscanf() */
+    fscanf(stdin, "%d", &data);
+    /* use the function pointer */
+    funcPtr(data);
+}

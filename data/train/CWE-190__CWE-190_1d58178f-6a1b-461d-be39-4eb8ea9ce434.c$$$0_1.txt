@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__char_fscanf_add_03_bad()
+{
+    char data;
+    data = ' ';
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%c", &data);
+    }
+    if(5==5)
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            char result = data + 1;
+            printHexCharLine(result);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+int CWE190_Integer_Overflow__int_max_add_61b_badSource(int data)
+{
+    /* POTENTIAL FLAW: Use the maximum value for this type */
+    data = INT_MAX;
+    return data;
+}

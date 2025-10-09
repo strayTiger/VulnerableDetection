@@ -1,0 +1,8 @@
+static void goodB2G()
+{
+    int64_t data;
+    data = 0LL;
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = LLONG_MAX;
+    CWE190_Integer_Overflow__int64_t_max_preinc_54b_goodB2GSink(data);
+}

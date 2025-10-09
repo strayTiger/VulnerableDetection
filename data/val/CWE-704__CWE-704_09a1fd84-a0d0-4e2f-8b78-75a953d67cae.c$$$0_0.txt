@@ -1,0 +1,5 @@
+void CWE843_Type_Confusion__short_41_goodG2BSink(void * data)
+{
+    /* POTENTIAL FLAW: Attempt to access data as an int */
+    printIntLine(*((int*)data));
+}

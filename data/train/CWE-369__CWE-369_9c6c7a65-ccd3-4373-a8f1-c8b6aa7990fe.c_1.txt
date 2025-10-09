@@ -1,0 +1,18 @@
+void CWE369_Divide_by_Zero__float_fscanf_34_bad()
+{
+    float data;
+    CWE369_Divide_by_Zero__float_fscanf_34_unionType myUnion;
+    /* Initialize data */
+    data = 0.0F;
+    /* POTENTIAL FLAW: Use a value input from the console using fscanf() */
+    fscanf (stdin, "%f", &data);
+    myUnion.unionFirst = data;
+    {
+        float data = myUnion.unionSecond;
+        {
+            /* POTENTIAL FLAW: Possibly divide by zero */
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+    }
+}

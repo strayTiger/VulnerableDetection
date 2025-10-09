@@ -1,0 +1,13 @@
+void CWE415_Double_Free__malloc_free_struct_65_bad()
+{
+    twoIntsStruct * data;
+    /* define a function pointer */
+    void (*funcPtr) (twoIntsStruct *) = CWE415_Double_Free__malloc_free_struct_65b_badSink;
+    /* Initialize data */
+    data = NULL;
+    data = (twoIntsStruct *)malloc(100*sizeof(twoIntsStruct));
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    /* use the function pointer */
+    funcPtr(data);
+}

@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    size_t data;
+    CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_rand_67_structType myStruct;
+    /* Initialize data */
+    data = 0;
+    /* FIX: Use a relatively small number for memory allocation */
+    data = 20;
+    myStruct.structFirst = data;
+    CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_rand_67b_goodG2BSink(myStruct);
+}

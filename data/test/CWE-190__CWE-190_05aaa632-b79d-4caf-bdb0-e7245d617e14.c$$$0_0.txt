@@ -1,0 +1,28 @@
+static void goodB2G1()
+{
+    int64_t data;
+    data = 0LL;
+    if(staticTrue)
+    {
+        /* POTENTIAL FLAW: Use a random value */
+        data = (int64_t)RAND64();
+    }
+    if(staticFalse)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (imaxabs((intmax_t)data) <= sqrtl(LLONG_MAX))
+        {
+            int64_t result = data * data;
+            printLongLongLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

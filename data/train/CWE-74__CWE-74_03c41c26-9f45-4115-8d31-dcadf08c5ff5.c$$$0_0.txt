@@ -1,0 +1,9 @@
+wchar_t * CWE78_OS_Command_Injection__wchar_t_listen_socket_system_22_goodG2B2Source(wchar_t * data)
+{
+    if(CWE78_OS_Command_Injection__wchar_t_listen_socket_system_22_goodG2B2Global)
+    {
+        /* FIX: Append a fixed string to data (not user / external input) */
+        wcscat(data, L"*.*");
+    }
+    return data;
+}

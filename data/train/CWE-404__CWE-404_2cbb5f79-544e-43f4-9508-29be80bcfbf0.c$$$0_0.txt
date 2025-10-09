@@ -1,0 +1,4 @@
+void CWE404_Improper_Resource_Shutdown__w32CreateFile_close_53b_goodB2GSink(HANDLE data)
+{
+    CWE404_Improper_Resource_Shutdown__w32CreateFile_close_53c_goodB2GSink(data);
+}

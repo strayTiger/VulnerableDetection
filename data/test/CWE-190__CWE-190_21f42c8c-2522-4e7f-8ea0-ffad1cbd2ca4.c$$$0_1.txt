@@ -1,0 +1,12 @@
+void CWE190_Integer_Overflow__int_listen_socket_add_64b_badSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    int * dataPtr = (int *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    int data = (*dataPtr);
+    {
+        /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+        int result = data + 1;
+        printIntLine(result);
+    }
+}

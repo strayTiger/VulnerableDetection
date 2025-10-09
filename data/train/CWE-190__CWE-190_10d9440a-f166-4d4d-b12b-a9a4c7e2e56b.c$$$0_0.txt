@@ -1,0 +1,26 @@
+static void goodB2G2()
+{
+    short data;
+    data = 0;
+    if(1)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%hd", &data);
+    }
+    if(1)
+    {
+        if(data > 0) /* ensure we won't have an underflow */
+        {
+            /* FIX: Add a check to prevent an overflow from occurring */
+            if (data < (SHRT_MAX/2))
+            {
+                short result = data * 2;
+                printIntLine(result);
+            }
+            else
+            {
+                printLine("data value is too large to perform arithmetic safely.");
+            }
+        }
+    }
+}

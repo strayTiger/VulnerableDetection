@@ -1,0 +1,9 @@
+static void badSink()
+{
+    char data = CWE191_Integer_Underflow__char_rand_sub_45_badData;
+    {
+        /* POTENTIAL FLAW: Subtracting 1 from data could cause an underflow */
+        char result = data - 1;
+        printHexCharLine(result);
+    }
+}

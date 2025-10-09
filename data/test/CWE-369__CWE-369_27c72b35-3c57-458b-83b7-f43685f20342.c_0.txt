@@ -1,0 +1,18 @@
+static void goodB2G()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0.0F;
+    /* FIX: Check for value of or near zero before dividing */
+    if(fabs(data) > 0.000001)
+    {
+        int result = (int)(100.0 / data);
+        printIntLine(result);
+    }
+    else
+    {
+        printLine("This would result in a divide by zero");
+    }
+}

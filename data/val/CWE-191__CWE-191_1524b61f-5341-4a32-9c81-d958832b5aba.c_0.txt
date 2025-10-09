@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    int64_t data;
+    void (*funcPtr) (int64_t) = goodB2GSink;
+    data = 0LL;
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = LLONG_MIN;
+    funcPtr(data);
+}

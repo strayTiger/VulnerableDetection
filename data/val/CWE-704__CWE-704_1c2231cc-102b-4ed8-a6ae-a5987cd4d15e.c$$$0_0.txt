@@ -1,0 +1,4 @@
+void CWE681_Incorrect_Conversion_Between_Numeric_Types__double2float_12_good()
+{
+    good1();
+}

@@ -1,0 +1,6 @@
+void CWE415_Double_Free__malloc_free_int_67b_goodG2BSink(CWE415_Double_Free__malloc_free_int_67_structType myStruct)
+{
+    int * data = myStruct.structFirst;
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

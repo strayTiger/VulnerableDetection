@@ -1,0 +1,6 @@
+void CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67b_badSink(CWE675_Duplicate_Operations_on_Resource__w32CreateFile_67_structType myStruct)
+{
+    HANDLE data = myStruct.structFirst;
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CloseHandle(data);
+}

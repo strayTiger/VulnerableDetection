@@ -1,0 +1,4 @@
+void CWE90_LDAP_Injection__w32_wchar_t_connect_socket_53c_goodG2BSink(wchar_t * data)
+{
+    CWE90_LDAP_Injection__w32_wchar_t_connect_socket_53d_goodG2BSink(data);
+}

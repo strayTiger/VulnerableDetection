@@ -1,0 +1,6 @@
+void CWE675_Duplicate_Operations_on_Resource__open_66b_goodG2BSink(int dataArray[])
+{
+    int data = dataArray[2];
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CLOSE(data);
+}

@@ -1,0 +1,26 @@
+static void good2()
+{
+    if(1)
+    {
+        {
+            int x = (rand() % 3);
+            /* FIX: Use break in all cases that you do not intend "fall-through"
+             * behavior */
+            switch (x)
+            {
+            case 0:
+                printLine("0");
+                break;
+            case 1:
+                printLine("1");
+                break;
+            case 2:
+                printLine("2");
+                break;
+            default:
+                printLine("Invalid Number");
+                break;
+            }
+        }
+    }
+}

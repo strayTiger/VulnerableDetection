@@ -1,0 +1,25 @@
+static void goodB2G2()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Set count to a random value */
+        count = RAND32();
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        {
+            size_t i = 0;
+            /* FIX: Validate count before using it as the for loop variant */
+            if (count > 0 && count <= 20)
+            {
+                for (i = 0; i < (size_t)count; i++)
+                {
+                    printLine("Hello");
+                }
+            }
+        }
+    }
+}

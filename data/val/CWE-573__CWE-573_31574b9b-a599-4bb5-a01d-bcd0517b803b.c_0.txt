@@ -1,0 +1,4 @@
+void CWE325_Missing_Required_Cryptographic_Step__w32_CryptHashData_17_good()
+{
+    good1();
+}

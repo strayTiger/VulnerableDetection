@@ -1,0 +1,11 @@
+void CWE404_Improper_Resource_Shutdown__fopen_w32CloseHandle_67_bad()
+{
+    FILE * data;
+    CWE404_Improper_Resource_Shutdown__fopen_w32CloseHandle_67_structType myStruct;
+    /* Initialize data */
+    data = NULL;
+    /* POTENTIAL FLAW: Open a file - need to make sure it is closed properly in the sink */
+    data = fopen("BadSource_fopen.txt", "w+");
+    myStruct.structFirst = data;
+    CWE404_Improper_Resource_Shutdown__fopen_w32CloseHandle_67b_badSink(myStruct);
+}

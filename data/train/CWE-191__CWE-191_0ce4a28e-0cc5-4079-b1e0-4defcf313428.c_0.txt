@@ -1,0 +1,9 @@
+static void goodB2G1()
+{
+    int64_t data;
+    data = 0LL;
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = LLONG_MIN;
+    goodB2G1Static = 0; /* false */
+    goodB2G1Sink(data);
+}

@@ -1,0 +1,8 @@
+static void goodB2G()
+{
+    int64_t * data;
+    data = NULL;
+    data = CWE401_Memory_Leak__int64_t_calloc_61b_goodB2GSource(data);
+    /* FIX: Deallocate memory */
+    free(data);
+}

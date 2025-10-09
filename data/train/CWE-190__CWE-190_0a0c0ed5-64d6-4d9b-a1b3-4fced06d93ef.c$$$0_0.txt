@@ -1,0 +1,23 @@
+static void goodB2G2()
+{
+    char data;
+    data = ' ';
+    if(globalFive==5)
+    {
+        /* POTENTIAL FLAW: Use a random value */
+        data = (char)RAND32();
+    }
+    if(globalFive==5)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (abs((long)data) <= (long)sqrt((double)CHAR_MAX))
+        {
+            char result = data * data;
+            printHexCharLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

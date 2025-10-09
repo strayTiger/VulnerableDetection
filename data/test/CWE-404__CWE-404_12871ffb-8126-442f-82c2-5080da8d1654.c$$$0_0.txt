@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    int * data;
+    data = NULL;
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (int *)ALLOCA(100*sizeof(int));
+    /* Initialize and make use of data */
+    data[0] = 5;
+    printIntLine(data[0]);
+    goodG2BSink(data);
+}

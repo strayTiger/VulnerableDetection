@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    short data;
+    short dataArray[5];
+    data = 0;
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%hd", &data);
+    dataArray[2] = data;
+    CWE190_Integer_Overflow__short_fscanf_multiply_66b_goodB2GSink(dataArray);
+}

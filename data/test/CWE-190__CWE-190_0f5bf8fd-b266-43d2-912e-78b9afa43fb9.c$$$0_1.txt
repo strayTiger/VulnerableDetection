@@ -1,0 +1,11 @@
+void CWE190_Integer_Overflow__char_rand_square_44_bad()
+{
+    char data;
+    /* define a function pointer */
+    void (*funcPtr) (char) = badSink;
+    data = ' ';
+    /* POTENTIAL FLAW: Use a random value */
+    data = (char)RAND32();
+    /* use the function pointer */
+    funcPtr(data);
+}

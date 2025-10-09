@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__twoIntsStruct_calloc_53b_badSink(twoIntsStruct * data)
+{
+    CWE401_Memory_Leak__twoIntsStruct_calloc_53c_badSink(data);
+}

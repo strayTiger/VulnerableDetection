@@ -1,0 +1,11 @@
+void CWE480_Use_of_Incorrect_Operator__basic_13_bad()
+{
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        /* FLAW: This will never be true becuase the () was omitted.  Also INCIDENTAL CWE 570 Expression Is Always False */
+        if(helperBad == NULL)
+        {
+            printLine("Got a NULL");
+        }
+    }
+}

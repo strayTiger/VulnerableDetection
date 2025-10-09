@@ -1,0 +1,5 @@
+void badass_slideproof(char **postredemption_coinitial)
+{
+  ++stonesoup_global_variable;;
+  hait_doughman(postredemption_coinitial);
+}

@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    size_t data;
+    void (*funcPtr) (size_t) = goodB2GSink;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = rand();
+    funcPtr(data);
+}

@@ -1,0 +1,33 @@
+static void goodG2B1()
+{
+    double * data;
+    data = (double *)malloc(10*sizeof(double));
+    if (data == NULL) {exit(-1);}
+    if(globalFalse)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Completely initialize data */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = (double)i;
+            }
+        }
+    }
+    if(globalTrue)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printDoubleLine(data[i]);
+            }
+        }
+    }
+}

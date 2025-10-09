@@ -1,0 +1,12 @@
+void CWE415_Double_Free__malloc_free_wchar_t_67_bad()
+{
+    wchar_t * data;
+    CWE415_Double_Free__malloc_free_wchar_t_67_structType myStruct;
+    /* Initialize data */
+    data = NULL;
+    data = (wchar_t *)malloc(100*sizeof(wchar_t));
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    myStruct.structFirst = data;
+    CWE415_Double_Free__malloc_free_wchar_t_67b_badSink(myStruct);
+}

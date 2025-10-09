@@ -1,0 +1,4 @@
+void CWE253_Incorrect_Check_of_Function_Return_Value__char_fprintf_18_good()
+{
+    good1();
+}

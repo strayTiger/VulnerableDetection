@@ -1,0 +1,6 @@
+void CWE590_Free_Memory_Not_on_Heap__free_wchar_t_static_65b_goodG2BSink(wchar_t * data)
+{
+    printWLine(data);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

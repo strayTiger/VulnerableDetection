@@ -1,0 +1,9 @@
+int CWE197_Numeric_Truncation_Error__int_fscanf_to_char_22_badSource(int data)
+{
+    if(CWE197_Numeric_Truncation_Error__int_fscanf_to_char_22_badGlobal)
+    {
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%d", &data);
+    }
+    return data;
+}

@@ -1,0 +1,6 @@
+static int64_t badSource(int64_t data)
+{
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = LLONG_MAX;
+    return data;
+}

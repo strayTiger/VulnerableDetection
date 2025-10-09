@@ -1,0 +1,4 @@
+void CWE404_Improper_Resource_Shutdown__freopen_w32CloseHandle_52b_badSink(FILE * data)
+{
+    CWE404_Improper_Resource_Shutdown__freopen_w32CloseHandle_52c_badSink(data);
+}

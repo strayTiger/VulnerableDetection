@@ -1,0 +1,9 @@
+void CWE675_Duplicate_Operations_on_Resource__freopen_64b_goodG2BSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    FILE * * dataPtr = (FILE * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    FILE * data = (*dataPtr);
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    fclose(data);
+}

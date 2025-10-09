@@ -1,0 +1,5 @@
+static void goodB2GSink(struct _twoIntsStruct * data)
+{
+    /* FIX: Deallocate memory */
+    free(data);
+}

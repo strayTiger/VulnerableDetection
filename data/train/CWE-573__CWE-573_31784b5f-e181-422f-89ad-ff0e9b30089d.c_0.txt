@@ -1,0 +1,15 @@
+static void goodG2B()
+{
+    long * data;
+    /* Initialize data */
+    data = NULL;
+    goto source;
+source:
+    data = (long *)malloc(100*sizeof(long));
+    if (data == NULL) {exit(-1);}
+    /* FIX: Do NOT free data in the source - the bad sink frees data */
+    goto sink;
+sink:
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

@@ -1,0 +1,6 @@
+int CWE617_Reachable_Assertion__rand_61b_badSource(int data)
+{
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    return data;
+}

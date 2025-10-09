@@ -1,0 +1,11 @@
+static void goodB2G()
+{
+    size_t data;
+    CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_rand_67_structType myStruct;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = rand();
+    myStruct.structFirst = data;
+    CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_rand_67b_goodB2GSink(myStruct);
+}

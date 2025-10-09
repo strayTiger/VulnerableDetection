@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__char_fscanf_square_13_bad()
+{
+    char data;
+    data = ' ';
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%c", &data);
+    }
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > CHAR_MAX, this will overflow */
+            char result = data * data;
+            printHexCharLine(result);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__int_max_postinc_31_bad()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum value for this type */
+    data = INT_MAX;
+    {
+        int dataCopy = data;
+        int data = dataCopy;
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            int result = data;
+            printIntLine(result);
+        }
+    }
+}

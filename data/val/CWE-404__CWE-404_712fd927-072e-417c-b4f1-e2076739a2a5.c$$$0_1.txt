@@ -1,0 +1,12 @@
+void CWE404_Improper_Resource_Shutdown__freopen_w32_close_64b_badSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    FILE * * dataPtr = (FILE * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    FILE * data = (*dataPtr);
+    if (data != NULL)
+    {
+        /* FLAW: Attempt to close the file using close() instead of fclose() */
+        _close((int)data);
+    }
+}

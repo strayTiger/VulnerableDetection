@@ -1,0 +1,5 @@
+void CWE617_Reachable_Assertion__connect_socket_07_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

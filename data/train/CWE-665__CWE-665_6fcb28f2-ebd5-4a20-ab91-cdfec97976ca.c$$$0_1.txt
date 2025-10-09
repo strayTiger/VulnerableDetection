@@ -1,0 +1,4 @@
+void CWE665_Improper_Initialization__char_ncat_53b_badSink(char * data)
+{
+    CWE665_Improper_Initialization__char_ncat_53c_badSink(data);
+}

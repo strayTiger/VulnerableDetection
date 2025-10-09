@@ -1,0 +1,9 @@
+void CWE190_Integer_Overflow__short_rand_postinc_54e_badSink(short data)
+{
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        data++;
+        short result = data;
+        printIntLine(result);
+    }
+}

@@ -1,0 +1,16 @@
+void CWE400_Resource_Exhaustion__fscanf_sleep_22_goodB2G2Sink(int count)
+{
+    if(CWE400_Resource_Exhaustion__fscanf_sleep_22_goodB2G2Global)
+    {
+        /* FIX: Validate count before using it as a parameter in the sleep function */
+        if (count > 0 && count <= 2000)
+        {
+            SLEEP(count);
+            printLine("Sleep time OK");
+        }
+        else
+        {
+            printLine("Sleep time too long");
+        }
+    }
+}

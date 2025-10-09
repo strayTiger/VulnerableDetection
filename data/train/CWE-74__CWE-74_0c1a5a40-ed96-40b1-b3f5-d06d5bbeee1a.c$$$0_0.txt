@@ -1,0 +1,6 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_listen_socket_printf_67b_goodB2GSink(CWE134_Uncontrolled_Format_String__wchar_t_listen_socket_printf_67_structType myStruct)
+{
+    wchar_t * data = myStruct.structFirst;
+    /* FIX: Specify the format disallowing a format string vulnerability */
+    wprintf(L"%s\n", data);
+}

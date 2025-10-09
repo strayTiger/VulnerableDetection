@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a positive integer less than CHAR_MAX*/
+    data = CHAR_MAX-5;
+    CWE197_Numeric_Truncation_Error__int_connect_socket_to_short_41_goodG2BSink(data);
+}

@@ -1,0 +1,4 @@
+void CWE415_Double_Free__malloc_free_long_53b_badSink(long * data)
+{
+    CWE415_Double_Free__malloc_free_long_53c_badSink(data);
+}

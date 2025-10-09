@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__float_fgets_52b_goodB2GSink(float data)
+{
+    CWE369_Divide_by_Zero__float_fgets_52c_goodB2GSink(data);
+}

@@ -1,0 +1,23 @@
+static void good1()
+{
+    int k;
+    for(k = 0; k < 1; k++)
+    {
+        {
+            unsigned intUnsigned;
+            int intSigned;
+            intUnsigned = rand();
+            if (rand() % 2 == 0)
+            {
+                intUnsigned = UINT_MAX - intUnsigned;
+            }
+            /* FIX: don't allow very large values of intUnsigned */
+            if (intUnsigned > INT_MAX)
+            {
+                exit(1);
+            }
+            intSigned = intUnsigned;
+            printIntLine(intSigned);
+        }
+    }
+}

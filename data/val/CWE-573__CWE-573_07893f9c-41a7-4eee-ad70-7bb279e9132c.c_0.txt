@@ -1,0 +1,12 @@
+static void goodB2G1()
+{
+    int64_t * data;
+    /* Initialize data */
+    data = NULL;
+    data = (int64_t *)malloc(100*sizeof(int64_t));
+    if (data == NULL) {exit(-1);}
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    goodB2G1Static = 0; /* false */
+    goodB2G1Sink(data);
+}

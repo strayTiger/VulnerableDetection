@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__strdup_char_67b_goodB2GSink(CWE401_Memory_Leak__strdup_char_67_structType myStruct)
+{
+    char * data = myStruct.structFirst;
+    /* FIX: Deallocate memory initialized in the source */
+    free(data);
+}

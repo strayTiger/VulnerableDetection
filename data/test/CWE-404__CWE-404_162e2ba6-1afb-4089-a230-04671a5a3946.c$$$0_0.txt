@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__strdup_char_51b_goodB2GSink(char * data)
+{
+    /* FIX: Deallocate memory initialized in the source */
+    free(data);
+}

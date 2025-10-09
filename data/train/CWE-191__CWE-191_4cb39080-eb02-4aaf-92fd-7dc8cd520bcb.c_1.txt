@@ -1,0 +1,6 @@
+char CWE191_Integer_Underflow__char_rand_predec_61b_badSource(char data)
+{
+    /* POTENTIAL FLAW: Use a random value */
+    data = (char)RAND32();
+    return data;
+}

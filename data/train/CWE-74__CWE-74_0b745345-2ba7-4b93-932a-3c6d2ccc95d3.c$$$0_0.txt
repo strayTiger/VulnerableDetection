@@ -1,0 +1,6 @@
+void CWE134_Uncontrolled_Format_String__char_file_fprintf_68b_goodB2GSink()
+{
+    char * data = CWE134_Uncontrolled_Format_String__char_file_fprintf_68_goodB2GData;
+    /* FIX: Specify the format disallowing a format string vulnerability */
+    fprintf(stdout, "%s\n", data);
+}

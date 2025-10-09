@@ -1,0 +1,29 @@
+static void goodB2G1()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%d", &data);
+    }
+    if(STATIC_CONST_FIVE!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < INT_MAX)
+        {
+            int result = data + 1;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

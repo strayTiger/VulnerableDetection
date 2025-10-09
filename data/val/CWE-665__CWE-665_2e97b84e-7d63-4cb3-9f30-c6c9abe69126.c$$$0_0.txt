@@ -1,0 +1,4 @@
+void CWE665_Improper_Initialization__char_cat_54c_goodG2BSink(char * data)
+{
+    CWE665_Improper_Initialization__char_cat_54d_goodG2BSink(data);
+}

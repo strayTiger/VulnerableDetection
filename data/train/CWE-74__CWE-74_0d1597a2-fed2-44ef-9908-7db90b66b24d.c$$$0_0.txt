@@ -1,0 +1,6 @@
+void CWE134_Uncontrolled_Format_String__wchar_t_connect_socket_printf_63b_goodB2GSink(wchar_t * * dataPtr)
+{
+    wchar_t * data = *dataPtr;
+    /* FIX: Specify the format disallowing a format string vulnerability */
+    wprintf(L"%s\n", data);
+}

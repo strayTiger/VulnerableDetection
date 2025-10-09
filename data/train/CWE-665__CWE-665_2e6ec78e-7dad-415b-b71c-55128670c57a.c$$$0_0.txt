@@ -1,0 +1,6 @@
+size_t CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_rand_61b_goodB2GSource(size_t data)
+{
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = rand();
+    return data;
+}

@@ -1,0 +1,9 @@
+void CWE404_Improper_Resource_Shutdown__fopen_w32_close_66b_goodB2GSink(FILE * dataArray[])
+{
+    FILE * data = dataArray[2];
+    if (data != NULL)
+    {
+        /* FIX: Close the file using fclose() */
+        fclose(data);
+    }
+}

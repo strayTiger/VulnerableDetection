@@ -1,0 +1,8 @@
+void CWE190_Integer_Overflow__int_listen_socket_square_54e_badSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: if (data*data) > INT_MAX, this will overflow */
+        int result = data * data;
+        printIntLine(result);
+    }
+}

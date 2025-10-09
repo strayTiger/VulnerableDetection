@@ -1,0 +1,6 @@
+static int goodG2BSource(int count)
+{
+    /* FIX: Use a relatively small number */
+    count = 20;
+    return count;
+}

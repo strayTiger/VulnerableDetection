@@ -1,0 +1,6 @@
+static int goodG2BSource(int data)
+{
+    /* FIX: Use a small, non-zero value that will not cause an integer overflow in the sinks */
+    data = 2;
+    return data;
+}

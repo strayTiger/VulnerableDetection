@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    data = CWE369_Divide_by_Zero__int_rand_modulo_61b_goodG2BSource(data);
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 % data);
+}

@@ -1,0 +1,5 @@
+static void goodB2GSink(wchar_t * data)
+{
+    /* FIX: Deallocate memory */
+    free(data);
+}

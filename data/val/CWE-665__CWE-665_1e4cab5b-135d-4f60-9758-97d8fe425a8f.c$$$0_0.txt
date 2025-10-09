@@ -1,0 +1,22 @@
+void CWE457_Use_of_Uninitialized_Variable__int_array_declare_partial_init_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    int * * dataPtr = (int * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    int * data = (*dataPtr);
+    /* FIX: Ensure data is initialized before use */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            data[i] = i;
+        }
+    }
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            printIntLine(data[i]);
+        }
+    }
+}

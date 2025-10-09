@@ -1,0 +1,8 @@
+static void goodB2G()
+{
+    struct _twoIntsStruct * data;
+    data = NULL;
+    data = CWE401_Memory_Leak__struct_twoIntsStruct_calloc_61b_goodB2GSource(data);
+    /* FIX: Deallocate memory */
+    free(data);
+}

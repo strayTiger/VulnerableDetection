@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    char data;
+    data = ' ';
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = CHAR_MAX;
+    CWE190_Integer_Overflow__char_max_preinc_68_goodB2GData = data;
+    CWE190_Integer_Overflow__char_max_preinc_68b_goodB2GSink();
+}

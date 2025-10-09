@@ -1,0 +1,27 @@
+static void goodB2G()
+{
+    int * data;
+    int dataUninitArray[10];
+    data = dataUninitArray;
+    goto source;
+source:
+    /* POTENTIAL FLAW: Don't initialize data */
+    ; /* empty statement needed for some flow variants */
+    goto sink;
+sink:
+    /* FIX: Ensure data is initialized before use */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            data[i] = i;
+        }
+    }
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            printIntLine(data[i]);
+        }
+    }
+}

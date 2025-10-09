@@ -1,0 +1,9 @@
+void CWE190_Integer_Overflow__unsigned_int_fscanf_preinc_22_bad()
+{
+    unsigned int data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%u", &data);
+    CWE190_Integer_Overflow__unsigned_int_fscanf_preinc_22_badGlobal = 1; /* true */
+    CWE190_Integer_Overflow__unsigned_int_fscanf_preinc_22_badSink(data);
+}

@@ -1,0 +1,5 @@
+void CWE190_Integer_Overflow__unsigned_int_max_square_45_good()
+{
+    goodG2B();
+    goodB2G();
+}

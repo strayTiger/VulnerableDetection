@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int data;
+    void (*funcPtr) (int) = CWE369_Divide_by_Zero__int_connect_socket_divide_65b_goodG2BSink;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value not equal to zero */
+    data = 7;
+    funcPtr(data);
+}

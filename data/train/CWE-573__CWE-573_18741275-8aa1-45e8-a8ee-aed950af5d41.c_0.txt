@@ -1,0 +1,22 @@
+static void goodG2B1()
+{
+    long * data;
+    /* Initialize data */
+    data = NULL;
+    if(GLOBAL_CONST_FIVE!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        data = (long *)malloc(100*sizeof(long));
+        if (data == NULL) {exit(-1);}
+        /* FIX: Do NOT free data in the source - the bad sink frees data */
+    }
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Possibly freeing memory twice */
+        free(data);
+    }
+}

@@ -1,0 +1,4 @@
+void CWE843_Type_Confusion__short_54b_goodG2BSink(void * data)
+{
+    CWE843_Type_Confusion__short_54c_goodG2BSink(data);
+}

@@ -1,0 +1,12 @@
+static void badSink(int data)
+{
+    if(badStatic)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            data++;
+            int result = data;
+            printIntLine(result);
+        }
+    }
+}

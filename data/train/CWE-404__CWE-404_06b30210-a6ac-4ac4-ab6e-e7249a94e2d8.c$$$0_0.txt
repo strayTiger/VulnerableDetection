@@ -1,0 +1,4 @@
+void CWE404_Improper_Resource_Shutdown__freopen_w32CloseHandle_54b_goodB2GSink(FILE * data)
+{
+    CWE404_Improper_Resource_Shutdown__freopen_w32CloseHandle_54c_goodB2GSink(data);
+}

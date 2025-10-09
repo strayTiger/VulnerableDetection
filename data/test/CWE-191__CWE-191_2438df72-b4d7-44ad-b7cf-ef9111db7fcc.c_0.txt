@@ -1,0 +1,10 @@
+static void goodB2G1()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Read data from the console using fscanf() */
+    fscanf(stdin, "%d", &data);
+    goodB2G1Static = 0; /* false */
+    goodB2G1Sink(data);
+}

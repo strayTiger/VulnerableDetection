@@ -1,0 +1,7 @@
+static void goodB2GSink()
+{
+    int64_t * data = CWE415_Double_Free__malloc_free_int64_t_45_goodB2GData;
+    /* do nothing */
+    /* FIX: Don't attempt to free the memory */
+    ; /* empty statement needed for some flow variants */
+}

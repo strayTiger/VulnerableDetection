@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__int64_t_fscanf_add_11_bad()
+{
+    int64_t data;
+    data = 0LL;
+    if(globalReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%" SCNd64, &data);
+    }
+    if(globalReturnsTrue())
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            int64_t result = data + 1;
+            printLongLongLine(result);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+void CWE617_Reachable_Assertion__fixed_63b_badSink(int * dataPtr)
+{
+    int data = *dataPtr;
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

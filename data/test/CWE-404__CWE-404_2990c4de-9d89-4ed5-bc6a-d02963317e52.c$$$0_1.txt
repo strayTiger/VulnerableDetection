@@ -1,0 +1,9 @@
+void CWE404_Improper_Resource_Shutdown__w32CreateFile_close_68b_badSink()
+{
+    HANDLE data = CWE404_Improper_Resource_Shutdown__w32CreateFile_close_68_badDataForBadSink;
+    if (data != INVALID_HANDLE_VALUE)
+    {
+        /* FLAW: Attempt to close the file using close() instead of CloseHandle() */
+        _close((int)data);
+    }
+}

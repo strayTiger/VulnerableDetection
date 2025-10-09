@@ -1,0 +1,11 @@
+static void badSink(unsigned int data)
+{
+    if(badStatic)
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > UINT_MAX, this will overflow */
+            unsigned int result = data * data;
+            printUnsignedLine(result);
+        }
+    }
+}

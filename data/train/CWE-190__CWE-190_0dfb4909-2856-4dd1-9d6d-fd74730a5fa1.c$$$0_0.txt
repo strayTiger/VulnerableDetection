@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    short data;
+    data = 0;
+    /* POTENTIAL FLAW: Use a random value */
+    data = (short)RAND32();
+    CWE190_Integer_Overflow__short_rand_add_68_goodB2GData = data;
+    CWE190_Integer_Overflow__short_rand_add_68b_goodB2GSink();
+}

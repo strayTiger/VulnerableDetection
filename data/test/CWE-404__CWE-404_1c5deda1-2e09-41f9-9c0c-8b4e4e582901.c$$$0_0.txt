@@ -1,0 +1,8 @@
+static void goodB2G2Sink(struct _twoIntsStruct * data)
+{
+    if(goodB2G2Static)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

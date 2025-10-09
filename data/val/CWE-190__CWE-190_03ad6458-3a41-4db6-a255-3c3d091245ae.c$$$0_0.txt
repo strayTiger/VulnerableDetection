@@ -1,0 +1,37 @@
+static void goodB2G1()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    switch(6)
+    {
+    case 6:
+        /* POTENTIAL FLAW: Use the maximum value for this type */
+        data = INT_MAX;
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(8)
+    {
+    case 7:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    default:
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < INT_MAX)
+        {
+            data++;
+            int result = data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+        break;
+    }
+}

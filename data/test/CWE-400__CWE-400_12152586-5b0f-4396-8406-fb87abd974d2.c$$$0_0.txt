@@ -1,0 +1,30 @@
+static void good1()
+{
+    if(5!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            int * data = (int *)malloc(100*sizeof(int));
+            if (data == NULL) {exit(-1);}
+            int * tmpData;
+            /* Initialize and make use of data */
+            data[0] = 5;
+            printIntLine(data[0]);
+            tmpData = (int *)realloc(data, (130000)*sizeof(int));
+            /* FIX: Ensure realloc() was successful before assigning data to the memory block
+            * allocated with realloc() */
+            if (tmpData != NULL)
+            {
+                data = tmpData;
+                /* Reinitialize and make use of data */
+                data[0] = 10;
+                printIntLine(data[0]);
+            }
+            free(data);
+        }
+    }
+}

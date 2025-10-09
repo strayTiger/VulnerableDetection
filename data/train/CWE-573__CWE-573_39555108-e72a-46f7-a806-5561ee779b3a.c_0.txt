@@ -1,0 +1,4 @@
+void CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52b_goodB2GSink(HANDLE data)
+{
+    CWE675_Duplicate_Operations_on_Resource__w32CreateFile_52c_goodB2GSink(data);
+}

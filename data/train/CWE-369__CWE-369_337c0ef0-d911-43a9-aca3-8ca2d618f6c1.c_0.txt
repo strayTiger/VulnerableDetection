@@ -1,0 +1,16 @@
+void CWE369_Divide_by_Zero__float_zero_22_goodB2G2Sink(float data)
+{
+    if(CWE369_Divide_by_Zero__float_zero_22_goodB2G2Global)
+    {
+        /* FIX: Check for value of or near zero before dividing */
+        if(fabs(data) > 0.000001)
+        {
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

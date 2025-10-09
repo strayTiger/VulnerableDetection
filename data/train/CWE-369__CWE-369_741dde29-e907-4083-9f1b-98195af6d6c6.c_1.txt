@@ -1,0 +1,9 @@
+void CWE369_Divide_by_Zero__int_zero_divide_61_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    data = CWE369_Divide_by_Zero__int_zero_divide_61b_badSource(data);
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 / data);
+}

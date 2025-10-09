@@ -1,0 +1,13 @@
+void CWE401_Memory_Leak__char_realloc_67_bad()
+{
+    char * data;
+    CWE401_Memory_Leak__char_realloc_67_structType myStruct;
+    data = NULL;
+    /* POTENTIAL FLAW: Allocate memory on the heap */
+    data = (char *)realloc(data, 100*sizeof(char));
+    /* Initialize and make use of data */
+    strcpy(data, "A String");
+    printLine(data);
+    myStruct.structFirst = data;
+    CWE401_Memory_Leak__char_realloc_67b_badSink(myStruct);
+}

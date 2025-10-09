@@ -1,0 +1,11 @@
+static void goodB2G1()
+{
+    char * data;
+    /* Initialize data */
+    data = NULL;
+    data = (char *)malloc(100*sizeof(char));
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    CWE415_Double_Free__malloc_free_char_22_goodB2G1Global = 0; /* false */
+    CWE415_Double_Free__malloc_free_char_22_goodB2G1Sink(data);
+}

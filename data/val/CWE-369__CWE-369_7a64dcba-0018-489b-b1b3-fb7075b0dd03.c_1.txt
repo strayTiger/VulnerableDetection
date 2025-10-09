@@ -1,0 +1,15 @@
+void CWE369_Divide_by_Zero__int_zero_divide_34_bad()
+{
+    int data;
+    CWE369_Divide_by_Zero__int_zero_divide_34_unionType myUnion;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0;
+    myUnion.unionFirst = data;
+    {
+        int data = myUnion.unionSecond;
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 / data);
+    }
+}

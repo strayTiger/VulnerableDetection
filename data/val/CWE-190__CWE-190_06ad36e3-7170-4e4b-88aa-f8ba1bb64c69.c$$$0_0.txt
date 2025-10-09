@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    short data;
+    void (*funcPtr) (short) = CWE190_Integer_Overflow__short_max_square_65b_goodB2GSink;
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = SHRT_MAX;
+    funcPtr(data);
+}

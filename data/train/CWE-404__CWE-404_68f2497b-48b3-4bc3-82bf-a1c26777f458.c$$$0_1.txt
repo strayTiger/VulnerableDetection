@@ -1,0 +1,11 @@
+void CWE775_Missing_Release_of_File_Descriptor_or_Handle__fopen_no_close_66_bad()
+{
+    FILE * data;
+    FILE * dataArray[5];
+    data = NULL;
+    /* POTENTIAL FLAW: Open a file without closing it */
+    data = fopen("BadSource_fopen.txt", "w+");
+    /* put data in array */
+    dataArray[2] = data;
+    CWE775_Missing_Release_of_File_Descriptor_or_Handle__fopen_no_close_66b_badSink(dataArray);
+}

@@ -1,0 +1,20 @@
+static void goodB2G()
+{
+    int i,k;
+    wchar_t * data;
+    data = NULL;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Allocate memory on the heap */
+        data = (wchar_t *)calloc(100, sizeof(wchar_t));
+        if (data == NULL) {exit(-1);}
+        /* Initialize and make use of data */
+        wcscpy(data, L"A String");
+        printWLine(data);
+    }
+    for(k = 0; k < 1; k++)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

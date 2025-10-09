@@ -1,0 +1,5 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_char_connect_socket_41_good()
+{
+    goodB2G();
+    goodG2B();
+}

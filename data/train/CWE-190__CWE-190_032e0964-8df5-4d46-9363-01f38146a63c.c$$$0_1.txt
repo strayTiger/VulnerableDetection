@@ -1,0 +1,12 @@
+void CWE190_Integer_Overflow__int_connect_socket_square_61_bad()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    data = CWE190_Integer_Overflow__int_connect_socket_square_61b_badSource(data);
+    {
+        /* POTENTIAL FLAW: if (data*data) > INT_MAX, this will overflow */
+        int result = data * data;
+        printIntLine(result);
+    }
+}

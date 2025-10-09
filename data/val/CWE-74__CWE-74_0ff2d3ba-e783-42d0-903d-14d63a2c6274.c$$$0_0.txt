@@ -1,0 +1,24 @@
+static void goodG2B1()
+{
+    char data;
+    data = ' ';
+    if(staticReturnsFalse())
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Set data to be a char */
+        data = 'a';
+    }
+    {
+        char charArraySink[4];
+        charArraySink[0] = 'x';
+        /* POTENTIAL FLAW: If data is null, the rest of the array will not be printed */
+        charArraySink[1] = data;
+        charArraySink[2] = 'z';
+        charArraySink[3] = '\0';
+        printLine(charArraySink);
+    }
+}

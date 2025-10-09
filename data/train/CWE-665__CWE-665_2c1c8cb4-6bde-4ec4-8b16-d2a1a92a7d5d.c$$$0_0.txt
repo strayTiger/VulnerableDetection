@@ -1,0 +1,11 @@
+static void goodB2G()
+{
+    size_t data;
+    size_t dataArray[5];
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = rand();
+    dataArray[2] = data;
+    CWE789_Uncontrolled_Mem_Alloc__malloc_wchar_t_rand_66b_goodB2GSink(dataArray);
+}

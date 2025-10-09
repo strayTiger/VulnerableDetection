@@ -1,0 +1,6 @@
+char * CWE78_OS_Command_Injection__char_console_w32_execv_61b_goodG2BSource(char * data)
+{
+    /* FIX: Append a fixed string to data (not user / external input) */
+    strcat(data, "*.*");
+    return data;
+}

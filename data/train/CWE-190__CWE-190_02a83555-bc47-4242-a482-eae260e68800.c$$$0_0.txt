@@ -1,0 +1,12 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    data = goodG2BSource(data);
+    {
+        /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+        int result = data + 1;
+        printIntLine(result);
+    }
+}

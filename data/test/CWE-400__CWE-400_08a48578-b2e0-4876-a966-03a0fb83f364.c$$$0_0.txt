@@ -1,0 +1,18 @@
+static void goodG2B()
+{
+    twoIntsStruct * data;
+    CWE401_Memory_Leak__twoIntsStruct_malloc_34_unionType myUnion;
+    data = NULL;
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (twoIntsStruct *)ALLOCA(100*sizeof(twoIntsStruct));
+    /* Initialize and make use of data */
+    data[0].intOne = 0;
+    data[0].intTwo = 0;
+    printStructLine(&data[0]);
+    myUnion.unionFirst = data;
+    {
+        twoIntsStruct * data = myUnion.unionSecond;
+        /* POTENTIAL FLAW: No deallocation */
+        ; /* empty statement needed for some flow variants */
+    }
+}

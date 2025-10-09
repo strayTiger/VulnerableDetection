@@ -1,0 +1,6 @@
+int CWE190_Integer_Overflow__int_rand_preinc_61b_goodB2GSource(int data)
+{
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    return data;
+}

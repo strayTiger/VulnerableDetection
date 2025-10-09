@@ -1,0 +1,5 @@
+void CWE400_Resource_Exhaustion__fscanf_fwrite_67_good()
+{
+    goodG2B();
+    goodB2G();
+}

@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    int data;
+    CWE369_Divide_by_Zero__int_rand_modulo_67_structType myStruct;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value not equal to zero */
+    data = 7;
+    myStruct.structFirst = data;
+    CWE369_Divide_by_Zero__int_rand_modulo_67b_goodG2BSink(myStruct);
+}

@@ -1,0 +1,39 @@
+void CWE457_Use_of_Uninitialized_Variable__double_array_alloca_partial_init_15_bad()
+{
+    double * data;
+    data = (double *)ALLOCA(10*sizeof(double));
+    switch(6)
+    {
+    case 6:
+        /* POTENTIAL FLAW: Partially initialize data */
+    {
+        int i;
+        for(i=0; i<(10/2); i++)
+        {
+            data[i] = (double)i;
+        }
+    }
+    break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        /* POTENTIAL FLAW: Use data without initializing it */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            printDoubleLine(data[i]);
+        }
+    }
+    break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

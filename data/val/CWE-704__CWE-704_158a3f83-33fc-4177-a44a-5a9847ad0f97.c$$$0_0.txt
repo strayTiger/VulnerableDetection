@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int data;
+    void (*funcPtr) (int) = CWE195_Signed_to_Unsigned_Conversion_Error__fgets_memmove_65b_goodG2BSink;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a positive integer less than &InitialDataSize&*/
+    data = 100-1;
+    funcPtr(data);
+}

@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__int_fgets_preinc_54b_goodG2BSink(int data)
+{
+    CWE190_Integer_Overflow__int_fgets_preinc_54c_goodG2BSink(data);
+}

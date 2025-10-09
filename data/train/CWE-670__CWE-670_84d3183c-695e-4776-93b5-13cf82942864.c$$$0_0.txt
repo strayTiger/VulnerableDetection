@@ -1,0 +1,6 @@
+int CWE617_Reachable_Assertion__connect_socket_61b_goodG2BSource(int data)
+{
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    return data;
+}

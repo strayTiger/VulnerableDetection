@@ -1,0 +1,8 @@
+void CWE590_Free_Memory_Not_on_Heap__free_wchar_t_alloca_66b_badSink(wchar_t * dataArray[])
+{
+    /* copy data out of dataArray */
+    wchar_t * data = dataArray[2];
+    printWLine(data);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

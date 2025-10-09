@@ -1,0 +1,5 @@
+void CWE369_Divide_by_Zero__int_zero_divide_16_good()
+{
+    goodB2G();
+    goodG2B();
+}

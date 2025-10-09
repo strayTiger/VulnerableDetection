@@ -1,0 +1,9 @@
+static void goodB2G2()
+{
+    unsigned int data;
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = UINT_MAX;
+    goodB2G2Static = 1; /* true */
+    goodB2G2Sink(data);
+}

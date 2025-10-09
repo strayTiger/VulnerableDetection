@@ -1,0 +1,19 @@
+static void good1()
+{
+    if(globalFalse)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            int intRand = rand();
+            /* FIX: used == instead of = */
+            if(intRand == 5)
+            {
+                printLine("i was 5");
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+static void good2()
+{
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        {
+            char dataBuffer[100] = "";
+            char * data = dataBuffer;
+            strcpy(data, "abcdefghijklmnopqrstuvwxyz");
+            /* FIX: Copy overlapping memory regions using memmove() */
+            memmove(data + 6, data + 4, 10*sizeof(char));
+            printLine(data);
+        }
+    }
+}

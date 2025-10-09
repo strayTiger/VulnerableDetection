@@ -1,0 +1,6 @@
+static void goodG2BSink(wchar_t * data)
+{
+    printWLine(data);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

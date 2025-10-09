@@ -1,0 +1,10 @@
+void CWE590_Free_Memory_Not_on_Heap__free_long_static_64b_goodG2BSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    long * * dataPtr = (long * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    long * data = (*dataPtr);
+    printLongLine(data[0]);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

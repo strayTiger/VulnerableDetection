@@ -1,0 +1,6 @@
+static size_t badSource(size_t data)
+{
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = rand();
+    return data;
+}

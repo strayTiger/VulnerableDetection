@@ -1,0 +1,15 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_34_bad()
+{
+    FILE * data;
+    CWE675_Duplicate_Operations_on_Resource__fopen_34_unionType myUnion;
+    data = NULL; /* Initialize data */
+    data = fopen("BadSource_fopen.txt", "w+");
+    /* POTENTIAL FLAW: Close the file in the source */
+    fclose(data);
+    myUnion.unionFirst = data;
+    {
+        FILE * data = myUnion.unionSecond;
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        fclose(data);
+    }
+}

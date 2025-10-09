@@ -1,0 +1,9 @@
+void CWE369_Divide_by_Zero__int_zero_modulo_41_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0;
+    badSink(data);
+}

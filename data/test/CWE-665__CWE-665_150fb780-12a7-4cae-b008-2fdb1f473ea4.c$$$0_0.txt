@@ -1,0 +1,15 @@
+static void goodB2G2()
+{
+    long data;
+    if(1)
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    if(1)
+    {
+        /* FIX: Ensure data is initialized before use */
+        data = 5L;
+        printLongLine(data);
+    }
+}

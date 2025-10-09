@@ -1,0 +1,8 @@
+static void goodG2B()
+{
+    unsigned int data;
+    data = 0;
+    /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+    data = 2;
+    goodG2BSink(data);
+}

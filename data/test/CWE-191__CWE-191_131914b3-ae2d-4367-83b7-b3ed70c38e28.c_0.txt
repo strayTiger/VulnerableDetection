@@ -1,0 +1,8 @@
+static void goodB2G()
+{
+    unsigned int data;
+    data = 0;
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = 0;
+    goodB2GSink(data);
+}

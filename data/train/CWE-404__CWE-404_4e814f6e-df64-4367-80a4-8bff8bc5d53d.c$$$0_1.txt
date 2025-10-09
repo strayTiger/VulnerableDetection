@@ -1,0 +1,8 @@
+void CWE590_Free_Memory_Not_on_Heap__free_struct_static_66b_badSink(twoIntsStruct * dataArray[])
+{
+    /* copy data out of dataArray */
+    twoIntsStruct * data = dataArray[2];
+    printStructLine(&data[0]);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

@@ -1,0 +1,11 @@
+void CWE190_Integer_Overflow__char_fscanf_add_66_bad()
+{
+    char data;
+    char dataArray[5];
+    data = ' ';
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%c", &data);
+    /* put data in array */
+    dataArray[2] = data;
+    CWE190_Integer_Overflow__char_fscanf_add_66b_badSink(dataArray);
+}

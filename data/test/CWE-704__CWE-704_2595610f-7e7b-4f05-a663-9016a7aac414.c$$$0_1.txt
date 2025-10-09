@@ -1,0 +1,9 @@
+void CWE197_Numeric_Truncation_Error__int_connect_socket_to_char_67b_badSink(CWE197_Numeric_Truncation_Error__int_connect_socket_to_char_67_structType myStruct)
+{
+    int data = myStruct.structFirst;
+    {
+        /* POTENTIAL FLAW: Convert data to a char, possibly causing a truncation error */
+        char charData = (char)data;
+        printHexCharLine(charData);
+    }
+}

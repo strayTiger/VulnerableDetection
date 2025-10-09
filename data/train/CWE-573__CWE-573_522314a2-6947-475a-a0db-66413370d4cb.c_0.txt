@@ -1,0 +1,11 @@
+static void good2()
+{
+    if(1)
+    {
+        /* FIX: check for the correct return value */
+        if (fwprintf(stdout, L"%s\n", L"string") < 0)
+        {
+            printLine("fwprintf failed!");
+        }
+    }
+}

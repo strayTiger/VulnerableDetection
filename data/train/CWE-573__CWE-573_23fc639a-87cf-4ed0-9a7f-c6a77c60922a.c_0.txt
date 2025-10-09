@@ -1,0 +1,5 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_64_good()
+{
+    goodG2B();
+    goodB2G();
+}

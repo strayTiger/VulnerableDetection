@@ -1,0 +1,13 @@
+void CWE415_Double_Free__malloc_free_struct_66_bad()
+{
+    twoIntsStruct * data;
+    twoIntsStruct * dataArray[5];
+    /* Initialize data */
+    data = NULL;
+    data = (twoIntsStruct *)malloc(100*sizeof(twoIntsStruct));
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    /* put data in array */
+    dataArray[2] = data;
+    CWE415_Double_Free__malloc_free_struct_66b_badSink(dataArray);
+}

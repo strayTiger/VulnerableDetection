@@ -1,0 +1,15 @@
+static void goodG2B()
+{
+    int data;
+    CWE617_Reachable_Assertion__rand_34_unionType myUnion;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    myUnion.unionFirst = data;
+    {
+        int data = myUnion.unionSecond;
+        /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+        assert(data > ASSERT_VALUE);
+    }
+}

@@ -1,0 +1,5 @@
+void CWE404_Improper_Resource_Shutdown__fopen_w32CloseHandle_14_good()
+{
+    goodB2G1();
+    goodB2G2();
+}

@@ -1,0 +1,5 @@
+void CWE761_Free_Pointer_Not_at_Start_of_Buffer__char_environment_22_good()
+{
+    goodB2G1();
+    goodB2G2();
+}

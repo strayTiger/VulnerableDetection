@@ -1,0 +1,16 @@
+static void goodG2B()
+{
+    void * data;
+    twoIntsStruct dataGoodBuffer;
+    int dataBadBuffer = 100;
+    dataGoodBuffer.intOne = 0;
+    dataGoodBuffer.intTwo = 0;
+    /* FIX: Set data to point to a twoIntsStruct struct */
+    data = &dataGoodBuffer;
+    {
+        void * dataCopy = data;
+        void * data = dataCopy;
+        /* POTENTIAL FLAW: Attempt to print a struct when data may be a non-struct data type */
+        printStructLine((twoIntsStruct *)data);
+    }
+}

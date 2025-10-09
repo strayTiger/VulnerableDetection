@@ -1,0 +1,18 @@
+static void goodG2B2()
+{
+    int64_t data;
+    data = 0LL;
+    if(staticTrue)
+    {
+        /* FIX: Use a small, non-zero value that will not cause an overflow in the sinks */
+        data = 2;
+    }
+    if(staticTrue)
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > LLONG_MAX, this will overflow */
+            int64_t result = data * data;
+            printLongLongLine(result);
+        }
+    }
+}

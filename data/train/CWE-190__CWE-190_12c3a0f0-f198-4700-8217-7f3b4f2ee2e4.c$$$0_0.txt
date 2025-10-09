@@ -1,0 +1,10 @@
+static void goodB2G()
+{
+    char data;
+    char dataArray[5];
+    data = ' ';
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = CHAR_MAX;
+    dataArray[2] = data;
+    CWE190_Integer_Overflow__char_max_add_66b_goodB2GSink(dataArray);
+}

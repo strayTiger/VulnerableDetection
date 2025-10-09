@@ -1,0 +1,9 @@
+void CWE675_Duplicate_Operations_on_Resource__freopen_64_bad()
+{
+    FILE * data;
+    data = NULL; /* Initialize data */
+    data = freopen("BadSource_freopen.txt","w+",stdin);
+    /* POTENTIAL FLAW: Close the file in the source */
+    fclose(data);
+    CWE675_Duplicate_Operations_on_Resource__freopen_64b_badSink(&data);
+}

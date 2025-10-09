@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__twoIntsStruct_malloc_34_good()
+{
+    goodG2B();
+    goodB2G();
+}

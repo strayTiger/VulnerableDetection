@@ -1,0 +1,7 @@
+void CWE369_Divide_by_Zero__int_zero_divide_04_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

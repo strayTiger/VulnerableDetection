@@ -1,0 +1,5 @@
+static void goodG2BSink(void * data)
+{
+    /* POTENTIAL FLAW: Attempt to print a struct when data may be a non-struct data type */
+    printStructLine((twoIntsStruct *)data);
+}

@@ -1,0 +1,13 @@
+void CWE78_OS_Command_Injection__wchar_t_connect_socket_system_61_bad()
+{
+    wchar_t * data;
+    wchar_t data_buf[100] = FULL_COMMAND;
+    data = data_buf;
+    data = CWE78_OS_Command_Injection__wchar_t_connect_socket_system_61b_badSource(data);
+    /* POTENTIAL FLAW: Execute command in data possibly leading to command injection */
+    if (SYSTEM(data) != 0)
+    {
+        printLine("command execution failed!");
+        exit(1);
+    }
+}

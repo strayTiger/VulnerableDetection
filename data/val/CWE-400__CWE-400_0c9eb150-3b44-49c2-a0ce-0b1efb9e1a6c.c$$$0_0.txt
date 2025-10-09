@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__wchar_t_realloc_54c_goodB2GSink(wchar_t * data)
+{
+    CWE401_Memory_Leak__wchar_t_realloc_54d_goodB2GSink(data);
+}

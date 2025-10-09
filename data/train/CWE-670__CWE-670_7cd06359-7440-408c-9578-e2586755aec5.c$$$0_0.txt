@@ -1,0 +1,16 @@
+static void good1()
+{
+    switch(5)
+    {
+    case 6:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    default:
+        /* FIX: ensure assertions cannot be triggered, in this case, to avoid an empty
+        * function, assert(1)
+        */
+        assert(1); /* INCIDENTAL: CWE 570 - expression is always false - it's "false" because assert(e) basically does if (!(e)) */
+        break;
+    }
+}

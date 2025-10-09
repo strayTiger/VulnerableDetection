@@ -1,0 +1,22 @@
+void CWE190_Integer_Overflow__int_rand_preinc_16_bad()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    while(1)
+    {
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+        break;
+    }
+    while(1)
+    {
+        {
+            /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+            ++data;
+            int result = data;
+            printIntLine(result);
+        }
+        break;
+    }
+}

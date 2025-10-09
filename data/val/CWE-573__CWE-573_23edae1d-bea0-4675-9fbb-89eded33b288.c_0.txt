@@ -1,0 +1,5 @@
+void CWE253_Incorrect_Check_of_Function_Return_Value__char_fgets_05_good()
+{
+    good1();
+    good2();
+}

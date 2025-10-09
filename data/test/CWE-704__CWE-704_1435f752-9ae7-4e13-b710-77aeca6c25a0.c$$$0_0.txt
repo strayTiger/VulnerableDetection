@@ -1,0 +1,4 @@
+void CWE194_Unexpected_Sign_Extension__fgets_strncpy_63_good()
+{
+    goodG2B();
+}

@@ -1,0 +1,7 @@
+void CWE675_Duplicate_Operations_on_Resource__w32CreateFile_66b_badSink(HANDLE dataArray[])
+{
+    /* copy data out of dataArray */
+    HANDLE data = dataArray[2];
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CloseHandle(data);
+}

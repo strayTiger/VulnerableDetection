@@ -1,0 +1,36 @@
+static void goodB2G()
+{
+    twoIntsStruct * data;
+    if(globalReturnsTrueOrFalse())
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    else
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    if(globalReturnsTrueOrFalse())
+    {
+        /* FIX: Ensure data is initialized before use */
+        /* initialize both the pointer and the data pointed to */
+        data = (twoIntsStruct *)malloc(sizeof(twoIntsStruct));
+        if (data == NULL) {exit(-1);}
+        data->intOne = 5;
+        data->intTwo = 6;
+        printIntLine(data->intOne);
+        printIntLine(data->intTwo);
+    }
+    else
+    {
+        /* FIX: Ensure data is initialized before use */
+        /* initialize both the pointer and the data pointed to */
+        data = (twoIntsStruct *)malloc(sizeof(twoIntsStruct));
+        if (data == NULL) {exit(-1);}
+        data->intOne = 5;
+        data->intTwo = 6;
+        printIntLine(data->intOne);
+        printIntLine(data->intTwo);
+    }
+}

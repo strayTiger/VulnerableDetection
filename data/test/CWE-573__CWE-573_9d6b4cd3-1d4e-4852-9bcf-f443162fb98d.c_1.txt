@@ -1,0 +1,12 @@
+void CWE675_Duplicate_Operations_on_Resource__open_65_bad()
+{
+    int data;
+    /* define a function pointer */
+    void (*funcPtr) (int) = CWE675_Duplicate_Operations_on_Resource__open_65b_badSink;
+    data = -1; /* Initialize data */
+    data = OPEN("BadSource_open.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
+    /* POTENTIAL FLAW: Close the file in the source */
+    CLOSE(data);
+    /* use the function pointer */
+    funcPtr(data);
+}

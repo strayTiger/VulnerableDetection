@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    char * data;
+    CWE78_OS_Command_Injection__char_connect_socket_execl_67_structType myStruct;
+    char dataBuffer[100] = COMMAND_ARG2;
+    data = dataBuffer;
+    /* FIX: Append a fixed string to data (not user / external input) */
+    strcat(data, "*.*");
+    myStruct.structFirst = data;
+    CWE78_OS_Command_Injection__char_connect_socket_execl_67b_goodG2BSink(myStruct);
+}

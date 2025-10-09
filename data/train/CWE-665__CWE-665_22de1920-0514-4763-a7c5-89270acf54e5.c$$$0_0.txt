@@ -1,0 +1,7 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_char_fgets_11_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

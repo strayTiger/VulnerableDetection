@@ -1,0 +1,4 @@
+void CWE843_Type_Confusion__short_53c_badSink(void * data)
+{
+    CWE843_Type_Confusion__short_53d_badSink(data);
+}

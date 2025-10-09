@@ -1,0 +1,18 @@
+static void good1()
+{
+    if(5!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            char dest[DEST_SIZE];
+            int intFive = 5;
+            /* FIX: use the correct format string */
+            sprintf(dest, "%d", intFive);
+            printLine(dest);
+        }
+    }
+}

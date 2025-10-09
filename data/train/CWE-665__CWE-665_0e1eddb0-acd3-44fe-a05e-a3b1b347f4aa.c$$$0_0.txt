@@ -1,0 +1,32 @@
+static void goodG2B1()
+{
+    int * data;
+    data = (int *)ALLOCA(10*sizeof(int));
+    if(staticFalse)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Completely initialize data */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = i;
+            }
+        }
+    }
+    if(staticTrue)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printIntLine(data[i]);
+            }
+        }
+    }
+}

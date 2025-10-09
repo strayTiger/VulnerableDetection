@@ -1,0 +1,26 @@
+static void goodB2G()
+{
+    int i,k;
+    int data;
+    /* Initialize data */
+    data = 0;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+    }
+    for(k = 0; k < 1; k++)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < INT_MAX)
+        {
+            ++data;
+            int result = data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

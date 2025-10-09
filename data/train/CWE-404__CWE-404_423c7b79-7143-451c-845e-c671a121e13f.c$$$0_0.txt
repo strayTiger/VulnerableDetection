@@ -1,0 +1,4 @@
+void CWE401_Memory_Leak__struct_twoIntsStruct_malloc_52b_goodB2GSink(struct _twoIntsStruct * data)
+{
+    CWE401_Memory_Leak__struct_twoIntsStruct_malloc_52c_goodB2GSink(data);
+}

@@ -1,0 +1,10 @@
+void CWE134_Uncontrolled_Format_String__char_environment_vprintf_65b_goodB2GVaSink(char * data, ...)
+{
+    {
+        va_list args;
+        va_start(args, data);
+        /* FIX: Specify the format disallowing a format string vulnerability */
+        vprintf("%s", args);
+        va_end(args);
+    }
+}

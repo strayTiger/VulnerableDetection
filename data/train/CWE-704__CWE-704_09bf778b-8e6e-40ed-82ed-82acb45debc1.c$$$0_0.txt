@@ -1,0 +1,5 @@
+void CWE194_Unexpected_Sign_Extension__fgets_malloc_22_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

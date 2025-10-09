@@ -1,0 +1,12 @@
+void CWE190_Integer_Overflow__int_max_multiply_44_bad()
+{
+    int data;
+    /* define a function pointer */
+    void (*funcPtr) (int) = badSink;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum value for this type */
+    data = INT_MAX;
+    /* use the function pointer */
+    funcPtr(data);
+}

@@ -1,0 +1,9 @@
+void CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_67b_badSink(CWE404_Improper_Resource_Shutdown__open_w32CloseHandle_67_structType myStruct)
+{
+    int data = myStruct.structFirst;
+    if (data != -1)
+    {
+        /* FLAW: Attempt to close the file using CloseHandle() instead of close() */
+        CloseHandle((HANDLE)data);
+    }
+}

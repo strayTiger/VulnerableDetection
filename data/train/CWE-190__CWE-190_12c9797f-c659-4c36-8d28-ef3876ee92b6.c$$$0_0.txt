@@ -1,0 +1,32 @@
+static void goodG2B2()
+{
+    int data;
+    /* Initialize data */
+    data = 0;
+    switch(6)
+    {
+    case 6:
+        /* FIX: Use a small, non-zero value that will not cause an integer overflow in the sinks */
+        data = 2;
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        if(data > 0) /* ensure we won't have an underflow */
+        {
+            /* POTENTIAL FLAW: if (data*2) > INT_MAX, this will overflow */
+            int result = data * 2;
+            printIntLine(result);
+        }
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

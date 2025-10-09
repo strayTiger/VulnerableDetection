@@ -1,0 +1,26 @@
+static void goodG2B2()
+{
+    int64_t data;
+    switch(6)
+    {
+    case 6:
+        /* FIX: Initialize data */
+        data = 5LL;
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        /* POTENTIAL FLAW: Use data without initializing it */
+        printLongLongLine(data);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

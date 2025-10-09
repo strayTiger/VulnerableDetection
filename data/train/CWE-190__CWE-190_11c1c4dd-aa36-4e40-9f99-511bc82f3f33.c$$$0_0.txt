@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__int64_t_rand_square_53c_goodG2BSink(int64_t data)
+{
+    CWE190_Integer_Overflow__int64_t_rand_square_53d_goodG2BSink(data);
+}

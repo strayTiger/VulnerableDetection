@@ -1,0 +1,29 @@
+static void goodB2G1()
+{
+    int data;
+    data = -1; /* Initialize data */
+    switch(6)
+    {
+    case 6:
+        data = OPEN("BadSource_open.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
+        /* POTENTIAL FLAW: Close the file in the source */
+        CLOSE(data);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(8)
+    {
+    case 7:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    default:
+        /* Do nothing */
+        /* FIX: Don't close the file in the sink */
+        ; /* empty statement needed for some flow variants */
+        break;
+    }
+}

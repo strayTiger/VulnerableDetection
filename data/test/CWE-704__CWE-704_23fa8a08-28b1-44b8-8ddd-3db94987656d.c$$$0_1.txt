@@ -1,0 +1,9 @@
+short CWE194_Unexpected_Sign_Extension__negative_strncpy_22_badSource(short data)
+{
+    if(CWE194_Unexpected_Sign_Extension__negative_strncpy_22_badGlobal)
+    {
+        /* FLAW: Use a negative number */
+        data = -1;
+    }
+    return data;
+}

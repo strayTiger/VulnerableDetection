@@ -1,0 +1,16 @@
+static void goodB2GSink(int data)
+{
+    if(data > 0) /* ensure we won't have an underflow */
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < (INT_MAX/2))
+        {
+            int result = data * 2;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

@@ -1,0 +1,17 @@
+static void goodG2B()
+{
+    int h,j;
+    int data;
+    /* Initialize data */
+    data = -1;
+    for(h = 0; h < 1; h++)
+    {
+        /* FIX: Use a value not equal to zero */
+        data = 7;
+    }
+    for(j = 0; j < 1; j++)
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 % data);
+    }
+}

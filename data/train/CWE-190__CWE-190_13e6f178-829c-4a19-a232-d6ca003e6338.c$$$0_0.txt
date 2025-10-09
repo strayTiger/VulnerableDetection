@@ -1,0 +1,9 @@
+static void goodG2BSink()
+{
+    short data = CWE190_Integer_Overflow__short_fscanf_square_45_goodG2BData;
+    {
+        /* POTENTIAL FLAW: if (data*data) > SHRT_MAX, this will overflow */
+        short result = data * data;
+        printIntLine(result);
+    }
+}

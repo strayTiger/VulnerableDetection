@@ -1,0 +1,12 @@
+void CWE665_Improper_Initialization__wchar_t_cat_65_bad()
+{
+    wchar_t * data;
+    /* define a function pointer */
+    void (*funcPtr) (wchar_t *) = CWE665_Improper_Initialization__wchar_t_cat_65b_badSink;
+    wchar_t dataBuffer[100];
+    data = dataBuffer;
+    /* FLAW: Do not initialize data */
+    ; /* empty statement needed for some flow variants */
+    /* use the function pointer */
+    funcPtr(data);
+}

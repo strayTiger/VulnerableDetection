@@ -1,0 +1,12 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    data = goodG2BSource(data);
+    {
+        /* POTENTIAL FLAW: Convert data to a char, possibly causing a truncation error */
+        char charData = (char)data;
+        printHexCharLine(charData);
+    }
+}

@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    int data;
+    data = -1; /* Initialize data */
+    data = goodB2GSource(data);
+    /* Do nothing */
+    /* FIX: Don't close the file in the sink */
+    ; /* empty statement needed for some flow variants */
+}

@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    /* FIX: Use a relatively small number */
+    count = 20;
+    CWE400_Resource_Exhaustion__connect_socket_for_loop_45_goodG2BData = count;
+    goodG2BSink();
+}

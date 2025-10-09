@@ -1,0 +1,10 @@
+static void goodG2BSink()
+{
+    int data = CWE191_Integer_Underflow__int_fscanf_predec_45_goodG2BData;
+    {
+        /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+        --data;
+        int result = data;
+        printIntLine(result);
+    }
+}

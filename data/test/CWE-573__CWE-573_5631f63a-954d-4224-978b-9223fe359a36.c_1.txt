@@ -1,0 +1,5 @@
+static void badSink(wchar_t * data)
+{
+    /* POTENTIAL FLAW: Possibly freeing memory twice */
+    free(data);
+}

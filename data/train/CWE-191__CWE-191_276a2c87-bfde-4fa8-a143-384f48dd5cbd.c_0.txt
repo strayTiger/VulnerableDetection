@@ -1,0 +1,4 @@
+void CWE191_Integer_Underflow__char_fscanf_multiply_54d_goodB2GSink(char data)
+{
+    CWE191_Integer_Underflow__char_fscanf_multiply_54e_goodB2GSink(data);
+}

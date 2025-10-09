@@ -1,0 +1,9 @@
+wchar_t * CWE401_Memory_Leak__strdup_wchar_t_61b_goodG2BSource(wchar_t * data)
+{
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (wchar_t *)ALLOCA(100*sizeof(wchar_t));
+    /* Initialize then use data */
+    wcscpy(data, L"a string");
+    printWLine(data);
+    return data;
+}

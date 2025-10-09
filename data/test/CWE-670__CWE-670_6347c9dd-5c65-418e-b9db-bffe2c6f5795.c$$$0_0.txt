@@ -1,0 +1,5 @@
+void CWE483_Incorrect_Block_Delimitation__semicolon_09_good()
+{
+    good1();
+    good2();
+}

@@ -1,0 +1,14 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    {
+        int dataCopy = data;
+        int data = dataCopy;
+        /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+        assert(data > ASSERT_VALUE);
+    }
+}

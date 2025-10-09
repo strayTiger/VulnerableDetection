@@ -1,0 +1,20 @@
+void CWE675_Duplicate_Operations_on_Resource__w32CreateFile_18_bad()
+{
+    HANDLE data;
+    data = INVALID_HANDLE_VALUE; /* Initialize data */
+    goto source;
+source:
+    data = CreateFile("BadSource_w32CreateFile.txt",
+                      (GENERIC_WRITE|GENERIC_READ),
+                      0,
+                      NULL,
+                      OPEN_ALWAYS,
+                      FILE_ATTRIBUTE_NORMAL,
+                      NULL);
+    /* POTENTIAL FLAW: Close the file in the source */
+    CloseHandle(data);
+    goto sink;
+sink:
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CloseHandle(data);
+}

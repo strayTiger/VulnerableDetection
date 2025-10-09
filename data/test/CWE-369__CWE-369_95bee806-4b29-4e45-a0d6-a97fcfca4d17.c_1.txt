@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__float_fgets_53c_badSink(float data)
+{
+    CWE369_Divide_by_Zero__float_fgets_53d_badSink(data);
+}

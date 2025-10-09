@@ -1,0 +1,20 @@
+void CWE665_Improper_Initialization__char_cat_17_bad()
+{
+    int i;
+    char * data;
+    char dataBuffer[100];
+    data = dataBuffer;
+    for(i = 0; i < 1; i++)
+    {
+        /* FLAW: Do not initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    {
+        char source[100];
+        memset(source, 'C', 100-1); /* fill with 'C's */
+        source[100-1] = '\0'; /* null terminate */
+        /* POTENTIAL FLAW: If data is not initialized properly, strcat() may not function correctly */
+        strcat(data, source);
+        printLine(data);
+    }
+}

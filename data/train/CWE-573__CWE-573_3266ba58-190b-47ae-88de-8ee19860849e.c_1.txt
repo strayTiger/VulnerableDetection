@@ -1,0 +1,14 @@
+void CWE415_Double_Free__malloc_free_long_44_bad()
+{
+    long * data;
+    /* define a function pointer */
+    void (*funcPtr) (long *) = badSink;
+    /* Initialize data */
+    data = NULL;
+    data = (long *)malloc(100*sizeof(long));
+    if (data == NULL) {exit(-1);}
+    /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+    free(data);
+    /* use the function pointer */
+    funcPtr(data);
+}

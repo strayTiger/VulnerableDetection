@@ -1,0 +1,19 @@
+void CWE415_Double_Free__malloc_free_struct_17_bad()
+{
+    int i,j;
+    twoIntsStruct * data;
+    /* Initialize data */
+    data = NULL;
+    for(i = 0; i < 1; i++)
+    {
+        data = (twoIntsStruct *)malloc(100*sizeof(twoIntsStruct));
+        if (data == NULL) {exit(-1);}
+        /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+        free(data);
+    }
+    for(j = 0; j < 1; j++)
+    {
+        /* POTENTIAL FLAW: Possibly freeing memory twice */
+        free(data);
+    }
+}

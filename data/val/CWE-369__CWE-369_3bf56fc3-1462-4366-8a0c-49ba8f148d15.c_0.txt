@@ -1,0 +1,23 @@
+static void goodB2G2()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    if(staticFive==5)
+    {
+        /* POTENTIAL FLAW: Set data to zero */
+        data = 0;
+    }
+    if(staticFive==5)
+    {
+        /* FIX: test for a zero denominator */
+        if( data != 0 )
+        {
+            printIntLine(100 % data);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

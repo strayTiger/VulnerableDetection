@@ -1,0 +1,15 @@
+static void goodG2B2()
+{
+    int data;
+    data = -1; /* Initialize data */
+    if(staticReturnsTrue())
+    {
+        /* FIX: Open, but do not close the file in the source */
+        data = OPEN("GoodSource_open.txt", O_RDWR|O_CREAT, S_IREAD|S_IWRITE);
+    }
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        CLOSE(data);
+    }
+}

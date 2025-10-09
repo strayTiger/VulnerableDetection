@@ -1,0 +1,15 @@
+static void goodB2GSink()
+{
+    int64_t data = CWE190_Integer_Overflow__int64_t_rand_postinc_45_goodB2GData;
+    /* FIX: Add a check to prevent an overflow from occurring */
+    if (data < LLONG_MAX)
+    {
+        data++;
+        int64_t result = data;
+        printLongLongLine(result);
+    }
+    else
+    {
+        printLine("data value is too large to perform arithmetic safely.");
+    }
+}

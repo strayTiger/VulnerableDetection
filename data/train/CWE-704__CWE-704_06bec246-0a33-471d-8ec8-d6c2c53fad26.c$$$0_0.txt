@@ -1,0 +1,4 @@
+void CWE194_Unexpected_Sign_Extension__fscanf_strncpy_54b_goodG2BSink(short data)
+{
+    CWE194_Unexpected_Sign_Extension__fscanf_strncpy_54c_goodG2BSink(data);
+}

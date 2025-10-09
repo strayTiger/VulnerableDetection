@@ -1,0 +1,9 @@
+void CWE191_Integer_Underflow__char_fscanf_sub_63b_badSink(char * dataPtr)
+{
+    char data = *dataPtr;
+    {
+        /* POTENTIAL FLAW: Subtracting 1 from data could cause an underflow */
+        char result = data - 1;
+        printHexCharLine(result);
+    }
+}

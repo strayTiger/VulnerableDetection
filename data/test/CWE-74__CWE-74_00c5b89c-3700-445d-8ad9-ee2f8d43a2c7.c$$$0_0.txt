@@ -1,0 +1,14 @@
+wchar_t * CWE78_OS_Command_Injection__wchar_t_console_system_22_goodG2B1Source(wchar_t * data)
+{
+    if(CWE78_OS_Command_Injection__wchar_t_console_system_22_goodG2B1Global)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Append a fixed string to data (not user / external input) */
+        wcscat(data, L"*.*");
+    }
+    return data;
+}

@@ -1,0 +1,12 @@
+static void goodG2BSink(short data)
+{
+    if(goodG2BStatic)
+    {
+        {
+            /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+            --data;
+            short result = data;
+            printIntLine(result);
+        }
+    }
+}

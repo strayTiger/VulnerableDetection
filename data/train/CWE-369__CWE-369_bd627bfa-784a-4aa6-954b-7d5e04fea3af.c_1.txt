@@ -1,0 +1,12 @@
+void CWE369_Divide_by_Zero__float_connect_socket_42_bad()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    data = badSource(data);
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        int result = (int)(100.0 / data);
+        printIntLine(result);
+    }
+}

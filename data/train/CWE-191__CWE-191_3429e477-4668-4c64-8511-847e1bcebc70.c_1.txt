@@ -1,0 +1,12 @@
+static void badSink(int64_t data)
+{
+    if(badStatic)
+    {
+        {
+            /* POTENTIAL FLAW: Decrementing data could cause an underflow */
+            data--;
+            int64_t result = data;
+            printLongLongLine(result);
+        }
+    }
+}

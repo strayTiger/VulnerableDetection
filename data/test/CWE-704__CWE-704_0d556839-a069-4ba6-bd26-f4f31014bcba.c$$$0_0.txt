@@ -1,0 +1,9 @@
+static short goodG2B2Source(short data)
+{
+    if(goodG2B2Static)
+    {
+        /* FIX: Use a positive integer less than CHAR_MAX*/
+        data = CHAR_MAX-5;
+    }
+    return data;
+}

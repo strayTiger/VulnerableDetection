@@ -1,0 +1,5 @@
+void CWE78_OS_Command_Injection__wchar_t_environment_w32_execv_10_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

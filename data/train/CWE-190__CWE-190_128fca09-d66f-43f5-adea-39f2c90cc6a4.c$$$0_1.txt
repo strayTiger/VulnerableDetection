@@ -1,0 +1,18 @@
+void CWE190_Integer_Overflow__short_fscanf_add_03_bad()
+{
+    short data;
+    data = 0;
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%hd", &data);
+    }
+    if(5==5)
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            short result = data + 1;
+            printIntLine(result);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+static char goodB2GSource(char data)
+{
+    /* POTENTIAL FLAW: Use a random value */
+    data = (char)RAND32();
+    return data;
+}

@@ -1,0 +1,11 @@
+void CWE665_Improper_Initialization__char_cat_53d_badSink(char * data)
+{
+    {
+        char source[100];
+        memset(source, 'C', 100-1); /* fill with 'C's */
+        source[100-1] = '\0'; /* null terminate */
+        /* POTENTIAL FLAW: If data is not initialized properly, strcat() may not function correctly */
+        strcat(data, source);
+        printLine(data);
+    }
+}

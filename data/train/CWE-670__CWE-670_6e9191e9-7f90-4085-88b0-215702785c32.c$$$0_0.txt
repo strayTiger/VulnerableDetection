@@ -1,0 +1,16 @@
+static void good1()
+{
+    if(staticFive!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: add () to function call */
+        if(helperGood() == NULL) /* this will sometimes be true (depending on the rand() in helperGood) */
+        {
+            printLine("Got a NULL");
+        }
+    }
+}

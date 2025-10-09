@@ -1,0 +1,10 @@
+void CWE665_Improper_Initialization__char_ncat_45_bad()
+{
+    char * data;
+    char dataBuffer[100];
+    data = dataBuffer;
+    /* FLAW: Do not initialize data */
+    ; /* empty statement needed for some flow variants */
+    CWE665_Improper_Initialization__char_ncat_45_badData = data;
+    badSink();
+}

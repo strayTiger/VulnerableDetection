@@ -1,0 +1,10 @@
+void CWE617_Reachable_Assertion__fscanf_68_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Read data from the console using fscanf() */
+    fscanf(stdin, "%d", &data);
+    CWE617_Reachable_Assertion__fscanf_68_badData = data;
+    CWE617_Reachable_Assertion__fscanf_68b_badSink();
+}

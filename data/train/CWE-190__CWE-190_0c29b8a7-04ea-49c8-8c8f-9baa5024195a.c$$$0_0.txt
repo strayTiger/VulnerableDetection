@@ -1,0 +1,5 @@
+void CWE190_Integer_Overflow__char_fscanf_postinc_64_good()
+{
+    goodG2B();
+    goodB2G();
+}

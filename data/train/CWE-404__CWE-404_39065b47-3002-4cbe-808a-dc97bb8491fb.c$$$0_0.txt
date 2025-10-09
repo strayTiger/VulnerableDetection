@@ -1,0 +1,16 @@
+static void goodB2G()
+{
+    FILE * data;
+    data = NULL;
+    /* POTENTIAL FLAW: Open a file without closing it */
+    data = fopen("BadSource_fopen.txt", "w+");
+    while(1)
+    {
+        /* FIX: If the file is still opened, close it */
+        if (data != NULL)
+        {
+            fclose(data);
+        }
+        break;
+    }
+}

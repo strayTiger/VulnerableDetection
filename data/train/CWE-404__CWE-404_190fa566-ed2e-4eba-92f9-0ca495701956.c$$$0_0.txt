@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__twoIntsStruct_realloc_68b_goodB2GSink()
+{
+    twoIntsStruct * data = CWE401_Memory_Leak__twoIntsStruct_realloc_68_goodB2GData;
+    /* FIX: Deallocate memory */
+    free(data);
+}

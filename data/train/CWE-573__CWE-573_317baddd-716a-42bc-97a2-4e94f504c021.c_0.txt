@@ -1,0 +1,12 @@
+static void good1()
+{
+    while(1)
+    {
+        /* FIX: check for the correct return value */
+        if (putwc((wchar_t)L'A', stdout) == WEOF)
+        {
+            printLine("putwc failed!");
+        }
+        break;
+    }
+}

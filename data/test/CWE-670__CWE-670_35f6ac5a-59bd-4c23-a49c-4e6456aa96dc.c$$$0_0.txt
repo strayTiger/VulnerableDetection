@@ -1,0 +1,5 @@
+void CWE484_Omitted_Break_Statement_in_Switch__basic_13_good()
+{
+    good1();
+    good2();
+}

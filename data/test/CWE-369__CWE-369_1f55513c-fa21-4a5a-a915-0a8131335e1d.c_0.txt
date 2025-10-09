@@ -1,0 +1,9 @@
+void CWE369_Divide_by_Zero__float_rand_68b_goodG2BSink()
+{
+    float data = CWE369_Divide_by_Zero__float_rand_68_goodG2BData;
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        int result = (int)(100.0 / data);
+        printIntLine(result);
+    }
+}

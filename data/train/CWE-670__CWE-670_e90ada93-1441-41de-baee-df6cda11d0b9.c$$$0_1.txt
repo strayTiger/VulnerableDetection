@@ -1,0 +1,5 @@
+void CWE617_Reachable_Assertion__zero_01_bad()
+{
+    /* FLAW: this assertion can be reached, and will always trigger */
+    assert(0); /* INCIDENTAL: CWE 571 - expression is always true - it's "true" because assert(e) basically does if (!(e)) */
+}

@@ -1,0 +1,14 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value not equal to zero */
+    data = 7;
+    {
+        int dataCopy = data;
+        int data = dataCopy;
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 % data);
+    }
+}

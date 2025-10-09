@@ -1,0 +1,8 @@
+static void goodG2BSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: if (data*data) > INT_MAX, this will overflow */
+        int result = data * data;
+        printIntLine(result);
+    }
+}

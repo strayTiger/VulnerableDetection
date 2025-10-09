@@ -1,0 +1,8 @@
+static void goodG2B()
+{
+    FILE * data;
+    data = NULL; /* Initialize data */
+    data = goodG2BSource(data);
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    fclose(data);
+}

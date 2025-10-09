@@ -1,0 +1,6 @@
+void CWE134_Uncontrolled_Format_String__char_connect_socket_printf_68b_goodB2GSink()
+{
+    char * data = CWE134_Uncontrolled_Format_String__char_connect_socket_printf_68_goodB2GData;
+    /* FIX: Specify the format disallowing a format string vulnerability */
+    printf("%s\n", data);
+}

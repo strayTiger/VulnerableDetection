@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__int_connect_socket_modulo_54b_goodG2BSink(int data)
+{
+    CWE369_Divide_by_Zero__int_connect_socket_modulo_54c_goodG2BSink(data);
+}

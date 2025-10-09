@@ -1,0 +1,8 @@
+static void good1()
+{
+    /* FIX: check for the correct return value */
+    if (putchar((int)'A') == EOF)
+    {
+        printLine("putchar failed!");
+    }
+}

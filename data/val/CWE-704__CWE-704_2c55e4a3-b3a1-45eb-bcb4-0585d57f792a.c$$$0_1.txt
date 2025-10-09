@@ -1,0 +1,12 @@
+void CWE195_Signed_to_Unsigned_Conversion_Error__rand_strncpy_44_bad()
+{
+    int data;
+    /* define a function pointer */
+    void (*funcPtr) (int) = badSink;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to a random value */
+    data = RAND32();
+    /* use the function pointer */
+    funcPtr(data);
+}

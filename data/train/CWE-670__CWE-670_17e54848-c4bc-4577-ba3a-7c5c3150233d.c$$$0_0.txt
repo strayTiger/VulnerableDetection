@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int data;
+    void (*funcPtr) (int) = CWE617_Reachable_Assertion__fgets_65b_goodG2BSink;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    funcPtr(data);
+}

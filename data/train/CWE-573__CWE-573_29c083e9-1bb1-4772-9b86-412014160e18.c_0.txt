@@ -1,0 +1,17 @@
+static void goodG2B()
+{
+    FILE * data;
+    data = NULL; /* Initialize data */
+    while(1)
+    {
+        /* FIX: Open, but do not close the file in the source */
+        data = fopen("GoodSource_fopen.txt", "w+");
+        break;
+    }
+    while(1)
+    {
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        fclose(data);
+        break;
+    }
+}

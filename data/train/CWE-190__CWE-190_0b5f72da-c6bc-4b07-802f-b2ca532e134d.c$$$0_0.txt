@@ -1,0 +1,28 @@
+static void goodB2G1()
+{
+    short data;
+    data = 0;
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%hd", &data);
+    }
+    if(staticReturnsFalse())
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (abs((long)data) <= (long)sqrt((double)SHRT_MAX))
+        {
+            short result = data * data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

@@ -1,0 +1,20 @@
+static void goodG2B()
+{
+    int h,j;
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    for(h = 0; h < 1; h++)
+    {
+        /* FIX: Use a hardcoded number that won't a divide by zero */
+        data = 2.0F;
+    }
+    for(j = 0; j < 1; j++)
+    {
+        {
+            /* POTENTIAL FLAW: Possibly divide by zero */
+            int result = (int)(100.0 / data);
+            printIntLine(result);
+        }
+    }
+}

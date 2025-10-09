@@ -1,0 +1,7 @@
+void CWE675_Duplicate_Operations_on_Resource__freopen_66b_goodB2GSink(FILE * dataArray[])
+{
+    FILE * data = dataArray[2];
+    /* Do nothing */
+    /* FIX: Don't close the file in the sink */
+    ; /* empty statement needed for some flow variants */
+}

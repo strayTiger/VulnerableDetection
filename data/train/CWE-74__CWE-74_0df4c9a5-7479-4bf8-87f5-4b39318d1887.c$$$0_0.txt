@@ -1,0 +1,16 @@
+static void goodG2B()
+{
+    int h,j;
+    wchar_t * data;
+    wchar_t dataBuffer[100] = L"";
+    data = dataBuffer;
+    for(h = 0; h < 1; h++)
+    {
+        /* FIX: Use a fixed string that does not contain a format specifier */
+        wcscpy(data, L"fixedstringtest");
+    }
+    for(j = 0; j < 1; j++)
+    {
+        goodG2BVaSinkB(data, data);
+    }
+}

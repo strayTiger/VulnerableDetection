@@ -1,0 +1,4 @@
+void CWE464_Addition_of_Data_Structure_Sentinel__basic_53c_badSink(char data)
+{
+    CWE464_Addition_of_Data_Structure_Sentinel__basic_53d_badSink(data);
+}

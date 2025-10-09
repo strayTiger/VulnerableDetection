@@ -1,0 +1,15 @@
+void CWE401_Memory_Leak__struct_twoIntsStruct_malloc_65_bad()
+{
+    struct _twoIntsStruct * data;
+    /* define a function pointer */
+    void (*funcPtr) (struct _twoIntsStruct *) = CWE401_Memory_Leak__struct_twoIntsStruct_malloc_65b_badSink;
+    data = NULL;
+    /* POTENTIAL FLAW: Allocate memory on the heap */
+    data = (struct _twoIntsStruct *)malloc(100*sizeof(struct _twoIntsStruct));
+    /* Initialize and make use of data */
+    data[0].intOne = 0;
+    data[0].intTwo = 0;
+    printStructLine((twoIntsStruct *)&data[0]);
+    /* use the function pointer */
+    funcPtr(data);
+}

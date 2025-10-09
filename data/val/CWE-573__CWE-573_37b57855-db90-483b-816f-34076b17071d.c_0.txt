@@ -1,0 +1,5 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_51b_goodG2BSink(FILE * data)
+{
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    fclose(data);
+}

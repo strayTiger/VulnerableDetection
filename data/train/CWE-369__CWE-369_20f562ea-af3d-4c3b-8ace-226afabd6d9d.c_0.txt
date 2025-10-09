@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__int_rand_divide_53b_goodB2GSink(int data)
+{
+    CWE369_Divide_by_Zero__int_rand_divide_53c_goodB2GSink(data);
+}

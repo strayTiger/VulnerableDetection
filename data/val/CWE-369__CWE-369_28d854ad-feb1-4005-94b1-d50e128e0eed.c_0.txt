@@ -1,0 +1,26 @@
+static void goodB2G()
+{
+    int data;
+    int *dataPtr1 = &data;
+    int *dataPtr2 = &data;
+    /* Initialize data */
+    data = -1;
+    {
+        int data = *dataPtr1;
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+        *dataPtr1 = data;
+    }
+    {
+        int data = *dataPtr2;
+        /* FIX: test for a zero denominator */
+        if( data != 0 )
+        {
+            printIntLine(100 % data);
+        }
+        else
+        {
+            printLine("This would result in a divide by zero");
+        }
+    }
+}

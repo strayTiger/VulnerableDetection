@@ -1,0 +1,11 @@
+static void good2()
+{
+    if(GLOBAL_CONST_TRUE)
+    {
+        /* FIX: check for the correct return value */
+        if (fputc((int)'A', stdout) == EOF)
+        {
+            printLine("fputc failed!");
+        }
+    }
+}

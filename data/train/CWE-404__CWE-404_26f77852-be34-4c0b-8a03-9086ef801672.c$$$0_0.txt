@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__int64_t_malloc_63b_goodB2GSink(int64_t * * dataPtr)
+{
+    int64_t * data = *dataPtr;
+    /* FIX: Deallocate memory */
+    free(data);
+}

@@ -1,0 +1,8 @@
+void CWE401_Memory_Leak__int64_t_malloc_22_goodG2BSink(int64_t * data)
+{
+    if(CWE401_Memory_Leak__int64_t_malloc_22_goodG2BGlobal)
+    {
+        /* POTENTIAL FLAW: No deallocation */
+        ; /* empty statement needed for some flow variants */
+    }
+}

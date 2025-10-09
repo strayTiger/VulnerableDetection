@@ -1,0 +1,11 @@
+void CWE190_Integer_Overflow__char_fscanf_postinc_44_bad()
+{
+    char data;
+    /* define a function pointer */
+    void (*funcPtr) (char) = badSink;
+    data = ' ';
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%c", &data);
+    /* use the function pointer */
+    funcPtr(data);
+}

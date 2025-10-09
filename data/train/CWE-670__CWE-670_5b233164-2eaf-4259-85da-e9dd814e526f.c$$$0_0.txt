@@ -1,0 +1,14 @@
+static void good2()
+{
+    if(STATIC_CONST_TRUE)
+    {
+        {
+            int intGoodSink = 0;
+            /* Print original value to avoid any unused variable incidentals */
+            printIntLine(intGoodSink);
+            /* FIX: use = instead of == */
+            intGoodSink = 5;
+            printIntLine(intGoodSink);
+        }
+    }
+}

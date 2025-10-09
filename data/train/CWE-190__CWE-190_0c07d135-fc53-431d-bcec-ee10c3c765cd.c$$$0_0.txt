@@ -1,0 +1,17 @@
+void CWE190_Integer_Overflow__int_max_preinc_22_goodB2G2Sink(int data)
+{
+    if(CWE190_Integer_Overflow__int_max_preinc_22_goodB2G2Global)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < INT_MAX)
+        {
+            ++data;
+            int result = data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

@@ -1,0 +1,10 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    FILE * * dataPtr = (FILE * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    FILE * data = (*dataPtr);
+    /* Do nothing */
+    /* FIX: Don't close the file in the sink */
+    ; /* empty statement needed for some flow variants */
+}

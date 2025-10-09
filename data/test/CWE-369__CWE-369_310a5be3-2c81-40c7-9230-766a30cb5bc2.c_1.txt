@@ -1,0 +1,6 @@
+void CWE369_Divide_by_Zero__int_listen_socket_modulo_67b_badSink(CWE369_Divide_by_Zero__int_listen_socket_modulo_67_structType myStruct)
+{
+    int data = myStruct.structFirst;
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 % data);
+}

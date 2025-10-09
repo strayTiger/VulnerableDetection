@@ -1,0 +1,6 @@
+char CWE191_Integer_Underflow__char_fscanf_predec_61b_badSource(char data)
+{
+    /* POTENTIAL FLAW: Use a value input from the console */
+    fscanf (stdin, "%c", &data);
+    return data;
+}

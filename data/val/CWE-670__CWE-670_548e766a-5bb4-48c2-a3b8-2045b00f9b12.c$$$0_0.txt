@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value greater than the assert value */
+    data = ASSERT_VALUE+1;
+    CWE617_Reachable_Assertion__rand_41_goodG2BSink(data);
+}

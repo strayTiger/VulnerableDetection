@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    short data;
+    short dataArray[5];
+    /* Initialize data */
+    data = 0;
+    /* FIX: Use a positive integer less than &InitialDataSize&*/
+    data = 100-1;
+    dataArray[2] = data;
+    CWE194_Unexpected_Sign_Extension__fscanf_strncpy_66b_goodG2BSink(dataArray);
+}

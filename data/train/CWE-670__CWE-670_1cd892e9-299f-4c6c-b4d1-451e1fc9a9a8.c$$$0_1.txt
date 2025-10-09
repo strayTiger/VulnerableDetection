@@ -1,0 +1,9 @@
+void CWE617_Reachable_Assertion__rand_64b_badSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    int * dataPtr = (int *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    int data = (*dataPtr);
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

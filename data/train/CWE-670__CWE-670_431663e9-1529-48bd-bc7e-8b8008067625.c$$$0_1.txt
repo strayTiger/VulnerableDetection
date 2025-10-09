@@ -1,0 +1,14 @@
+void CWE617_Reachable_Assertion__fixed_17_bad()
+{
+    int i;
+    int data;
+    /* Initialize data */
+    data = -1;
+    for(i = 0; i < 1; i++)
+    {
+        /* FLAW: Use a value less than the assert value */
+        data = ASSERT_VALUE-1;
+    }
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

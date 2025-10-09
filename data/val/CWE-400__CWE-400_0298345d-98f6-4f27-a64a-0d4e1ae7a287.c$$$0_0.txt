@@ -1,0 +1,17 @@
+static void goodB2G2Sink(FILE * data)
+{
+    if(goodB2G2Static)
+    {
+        /* FIX: Close the file from the source before pointing data to a new file handle */
+        if (data != NULL)
+        {
+            fclose(data);
+        }
+        data = fopen("GoodSink_fopen.txt", "w+");
+        /* avoid incidental for not closing the file handle */
+        if (data != NULL)
+        {
+            fclose(data);
+        }
+    }
+}

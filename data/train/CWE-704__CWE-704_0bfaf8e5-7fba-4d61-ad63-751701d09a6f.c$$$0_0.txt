@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    short data;
+    /* Initialize data */
+    data = 0;
+    /* FIX: Use a positive integer less than &InitialDataSize&*/
+    data = 100-1;
+    CWE194_Unexpected_Sign_Extension__rand_strncpy_41_goodG2BSink(data);
+}

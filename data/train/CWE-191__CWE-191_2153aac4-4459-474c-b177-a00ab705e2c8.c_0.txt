@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    short data;
+    short dataArray[5];
+    data = 0;
+    /* FIX: Use a small, non-zero value that will not cause an underflow in the sinks */
+    data = -2;
+    dataArray[2] = data;
+    CWE191_Integer_Underflow__short_fscanf_multiply_66b_goodG2BSink(dataArray);
+}

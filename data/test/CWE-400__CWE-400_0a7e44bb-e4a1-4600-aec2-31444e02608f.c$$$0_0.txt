@@ -1,0 +1,7 @@
+void CWE400_Resource_Exhaustion__fgets_fwrite_09_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B1();
+    goodG2B2();
+}

@@ -1,0 +1,4 @@
+void CWE605_Multiple_Binds_Same_Port__basic_18_good()
+{
+    good1();
+}

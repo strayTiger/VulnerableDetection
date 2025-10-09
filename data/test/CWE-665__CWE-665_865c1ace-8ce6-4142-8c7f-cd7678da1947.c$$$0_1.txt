@@ -1,0 +1,9 @@
+char * CWE665_Improper_Initialization__char_cat_22_badSource(char * data)
+{
+    if(CWE665_Improper_Initialization__char_cat_22_badGlobal)
+    {
+        /* FLAW: Do not initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    return data;
+}

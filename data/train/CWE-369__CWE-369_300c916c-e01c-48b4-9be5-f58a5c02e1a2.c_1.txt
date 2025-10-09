@@ -1,0 +1,6 @@
+float CWE369_Divide_by_Zero__float_fscanf_61b_badSource(float data)
+{
+    /* POTENTIAL FLAW: Use a value input from the console using fscanf() */
+    fscanf (stdin, "%f", &data);
+    return data;
+}

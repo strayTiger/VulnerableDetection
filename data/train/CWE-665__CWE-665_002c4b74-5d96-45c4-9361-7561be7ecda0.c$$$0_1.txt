@@ -1,0 +1,7 @@
+void CWE457_Use_of_Uninitialized_Variable__int_64_bad()
+{
+    int data;
+    /* POTENTIAL FLAW: Don't initialize data */
+    ; /* empty statement needed for some flow variants */
+    CWE457_Use_of_Uninitialized_Variable__int_64b_badSink(&data);
+}

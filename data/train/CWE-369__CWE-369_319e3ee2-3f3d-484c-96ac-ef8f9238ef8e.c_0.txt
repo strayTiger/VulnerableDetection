@@ -1,0 +1,8 @@
+void CWE369_Divide_by_Zero__int_fscanf_divide_22_goodG2BSink(int data)
+{
+    if(CWE369_Divide_by_Zero__int_fscanf_divide_22_goodG2BGlobal)
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 / data);
+    }
+}

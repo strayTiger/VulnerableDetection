@@ -1,0 +1,8 @@
+void CWE197_Numeric_Truncation_Error__int_large_to_short_53d_goodG2BSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: Convert data to a short, possibly causing a truncation error */
+        short shortData = (short)data;
+        printShortLine(shortData);
+    }
+}

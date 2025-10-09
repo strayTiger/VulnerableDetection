@@ -1,0 +1,16 @@
+void CWE78_OS_Command_Injection__char_environment_popen_64b_goodG2BSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    char * * dataPtr = (char * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    char * data = (*dataPtr);
+    {
+        FILE *pipe;
+        /* POTENTIAL FLAW: Execute command in data possibly leading to command injection */
+        pipe = POPEN(data, "w");
+        if (pipe != NULL)
+        {
+            PCLOSE(pipe);
+        }
+    }
+}

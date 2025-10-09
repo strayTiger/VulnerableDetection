@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__float_fscanf_54d_badSink(float data)
+{
+    CWE369_Divide_by_Zero__float_fscanf_54e_badSink(data);
+}

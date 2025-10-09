@@ -1,0 +1,20 @@
+static void goodB2G()
+{
+    FILE * data;
+    FILE * *dataPtr1 = &data;
+    FILE * *dataPtr2 = &data;
+    data = NULL; /* Initialize data */
+    {
+        FILE * data = *dataPtr1;
+        data = fopen("BadSource_fopen.txt", "w+");
+        /* POTENTIAL FLAW: Close the file in the source */
+        fclose(data);
+        *dataPtr1 = data;
+    }
+    {
+        FILE * data = *dataPtr2;
+        /* Do nothing */
+        /* FIX: Don't close the file in the sink */
+        ; /* empty statement needed for some flow variants */
+    }
+}

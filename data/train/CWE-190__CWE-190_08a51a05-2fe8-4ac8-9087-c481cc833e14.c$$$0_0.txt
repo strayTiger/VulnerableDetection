@@ -1,0 +1,20 @@
+void CWE190_Integer_Overflow__short_max_multiply_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    short * dataPtr = (short *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    short data = (*dataPtr);
+    if(data > 0) /* ensure we won't have an underflow */
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (data < (SHRT_MAX/2))
+        {
+            short result = data * 2;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

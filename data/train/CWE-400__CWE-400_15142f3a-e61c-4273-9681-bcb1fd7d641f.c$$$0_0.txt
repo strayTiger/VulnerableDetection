@@ -1,0 +1,5 @@
+void CWE400_Resource_Exhaustion__rand_sleep_51_good()
+{
+    goodG2B();
+    goodB2G();
+}

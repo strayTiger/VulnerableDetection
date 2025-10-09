@@ -1,0 +1,40 @@
+static void goodB2G1()
+{
+    int * data;
+    data = (int *)malloc(10*sizeof(int));
+    if (data == NULL) {exit(-1);}
+    if(globalFive==5)
+    {
+        /* POTENTIAL FLAW: Partially initialize data */
+        {
+            int i;
+            for(i=0; i<(10/2); i++)
+            {
+                data[i] = i;
+            }
+        }
+    }
+    if(globalFive!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Ensure data is initialized before use */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = i;
+            }
+        }
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printIntLine(data[i]);
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+static void goodB2G1()
+{
+    size_t data;
+    /* Initialize data */
+    data = 0;
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Read data from the console using fscanf() */
+        fscanf(stdin, "%zu", &data);
+    }
+    if(5!=5)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            char * myString;
+            /* FIX: Include a MAXIMUM limitation for memory allocation and a check to ensure data is large enough
+             * for the strcpy() function to not cause a buffer overflow */
+            /* INCIDENTAL FLAW: The source could cause a type overrun in data or in the memory allocation */
+            if (data > strlen(HELLO_STRING) && data < 100)
+            {
+                myString = (char *)malloc(data*sizeof(char));
+                if (myString == NULL) {exit(-1);}
+                /* Copy a small string into myString */
+                strcpy(myString, HELLO_STRING);
+                printLine(myString);
+                free(myString);
+            }
+            else
+            {
+                printLine("Input is less than the length of the source string or too large");
+            }
+        }
+    }
+}

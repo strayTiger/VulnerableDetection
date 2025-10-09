@@ -1,0 +1,5 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_char_listen_socket_44_good()
+{
+    goodG2B();
+    goodB2G();
+}

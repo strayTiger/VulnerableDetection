@@ -1,0 +1,6 @@
+static char goodB2GSource(char data)
+{
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = CHAR_MAX;
+    return data;
+}

@@ -1,0 +1,14 @@
+void CWE617_Reachable_Assertion__rand_17_bad()
+{
+    int i;
+    int data;
+    /* Initialize data */
+    data = -1;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Set data to a random value */
+        data = RAND32();
+    }
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

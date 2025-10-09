@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__char_calloc_53d_goodB2GSink(char * data)
+{
+    /* FIX: Deallocate memory */
+    free(data);
+}

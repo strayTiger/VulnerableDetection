@@ -1,0 +1,8 @@
+void CWE401_Memory_Leak__char_realloc_22_goodB2G2Sink(char * data)
+{
+    if(CWE401_Memory_Leak__char_realloc_22_goodB2G2Global)
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

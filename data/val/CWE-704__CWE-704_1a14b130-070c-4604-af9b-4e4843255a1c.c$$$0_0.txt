@@ -1,0 +1,4 @@
+void CWE197_Numeric_Truncation_Error__short_fgets_31_good()
+{
+    goodG2B();
+}

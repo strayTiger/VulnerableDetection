@@ -1,0 +1,5 @@
+void CWE480_Use_of_Incorrect_Operator__basic_04_good()
+{
+    good1();
+    good2();
+}

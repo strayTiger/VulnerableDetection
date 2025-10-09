@@ -1,0 +1,5 @@
+void CWE78_OS_Command_Injection__char_listen_socket_system_09_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

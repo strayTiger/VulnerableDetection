@@ -1,0 +1,10 @@
+static void good1()
+{
+    goto sink;
+sink:
+    /* FIX: check for the correct return value */
+    if (fwprintf(stdout, L"%s\n", L"string") < 0)
+    {
+        printLine("fwprintf failed!");
+    }
+}

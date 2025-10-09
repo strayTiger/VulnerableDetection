@@ -1,0 +1,11 @@
+void CWE400_Resource_Exhaustion__rand_sleep_67_bad()
+{
+    int count;
+    CWE400_Resource_Exhaustion__rand_sleep_67_structType myStruct;
+    /* Initialize count */
+    count = -1;
+    /* POTENTIAL FLAW: Set count to a random value */
+    count = RAND32();
+    myStruct.structFirst = count;
+    CWE400_Resource_Exhaustion__rand_sleep_67b_badSink(myStruct);
+}

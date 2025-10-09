@@ -1,0 +1,5 @@
+void CWE190_Integer_Overflow__int64_t_rand_multiply_45_good()
+{
+    goodG2B();
+    goodB2G();
+}

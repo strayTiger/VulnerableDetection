@@ -1,0 +1,6 @@
+char * CWE665_Improper_Initialization__char_cat_61b_goodG2BSource(char * data)
+{
+    /* FIX: Properly initialize data */
+    data[0] = '\0'; /* null terminate */
+    return data;
+}

@@ -1,0 +1,5 @@
+void CWE681_Incorrect_Conversion_Between_Numeric_Types__double2int_06_good()
+{
+    good1();
+    good2();
+}

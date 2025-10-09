@@ -1,0 +1,9 @@
+void CWE675_Duplicate_Operations_on_Resource__open_64b_badSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    int * dataPtr = (int *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    int data = (*dataPtr);
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CLOSE(data);
+}

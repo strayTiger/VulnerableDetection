@@ -1,0 +1,13 @@
+void CWE369_Divide_by_Zero__int_listen_socket_divide_67b_goodB2GSink(CWE369_Divide_by_Zero__int_listen_socket_divide_67_structType myStruct)
+{
+    int data = myStruct.structFirst;
+    /* FIX: test for a zero denominator */
+    if( data != 0 )
+    {
+        printIntLine(100 / data);
+    }
+    else
+    {
+        printLine("This would result in a divide by zero");
+    }
+}

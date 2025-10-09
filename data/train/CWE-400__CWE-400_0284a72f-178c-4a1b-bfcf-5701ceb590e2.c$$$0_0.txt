@@ -1,0 +1,4 @@
+void CWE400_Resource_Exhaustion__fgets_sleep_53c_goodB2GSink(int count)
+{
+    CWE400_Resource_Exhaustion__fgets_sleep_53d_goodB2GSink(count);
+}

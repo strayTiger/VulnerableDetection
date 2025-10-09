@@ -1,0 +1,4 @@
+void CWE415_Double_Free__malloc_free_struct_53b_goodB2GSink(twoIntsStruct * data)
+{
+    CWE415_Double_Free__malloc_free_struct_53c_goodB2GSink(data);
+}

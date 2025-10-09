@@ -1,0 +1,31 @@
+static void goodG2B2()
+{
+    float data;
+    /* Initialize data */
+    data = 0.0F;
+    switch(6)
+    {
+    case 6:
+        /* FIX: Use a hardcoded number that won't a divide by zero */
+        data = 2.0F;
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        int result = (int)(100.0 / data);
+        printIntLine(result);
+    }
+    break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

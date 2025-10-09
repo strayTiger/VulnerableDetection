@@ -1,0 +1,33 @@
+static void goodB2G()
+{
+    wchar_t * data;
+    data = NULL;
+    if(globalReturnsTrueOrFalse())
+    {
+        /* POTENTIAL FLAW: Allocate memory on the heap */
+        data = (wchar_t *)realloc(data, 100*sizeof(wchar_t));
+        if (data == NULL) {exit(-1);}
+        /* Initialize and make use of data */
+        wcscpy(data, L"A String");
+        printWLine(data);
+    }
+    else
+    {
+        /* POTENTIAL FLAW: Allocate memory on the heap */
+        data = (wchar_t *)realloc(data, 100*sizeof(wchar_t));
+        if (data == NULL) {exit(-1);}
+        /* Initialize and make use of data */
+        wcscpy(data, L"A String");
+        printWLine(data);
+    }
+    if(globalReturnsTrueOrFalse())
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+    else
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

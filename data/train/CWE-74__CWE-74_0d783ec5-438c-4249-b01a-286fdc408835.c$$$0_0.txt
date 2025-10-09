@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    char * data;
+    char dataBuffer[100] = COMMAND_ARG2;
+    data = dataBuffer;
+    /* FIX: Append a fixed string to data (not user / external input) */
+    strcat(data, "*.*");
+    CWE78_OS_Command_Injection__char_environment_w32_execvp_63b_goodG2BSink(&data);
+}

@@ -1,0 +1,4 @@
+void CWE78_OS_Command_Injection__wchar_t_connect_socket_w32_execvp_53c_goodG2BSink(wchar_t * data)
+{
+    CWE78_OS_Command_Injection__wchar_t_connect_socket_w32_execvp_53d_goodG2BSink(data);
+}

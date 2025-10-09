@@ -1,0 +1,31 @@
+static void goodB2G1()
+{
+    wchar_t * data;
+    /* Initialize data */
+    data = NULL;
+    switch(6)
+    {
+    case 6:
+        data = (wchar_t *)malloc(100*sizeof(wchar_t));
+        if (data == NULL) {exit(-1);}
+        /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+        free(data);
+        break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(8)
+    {
+    case 7:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    default:
+        /* do nothing */
+        /* FIX: Don't attempt to free the memory */
+        ; /* empty statement needed for some flow variants */
+        break;
+    }
+}

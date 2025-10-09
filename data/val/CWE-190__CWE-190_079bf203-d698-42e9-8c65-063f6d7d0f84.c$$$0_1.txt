@@ -1,0 +1,5 @@
+void idou_parerethesis(char **unsculptural_badger)
+{
+  ++stonesoup_global_variable;;
+  exodus_comparer(unsculptural_badger);
+}

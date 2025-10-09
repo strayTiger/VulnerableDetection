@@ -1,0 +1,30 @@
+void CWE789_Uncontrolled_Mem_Alloc__malloc_char_rand_22_goodB2G1Sink(size_t data)
+{
+    if(CWE789_Uncontrolled_Mem_Alloc__malloc_char_rand_22_goodB2G1Global)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            char * myString;
+            /* FIX: Include a MAXIMUM limitation for memory allocation and a check to ensure data is large enough
+             * for the strcpy() function to not cause a buffer overflow */
+            /* INCIDENTAL FLAW: The source could cause a type overrun in data or in the memory allocation */
+            if (data > strlen(HELLO_STRING) && data < 100)
+            {
+                myString = (char *)malloc(data*sizeof(char));
+                if (myString == NULL) {exit(-1);}
+                /* Copy a small string into myString */
+                strcpy(myString, HELLO_STRING);
+                printLine(myString);
+                free(myString);
+            }
+            else
+            {
+                printLine("Input is less than the length of the source string or too large");
+            }
+        }
+    }
+}

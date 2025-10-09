@@ -1,0 +1,9 @@
+static void goodB2G1()
+{
+    char data;
+    data = ' ';
+    /* POTENTIAL FLAW: Use a random value */
+    data = (char)RAND32();
+    goodB2G1Static = 0; /* false */
+    goodB2G1Sink(data);
+}

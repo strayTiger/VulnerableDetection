@@ -1,0 +1,27 @@
+static void good1()
+{
+    if(STATIC_CONST_FALSE)
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        {
+            unsigned intUnsigned;
+            int intSigned;
+            intUnsigned = rand();
+            if (rand() % 2 == 0)
+            {
+                intUnsigned = UINT_MAX - intUnsigned;
+            }
+            /* FIX: don't allow very large values of intUnsigned */
+            if (intUnsigned > INT_MAX)
+            {
+                exit(1);
+            }
+            intSigned = intUnsigned;
+            printIntLine(intSigned);
+        }
+    }
+}

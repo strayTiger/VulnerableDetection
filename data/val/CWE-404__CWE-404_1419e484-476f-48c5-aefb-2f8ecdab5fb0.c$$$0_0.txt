@@ -1,0 +1,9 @@
+void CWE401_Memory_Leak__strdup_wchar_t_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    wchar_t * * dataPtr = (wchar_t * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    wchar_t * data = (*dataPtr);
+    /* FIX: Deallocate memory initialized in the source */
+    free(data);
+}

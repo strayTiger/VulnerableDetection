@@ -1,0 +1,6 @@
+char CWE191_Integer_Underflow__char_min_multiply_61b_goodG2BSource(char data)
+{
+    /* FIX: Use a small, non-zero value that will not cause an underflow in the sinks */
+    data = -2;
+    return data;
+}

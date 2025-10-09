@@ -1,0 +1,19 @@
+static void goodB2G2()
+{
+    int * data;
+    data = NULL;
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Allocate memory on the heap */
+        data = (int *)realloc(data, 100*sizeof(int));
+        if (data == NULL) {exit(-1);}
+        /* Initialize and make use of data */
+        data[0] = 5;
+        printIntLine(data[0]);
+    }
+    if(staticReturnsTrue())
+    {
+        /* FIX: Deallocate memory */
+        free(data);
+    }
+}

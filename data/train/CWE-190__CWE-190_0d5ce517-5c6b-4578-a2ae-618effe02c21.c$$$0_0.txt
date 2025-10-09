@@ -1,0 +1,13 @@
+void CWE190_Integer_Overflow__short_max_postinc_64b_goodG2BSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    short * dataPtr = (short *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    short data = (*dataPtr);
+    {
+        /* POTENTIAL FLAW: Incrementing data could cause an overflow */
+        data++;
+        short result = data;
+        printIntLine(result);
+    }
+}

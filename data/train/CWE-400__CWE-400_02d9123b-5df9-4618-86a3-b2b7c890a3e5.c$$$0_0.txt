@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__int_malloc_67_good()
+{
+    goodG2B();
+    goodB2G();
+}

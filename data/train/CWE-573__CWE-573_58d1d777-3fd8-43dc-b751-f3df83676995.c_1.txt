@@ -1,0 +1,5 @@
+void CWE675_Duplicate_Operations_on_Resource__w32CreateFile_51b_badSink(HANDLE data)
+{
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CloseHandle(data);
+}

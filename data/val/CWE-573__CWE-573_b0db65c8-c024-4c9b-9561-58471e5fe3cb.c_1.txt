@@ -1,0 +1,6 @@
+static void badSink()
+{
+    FILE * data = CWE675_Duplicate_Operations_on_Resource__fopen_45_badData;
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    fclose(data);
+}

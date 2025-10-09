@@ -1,0 +1,5 @@
+void CWE195_Signed_to_Unsigned_Conversion_Error__rand_memmove_07_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

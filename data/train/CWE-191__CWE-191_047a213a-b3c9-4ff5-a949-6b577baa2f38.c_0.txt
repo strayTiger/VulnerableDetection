@@ -1,0 +1,6 @@
+void CWE191_Integer_Underflow__short_min_predec_21_good()
+{
+    goodB2G1();
+    goodB2G2();
+    goodG2B();
+}

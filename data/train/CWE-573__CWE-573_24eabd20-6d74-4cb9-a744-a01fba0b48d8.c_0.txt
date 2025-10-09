@@ -1,0 +1,11 @@
+static void good2()
+{
+    if(STATIC_CONST_TRUE)
+    {
+        /* FIX: check for the correct return value */
+        if (fwrite((wchar_t *)L"string", sizeof(wchar_t), wcslen(L"string"), stdout) != wcslen(L"string"))
+        {
+            printLine("fwrite failed!");
+        }
+    }
+}

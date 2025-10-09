@@ -1,0 +1,15 @@
+void CWE401_Memory_Leak__int_realloc_44_bad()
+{
+    int * data;
+    /* define a function pointer */
+    void (*funcPtr) (int *) = badSink;
+    data = NULL;
+    /* POTENTIAL FLAW: Allocate memory on the heap */
+    data = (int *)realloc(data, 100*sizeof(int));
+    if (data == NULL) {exit(-1);}
+    /* Initialize and make use of data */
+    data[0] = 5;
+    printIntLine(data[0]);
+    /* use the function pointer */
+    funcPtr(data);
+}

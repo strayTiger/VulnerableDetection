@@ -1,0 +1,6 @@
+char CWE191_Integer_Underflow__char_min_predec_61b_badSource(char data)
+{
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = CHAR_MIN;
+    return data;
+}

@@ -1,0 +1,13 @@
+static void good2()
+{
+    if(globalReturnsTrue())
+    {
+        /* FIX: check for the correct return value */
+        if (RpcImpersonateClient(0) != RPC_S_OK)
+        {
+            exit(1);
+        }
+        /* We'll leave out most of the implementation since it has nothing to do with the CWE
+         * and since the checkers are looking for certain function calls anyway */
+    }
+}

@@ -1,0 +1,4 @@
+void CWE675_Duplicate_Operations_on_Resource__open_54d_badSink(int data)
+{
+    CWE675_Duplicate_Operations_on_Resource__open_54e_badSink(data);
+}

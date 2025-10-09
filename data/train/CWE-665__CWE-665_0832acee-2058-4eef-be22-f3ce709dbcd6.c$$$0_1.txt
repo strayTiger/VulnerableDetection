@@ -1,0 +1,14 @@
+void CWE457_Use_of_Uninitialized_Variable__wchar_t_pointer_03_bad()
+{
+    wchar_t * data;
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    if(5==5)
+    {
+        /* POTENTIAL FLAW: Use data without initializing it */
+        printWLine(data);
+    }
+}

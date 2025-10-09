@@ -1,0 +1,10 @@
+void CWE400_Resource_Exhaustion__rand_fwrite_21_bad()
+{
+    int count;
+    /* Initialize count */
+    count = -1;
+    /* POTENTIAL FLAW: Set count to a random value */
+    count = RAND32();
+    badStatic = 1; /* true */
+    badSink(count);
+}

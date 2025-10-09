@@ -1,0 +1,9 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a positive integer less than &InitialDataSize&*/
+    data = 100-1;
+    CWE195_Signed_to_Unsigned_Conversion_Error__connect_socket_malloc_51b_goodG2BSink(data);
+}

@@ -1,0 +1,8 @@
+static void badSink(FILE * data)
+{
+    if(badStatic)
+    {
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        fclose(data);
+    }
+}

@@ -1,0 +1,11 @@
+static void goodG2BSink(char data)
+{
+    if(goodG2BStatic)
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            char result = data + 1;
+            printHexCharLine(result);
+        }
+    }
+}

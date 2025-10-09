@@ -1,0 +1,8 @@
+void CWE675_Duplicate_Operations_on_Resource__freopen_61_bad()
+{
+    FILE * data;
+    data = NULL; /* Initialize data */
+    data = CWE675_Duplicate_Operations_on_Resource__freopen_61b_badSource(data);
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    fclose(data);
+}

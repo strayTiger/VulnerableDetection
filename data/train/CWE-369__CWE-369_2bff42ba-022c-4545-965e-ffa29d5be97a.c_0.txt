@@ -1,0 +1,10 @@
+static void goodG2B()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    /* FIX: Use a value not equal to zero */
+    data = 7;
+    CWE369_Divide_by_Zero__int_fscanf_divide_45_goodG2BData = data;
+    goodG2BSink();
+}

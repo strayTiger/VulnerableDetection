@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    short data;
+    void (*funcPtr) (short) = CWE191_Integer_Underflow__short_min_predec_65b_goodB2GSink;
+    data = 0;
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = SHRT_MIN;
+    funcPtr(data);
+}

@@ -1,0 +1,9 @@
+static char * goodG2BSource(char * data)
+{
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (char *)ALLOCA(100*sizeof(char));
+    /* Initialize and make use of data */
+    strcpy(data, "A String");
+    printLine(data);
+    return data;
+}

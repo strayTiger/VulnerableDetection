@@ -1,0 +1,15 @@
+static void goodG2B()
+{
+    twoIntsStruct * data;
+    data = (twoIntsStruct *)ALLOCA(10*sizeof(twoIntsStruct));
+    /* FIX: Completely initialize data */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            data[i].intOne = i;
+            data[i].intTwo = i;
+        }
+    }
+    CWE457_Use_of_Uninitialized_Variable__struct_array_alloca_no_init_64b_goodG2BSink(&data);
+}

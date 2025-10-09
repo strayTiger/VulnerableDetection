@@ -1,0 +1,9 @@
+void CWE369_Divide_by_Zero__int_fgets_modulo_42_bad()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    data = badSource(data);
+    /* POTENTIAL FLAW: Possibly divide by zero */
+    printIntLine(100 % data);
+}

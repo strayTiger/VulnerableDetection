@@ -1,0 +1,19 @@
+static void goodB2G2()
+{
+    twoIntsStruct * data;
+    /* Initialize data */
+    data = NULL;
+    if(STATIC_CONST_TRUE)
+    {
+        data = (twoIntsStruct *)malloc(100*sizeof(twoIntsStruct));
+        if (data == NULL) {exit(-1);}
+        /* POTENTIAL FLAW: Free data in the source - the bad sink frees data as well */
+        free(data);
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        /* do nothing */
+        /* FIX: Don't attempt to free the memory */
+        ; /* empty statement needed for some flow variants */
+    }
+}

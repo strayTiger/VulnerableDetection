@@ -1,0 +1,6 @@
+static void goodG2BSink()
+{
+    char * data = CWE401_Memory_Leak__char_malloc_45_goodG2BData;
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

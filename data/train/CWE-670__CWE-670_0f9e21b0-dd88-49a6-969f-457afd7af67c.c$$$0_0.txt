@@ -1,0 +1,6 @@
+void CWE617_Reachable_Assertion__rand_66b_goodG2BSink(int dataArray[])
+{
+    int data = dataArray[2];
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

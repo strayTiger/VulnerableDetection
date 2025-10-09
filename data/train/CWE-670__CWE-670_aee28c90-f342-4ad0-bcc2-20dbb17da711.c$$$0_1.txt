@@ -1,0 +1,13 @@
+void CWE482_Comparing_Instead_of_Assigning__basic_18_bad()
+{
+    goto sink;
+sink:
+    {
+        int intBadSink = 0;
+        /* Print original value to avoid any unused variable incidentals */
+        printIntLine(intBadSink);
+        /* FLAW: meant to assign 5 to intBadSink.  Maintenance note: may generate a compiler warning, this is intentional */
+        intBadSink == 5;
+        printIntLine(intBadSink);
+    }
+}

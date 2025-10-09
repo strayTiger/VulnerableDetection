@@ -1,0 +1,6 @@
+wchar_t * CWE134_Uncontrolled_Format_String__wchar_t_file_w32_vsnprintf_61b_goodG2BSource(wchar_t * data)
+{
+    /* FIX: Use a fixed string that does not contain a format specifier */
+    wcscpy(data, L"fixedstringtest");
+    return data;
+}

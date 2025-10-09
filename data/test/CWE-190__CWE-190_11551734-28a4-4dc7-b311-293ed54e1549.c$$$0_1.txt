@@ -1,0 +1,19 @@
+void CWE190_Integer_Overflow__short_rand_square_17_bad()
+{
+    int i,j;
+    short data;
+    data = 0;
+    for(i = 0; i < 1; i++)
+    {
+        /* POTENTIAL FLAW: Use a random value */
+        data = (short)RAND32();
+    }
+    for(j = 0; j < 1; j++)
+    {
+        {
+            /* POTENTIAL FLAW: if (data*data) > SHRT_MAX, this will overflow */
+            short result = data * data;
+            printIntLine(result);
+        }
+    }
+}

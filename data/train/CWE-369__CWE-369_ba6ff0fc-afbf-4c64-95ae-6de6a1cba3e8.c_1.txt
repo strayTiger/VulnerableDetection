@@ -1,0 +1,12 @@
+void CWE369_Divide_by_Zero__int_zero_modulo_44_bad()
+{
+    int data;
+    /* define a function pointer */
+    void (*funcPtr) (int) = badSink;
+    /* Initialize data */
+    data = -1;
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0;
+    /* use the function pointer */
+    funcPtr(data);
+}

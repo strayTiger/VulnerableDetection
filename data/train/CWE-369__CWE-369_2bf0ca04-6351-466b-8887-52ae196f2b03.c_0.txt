@@ -1,0 +1,17 @@
+void CWE369_Divide_by_Zero__float_fgets_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    float * dataPtr = (float *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    float data = (*dataPtr);
+    /* FIX: Check for value of or near zero before dividing */
+    if(fabs(data) > 0.000001)
+    {
+        int result = (int)(100.0 / data);
+        printIntLine(result);
+    }
+    else
+    {
+        printLine("This would result in a divide by zero");
+    }
+}

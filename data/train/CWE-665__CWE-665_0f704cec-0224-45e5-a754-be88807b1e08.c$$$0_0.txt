@@ -1,0 +1,50 @@
+static void goodB2G2()
+{
+    twoIntsStruct * data;
+    twoIntsStruct dataUninitArray[10];
+    data = dataUninitArray;
+    switch(6)
+    {
+    case 6:
+        /* POTENTIAL FLAW: Partially initialize data */
+    {
+        int i;
+        for(i=0; i<(10/2); i++)
+        {
+            data[i].intOne = i;
+            data[i].intTwo = i;
+        }
+    }
+    break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+    switch(7)
+    {
+    case 7:
+        /* FIX: Ensure data is initialized before use */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            data[i].intOne = i;
+            data[i].intTwo = i;
+        }
+    }
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            printIntLine(data[i].intOne);
+            printIntLine(data[i].intTwo);
+        }
+    }
+    break;
+    default:
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+        break;
+    }
+}

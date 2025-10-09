@@ -1,0 +1,13 @@
+void CWE665_Improper_Initialization__char_cat_66b_badSink(char * dataArray[])
+{
+    /* copy data out of dataArray */
+    char * data = dataArray[2];
+    {
+        char source[100];
+        memset(source, 'C', 100-1); /* fill with 'C's */
+        source[100-1] = '\0'; /* null terminate */
+        /* POTENTIAL FLAW: If data is not initialized properly, strcat() may not function correctly */
+        strcat(data, source);
+        printLine(data);
+    }
+}

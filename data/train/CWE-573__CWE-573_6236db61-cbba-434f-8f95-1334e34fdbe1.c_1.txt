@@ -1,0 +1,8 @@
+void CWE675_Duplicate_Operations_on_Resource__fopen_22_badSink(FILE * data)
+{
+    if(CWE675_Duplicate_Operations_on_Resource__fopen_22_badGlobal)
+    {
+        /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+        fclose(data);
+    }
+}

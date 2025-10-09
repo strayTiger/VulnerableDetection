@@ -1,0 +1,8 @@
+void CWE675_Duplicate_Operations_on_Resource__open_42_bad()
+{
+    int data;
+    data = -1; /* Initialize data */
+    data = badSource(data);
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CLOSE(data);
+}

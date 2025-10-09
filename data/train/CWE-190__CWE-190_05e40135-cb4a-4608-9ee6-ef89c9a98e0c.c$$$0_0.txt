@@ -1,0 +1,23 @@
+static void goodB2G2()
+{
+    short data;
+    data = 0;
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Use a random value */
+        data = (short)RAND32();
+    }
+    if(STATIC_CONST_FIVE==5)
+    {
+        /* FIX: Add a check to prevent an overflow from occurring */
+        if (abs((long)data) <= (long)sqrt((double)SHRT_MAX))
+        {
+            short result = data * data;
+            printIntLine(result);
+        }
+        else
+        {
+            printLine("data value is too large to perform arithmetic safely.");
+        }
+    }
+}

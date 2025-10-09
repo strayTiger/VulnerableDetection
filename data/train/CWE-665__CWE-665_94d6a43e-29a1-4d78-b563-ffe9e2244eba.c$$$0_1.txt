@@ -1,0 +1,34 @@
+void dandis_needlebook(int botulin_baddest,union themistian_ingles guffaws_butylates)
+{
+    int stonesoup_stack_size = 0;
+  char *wanders_adonizing = 0;
+  ++stonesoup_global_variable;
+  botulin_baddest--;
+  if (botulin_baddest > 0) {
+    balkanite_hesychastic(botulin_baddest,guffaws_butylates);
+    return ;
+  }
+  wanders_adonizing = ((char *)guffaws_butylates . launch_sherm);
+    tracepoint(stonesoup_trace, weakness_start, "CWE789", "A", "Uncontrolled Memory Allocation");
+    tracepoint(stonesoup_trace, trace_point, "CROSSOVER-POINT: BEFORE");
+    /* STONESOUP: CROSSOVER-POINT (Uncontrolled Memory Allocation) */
+    if (strlen(wanders_adonizing) > 1 &&
+     wanders_adonizing[0] == '-') {
+     stonesoup_printf("Input value is negative\n");
+ } else {
+        stonesoup_stack_size = strtoul(wanders_adonizing,0,0);
+        stonesoup_printf("Allocating stack array\n");
+        tracepoint(stonesoup_trace, trace_point, "TRIGGER-POINT: BEFORE");
+     /* STONESOUP: TRIGGER-POINT (Uncontrolled Memory Allocation) */
+        tracepoint(stonesoup_trace, variable_signed_integral, "stonesoup_stack_size", stonesoup_stack_size, &stonesoup_stack_size, "TRIGGER-STATE");
+        char stonesoup_stack_string[stonesoup_stack_size];
+        memset(stonesoup_stack_string,'x',stonesoup_stack_size - 1);
+        tracepoint(stonesoup_trace, trace_point, "TRIGGER-POINT: AFTER");
+    }
+    tracepoint(stonesoup_trace, trace_point, "CROSSOVER-POINT: AFTER");
+    tracepoint(stonesoup_trace, weakness_end);
+;
+  if (guffaws_butylates . launch_sherm != 0) 
+    free(((char *)guffaws_butylates . launch_sherm));
+stonesoup_close_printf_context();
+}

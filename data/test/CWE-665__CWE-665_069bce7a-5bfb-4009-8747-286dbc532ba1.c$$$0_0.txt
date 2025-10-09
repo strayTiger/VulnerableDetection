@@ -1,0 +1,40 @@
+static void goodB2G1()
+{
+    double * data;
+    double dataUninitArray[10];
+    data = dataUninitArray;
+    if(staticReturnsTrue())
+    {
+        /* POTENTIAL FLAW: Partially initialize data */
+        {
+            int i;
+            for(i=0; i<(10/2); i++)
+            {
+                data[i] = (double)i;
+            }
+        }
+    }
+    if(staticReturnsFalse())
+    {
+        /* INCIDENTAL: CWE 561 Dead Code, the code below will never run */
+        printLine("Benign, fixed string");
+    }
+    else
+    {
+        /* FIX: Ensure data is initialized before use */
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                data[i] = (double)i;
+            }
+        }
+        {
+            int i;
+            for(i=0; i<10; i++)
+            {
+                printDoubleLine(data[i]);
+            }
+        }
+    }
+}

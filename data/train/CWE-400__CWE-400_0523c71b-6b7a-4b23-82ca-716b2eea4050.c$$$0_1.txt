@@ -1,0 +1,9 @@
+static void badSink(wchar_t * data)
+{
+    if(badStatic)
+    {
+        /* POTENTIAL FLAW: No deallocation of memory */
+        /* no deallocation */
+        ; /* empty statement needed for some flow variants */
+    }
+}

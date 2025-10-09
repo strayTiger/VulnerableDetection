@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    unsigned int data;
+    void (*funcPtr) (unsigned int) = CWE190_Integer_Overflow__unsigned_int_max_postinc_65b_goodB2GSink;
+    data = 0;
+    /* POTENTIAL FLAW: Use the maximum size of the data type */
+    data = UINT_MAX;
+    funcPtr(data);
+}

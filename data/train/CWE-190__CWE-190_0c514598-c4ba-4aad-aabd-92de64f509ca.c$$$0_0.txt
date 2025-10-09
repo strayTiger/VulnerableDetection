@@ -1,0 +1,11 @@
+void CWE190_Integer_Overflow__int_listen_socket_add_22_goodG2BSink(int data)
+{
+    if(CWE190_Integer_Overflow__int_listen_socket_add_22_goodG2BGlobal)
+    {
+        {
+            /* POTENTIAL FLAW: Adding 1 to data could cause an overflow */
+            int result = data + 1;
+            printIntLine(result);
+        }
+    }
+}

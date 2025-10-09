@@ -1,0 +1,11 @@
+void CWE369_Divide_by_Zero__float_zero_67_bad()
+{
+    float data;
+    CWE369_Divide_by_Zero__float_zero_67_structType myStruct;
+    /* Initialize data */
+    data = 0.0F;
+    /* POTENTIAL FLAW: Set data to zero */
+    data = 0.0F;
+    myStruct.structFirst = data;
+    CWE369_Divide_by_Zero__float_zero_67b_badSink(myStruct);
+}

@@ -1,0 +1,6 @@
+static void badSink()
+{
+    wchar_t * data = CWE401_Memory_Leak__wchar_t_malloc_45_badData;
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

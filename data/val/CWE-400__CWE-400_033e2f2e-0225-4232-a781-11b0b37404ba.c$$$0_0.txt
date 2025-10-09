@@ -1,0 +1,25 @@
+static void goodG2B()
+{
+    int count;
+    int *countPtr1 = &count;
+    int *countPtr2 = &count;
+    /* Initialize count */
+    count = -1;
+    {
+        int count = *countPtr1;
+        /* FIX: Use a relatively small number */
+        count = 20;
+        *countPtr1 = count;
+    }
+    {
+        int count = *countPtr2;
+        {
+            size_t i = 0;
+            /* POTENTIAL FLAW: For loop using count as the loop variant and no validation */
+            for (i = 0; i < (size_t)count; i++)
+            {
+                printLine("Hello");
+            }
+        }
+    }
+}

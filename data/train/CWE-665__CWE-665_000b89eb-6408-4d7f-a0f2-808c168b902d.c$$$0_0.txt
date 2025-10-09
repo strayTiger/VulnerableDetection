@@ -1,0 +1,24 @@
+void CWE457_Use_of_Uninitialized_Variable__struct_array_alloca_no_init_64b_goodB2GSink(void * dataVoidPtr)
+{
+    /* cast void pointer to a pointer of the appropriate type */
+    twoIntsStruct * * dataPtr = (twoIntsStruct * *)dataVoidPtr;
+    /* dereference dataPtr into data */
+    twoIntsStruct * data = (*dataPtr);
+    /* FIX: Ensure data is initialized before use */
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            data[i].intOne = i;
+            data[i].intTwo = i;
+        }
+    }
+    {
+        int i;
+        for(i=0; i<10; i++)
+        {
+            printIntLine(data[i].intOne);
+            printIntLine(data[i].intTwo);
+        }
+    }
+}

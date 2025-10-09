@@ -1,0 +1,6 @@
+static int64_t badSource(int64_t data)
+{
+    /* POTENTIAL FLAW: Use a random value */
+    data = (int64_t)RAND64();
+    return data;
+}

@@ -1,0 +1,4 @@
+void CWE369_Divide_by_Zero__float_connect_socket_54c_goodG2BSink(float data)
+{
+    CWE369_Divide_by_Zero__float_connect_socket_54d_goodG2BSink(data);
+}

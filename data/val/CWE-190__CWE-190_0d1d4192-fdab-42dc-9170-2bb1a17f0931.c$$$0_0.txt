@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__int_connect_socket_multiply_53b_goodG2BSink(int data)
+{
+    CWE190_Integer_Overflow__int_connect_socket_multiply_53c_goodG2BSink(data);
+}

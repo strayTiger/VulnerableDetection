@@ -1,0 +1,10 @@
+static void good1()
+{
+    goto sink;
+sink:
+    /* FIX: check for the correct return value */
+    if (fputws(L"string", stdout) == WEOF)
+    {
+        printLine("fputws failed!");
+    }
+}

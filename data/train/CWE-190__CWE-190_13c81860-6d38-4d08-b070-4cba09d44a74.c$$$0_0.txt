@@ -1,0 +1,26 @@
+static void goodB2G2()
+{
+    char data;
+    data = ' ';
+    if(STATIC_CONST_TRUE)
+    {
+        /* POTENTIAL FLAW: Use a value input from the console */
+        fscanf (stdin, "%c", &data);
+    }
+    if(STATIC_CONST_TRUE)
+    {
+        if(data > 0) /* ensure we won't have an underflow */
+        {
+            /* FIX: Add a check to prevent an overflow from occurring */
+            if (data < (CHAR_MAX/2))
+            {
+                char result = data * 2;
+                printHexCharLine(result);
+            }
+            else
+            {
+                printLine("data value is too large to perform arithmetic safely.");
+            }
+        }
+    }
+}

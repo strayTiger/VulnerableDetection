@@ -1,0 +1,10 @@
+static void goodG2B1()
+{
+    int data;
+    /* Initialize data */
+    data = -1;
+    goodG2B1Static = 0; /* false */
+    data = goodG2B1Source(data);
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

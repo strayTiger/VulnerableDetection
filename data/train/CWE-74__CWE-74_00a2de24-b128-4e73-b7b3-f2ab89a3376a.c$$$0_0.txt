@@ -1,0 +1,4 @@
+void CWE78_OS_Command_Injection__wchar_t_console_w32_spawnv_17_good()
+{
+    goodG2B();
+}

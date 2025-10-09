@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__struct_twoIntsStruct_calloc_65b_goodB2GSink(struct _twoIntsStruct * data)
+{
+    /* FIX: Deallocate memory */
+    free(data);
+}

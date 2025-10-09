@@ -1,0 +1,9 @@
+static void goodB2G2()
+{
+    FILE * data;
+    data = NULL;
+    /* POTENTIAL FLAW: Open a file without closing it */
+    data = fopen("BadSource_fopen.txt", "w+");
+    goodB2G2Static = 1; /* true */
+    goodB2G2Sink(data);
+}

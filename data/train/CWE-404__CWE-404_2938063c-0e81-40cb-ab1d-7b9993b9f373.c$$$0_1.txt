@@ -1,0 +1,4 @@
+void CWE404_Improper_Resource_Shutdown__open_fclose_54b_badSink(int data)
+{
+    CWE404_Improper_Resource_Shutdown__open_fclose_54c_badSink(data);
+}

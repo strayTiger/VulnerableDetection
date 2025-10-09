@@ -1,0 +1,9 @@
+static void goodB2G()
+{
+    unsigned int data;
+    void (*funcPtr) (unsigned int) = goodB2GSink;
+    data = 0;
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = 0;
+    funcPtr(data);
+}

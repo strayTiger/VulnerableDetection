@@ -1,0 +1,7 @@
+void CWE457_Use_of_Uninitialized_Variable__struct_63b_goodG2BSink(twoIntsStruct * dataPtr)
+{
+    twoIntsStruct data = *dataPtr;
+    /* POTENTIAL FLAW: Use data without initializing it */
+    printIntLine(data.intOne);
+    printIntLine(data.intTwo);
+}

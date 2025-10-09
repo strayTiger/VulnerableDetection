@@ -1,0 +1,12 @@
+void CWE191_Integer_Underflow__int_fscanf_sub_44_bad()
+{
+    int data;
+    /* define a function pointer */
+    void (*funcPtr) (int) = badSink;
+    /* Initialize data */
+    data = 0;
+    /* POTENTIAL FLAW: Read data from the console using fscanf() */
+    fscanf(stdin, "%d", &data);
+    /* use the function pointer */
+    funcPtr(data);
+}

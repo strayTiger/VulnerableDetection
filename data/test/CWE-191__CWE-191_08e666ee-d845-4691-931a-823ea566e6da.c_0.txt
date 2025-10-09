@@ -1,0 +1,6 @@
+char CWE191_Integer_Underflow__char_min_multiply_61b_goodB2GSource(char data)
+{
+    /* POTENTIAL FLAW: Use the minimum size of the data type */
+    data = CHAR_MIN;
+    return data;
+}

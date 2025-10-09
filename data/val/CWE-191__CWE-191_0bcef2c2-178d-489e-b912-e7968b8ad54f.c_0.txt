@@ -1,0 +1,8 @@
+static void goodG2B()
+{
+    unsigned int data;
+    data = 0;
+    /* FIX: Use a small, non-zero value that will not cause an underflow in the sinks */
+    data = -2;
+    CWE191_Integer_Underflow__unsigned_int_min_postdec_52b_goodG2BSink(data);
+}

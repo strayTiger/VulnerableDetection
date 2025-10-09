@@ -1,0 +1,5 @@
+void CWE401_Memory_Leak__wchar_t_malloc_65b_goodB2GSink(wchar_t * data)
+{
+    /* FIX: Deallocate memory */
+    free(data);
+}

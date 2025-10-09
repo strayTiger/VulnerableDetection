@@ -1,0 +1,14 @@
+static void goodB2G2()
+{
+    char * data;
+    data = NULL;
+    {
+        char myString[] = "myString";
+        /* POTENTIAL FLAW: Allocate memory from the heap using a function that requires free() for deallocation */
+        data = strdup(myString);
+        /* Use data */
+        printLine(data);
+    }
+    CWE401_Memory_Leak__strdup_char_22_goodB2G2Global = 1; /* true */
+    CWE401_Memory_Leak__strdup_char_22_goodB2G2Sink(data);
+}

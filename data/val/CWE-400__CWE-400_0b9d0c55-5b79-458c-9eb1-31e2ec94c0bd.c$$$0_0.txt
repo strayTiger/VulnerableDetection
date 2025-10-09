@@ -1,0 +1,44 @@
+static void goodB2G2()
+{
+    size_t data;
+    /* Initialize data */
+    data = 0;
+    if(5==5)
+    {
+        {
+            char inputBuffer[CHAR_ARRAY_SIZE] = "";
+            /* POTENTIAL FLAW: Read data from the console using fgets() */
+            if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+            {
+                /* Convert to unsigned int */
+                data = strtoul(inputBuffer, NULL, 0);
+            }
+            else
+            {
+                printLine("fgets() failed.");
+            }
+        }
+    }
+    if(5==5)
+    {
+        {
+            char * myString;
+            /* FIX: Include a MAXIMUM limitation for memory allocation and a check to ensure data is large enough
+             * for the strcpy() function to not cause a buffer overflow */
+            /* INCIDENTAL FLAW: The source could cause a type overrun in data or in the memory allocation */
+            if (data > strlen(HELLO_STRING) && data < 100)
+            {
+                myString = (char *)malloc(data*sizeof(char));
+                if (myString == NULL) {exit(-1);}
+                /* Copy a small string into myString */
+                strcpy(myString, HELLO_STRING);
+                printLine(myString);
+                free(myString);
+            }
+            else
+            {
+                printLine("Input is less than the length of the source string or too large");
+            }
+        }
+    }
+}

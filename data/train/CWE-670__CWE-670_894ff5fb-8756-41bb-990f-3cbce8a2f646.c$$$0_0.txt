@@ -1,0 +1,5 @@
+void CWE617_Reachable_Assertion__fixed_06_good()
+{
+    goodG2B1();
+    goodG2B2();
+}

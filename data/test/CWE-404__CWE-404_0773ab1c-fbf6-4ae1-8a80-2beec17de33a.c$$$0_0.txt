@@ -1,0 +1,11 @@
+static void goodG2B()
+{
+    char * data;
+    data = NULL;
+    /* FIX: Use memory allocated on the stack with ALLOCA */
+    data = (char *)ALLOCA(100*sizeof(char));
+    /* Initialize then use data */
+    strcpy(data, "a string");
+    printLine(data);
+    CWE401_Memory_Leak__strdup_char_51b_goodG2BSink(data);
+}

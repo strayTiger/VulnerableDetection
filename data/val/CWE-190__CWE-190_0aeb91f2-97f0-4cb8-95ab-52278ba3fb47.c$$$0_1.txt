@@ -1,0 +1,4 @@
+void CWE190_Integer_Overflow__char_fscanf_postinc_53c_badSink(char data)
+{
+    CWE190_Integer_Overflow__char_fscanf_postinc_53d_badSink(data);
+}

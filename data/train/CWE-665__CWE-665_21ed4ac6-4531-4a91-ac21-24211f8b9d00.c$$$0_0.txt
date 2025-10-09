@@ -1,0 +1,15 @@
+static void goodB2G2()
+{
+    int data;
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        /* POTENTIAL FLAW: Don't initialize data */
+        ; /* empty statement needed for some flow variants */
+    }
+    if(GLOBAL_CONST_FIVE==5)
+    {
+        /* FIX: Ensure data is initialized before use */
+        data = 5;
+        printIntLine(data);
+    }
+}

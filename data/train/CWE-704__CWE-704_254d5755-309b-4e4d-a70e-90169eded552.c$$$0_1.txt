@@ -1,0 +1,27 @@
+void CWE197_Numeric_Truncation_Error__short_fgets_09_bad()
+{
+    short data;
+    /* Initialize data */
+    data = -1;
+    if(GLOBAL_CONST_TRUE)
+    {
+        {
+            char inputBuffer[CHAR_ARRAY_SIZE] = "";
+            /* FLAW: Use a number input from the console using fgets() */
+            if (fgets(inputBuffer, CHAR_ARRAY_SIZE, stdin) != NULL)
+            {
+                /* Convert to short */
+                data = (short)atoi(inputBuffer);
+            }
+            else
+            {
+                printLine("fgets() failed.");
+            }
+        }
+    }
+    {
+        /* POTENTIAL FLAW: Convert data to a char, possibly causing a truncation error */
+        char charData = (char)data;
+        printHexCharLine(charData);
+    }
+}

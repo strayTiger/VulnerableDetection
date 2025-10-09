@@ -1,0 +1,8 @@
+void CWE197_Numeric_Truncation_Error__int_listen_socket_to_short_41_goodG2BSink(int data)
+{
+    {
+        /* POTENTIAL FLAW: Convert data to a short, possibly causing a truncation error */
+        short shortData = (short)data;
+        printShortLine(shortData);
+    }
+}

@@ -1,0 +1,6 @@
+static char * goodG2BSource(char * data)
+{
+    /* FIX: Append a fixed string to data (not user / external input) */
+    strcat(data, "*.*");
+    return data;
+}

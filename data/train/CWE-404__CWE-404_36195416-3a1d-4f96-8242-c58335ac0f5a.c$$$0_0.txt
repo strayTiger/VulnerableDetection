@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__twoIntsStruct_realloc_67b_goodG2BSink(CWE401_Memory_Leak__twoIntsStruct_realloc_67_structType myStruct)
+{
+    twoIntsStruct * data = myStruct.structFirst;
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}

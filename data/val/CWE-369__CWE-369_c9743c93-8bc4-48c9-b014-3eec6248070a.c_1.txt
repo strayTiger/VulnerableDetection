@@ -1,0 +1,8 @@
+void CWE369_Divide_by_Zero__int_rand_modulo_22_badSink(int data)
+{
+    if(CWE369_Divide_by_Zero__int_rand_modulo_22_badGlobal)
+    {
+        /* POTENTIAL FLAW: Possibly divide by zero */
+        printIntLine(100 % data);
+    }
+}

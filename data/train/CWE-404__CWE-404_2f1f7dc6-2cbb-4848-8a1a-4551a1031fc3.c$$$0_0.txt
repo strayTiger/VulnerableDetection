@@ -1,0 +1,6 @@
+static char * goodB2GSource(char * data)
+{
+    /* POTENTIAL FLAW: Initialize data to be a fixed string that contains the search character in the sinks */
+    strcpy(data, BAD_SOURCE_FIXED_STRING);
+    return data;
+}

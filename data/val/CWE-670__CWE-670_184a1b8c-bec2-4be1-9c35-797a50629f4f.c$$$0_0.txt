@@ -1,0 +1,6 @@
+static void goodG2BSink()
+{
+    int data = CWE617_Reachable_Assertion__fscanf_45_goodG2BData;
+    /* POTENTIAL FLAW: this assertion could trigger if n <= ASSERT_VALUE */
+    assert(data > ASSERT_VALUE);
+}

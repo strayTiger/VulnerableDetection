@@ -1,0 +1,6 @@
+void CWE675_Duplicate_Operations_on_Resource__open_67b_goodG2BSink(CWE675_Duplicate_Operations_on_Resource__open_67_structType myStruct)
+{
+    int data = myStruct.structFirst;
+    /* POTENTIAL FLAW: Close the file in the sink (it may have been closed in the Source) */
+    CLOSE(data);
+}

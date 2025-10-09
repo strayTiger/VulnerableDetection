@@ -1,0 +1,7 @@
+void CWE590_Free_Memory_Not_on_Heap__free_struct_declare_66b_goodG2BSink(twoIntsStruct * dataArray[])
+{
+    twoIntsStruct * data = dataArray[2];
+    printStructLine(&data[0]);
+    /* POTENTIAL FLAW: Possibly deallocating memory allocated on the stack */
+    free(data);
+}

@@ -1,0 +1,6 @@
+void CWE401_Memory_Leak__struct_twoIntsStruct_realloc_66b_goodG2BSink(struct _twoIntsStruct * dataArray[])
+{
+    struct _twoIntsStruct * data = dataArray[2];
+    /* POTENTIAL FLAW: No deallocation */
+    ; /* empty statement needed for some flow variants */
+}
