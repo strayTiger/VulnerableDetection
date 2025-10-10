@@ -1,7 +1,7 @@
 
 # VulnerableDetection
 
-VulnerableDetection is a project designed to compare the performance of different models in vulnerability detection tasks. The project implements and evaluates multiple vulnerability detection models, helping researchers and developers understand the advantages and limitations of these models.
+Vulnerability Detection is a project designed to compare the performance of different models in vulnerability detection tasks. The project implements and evaluates multiple vulnerability detection models, helping researchers and developers understand the advantages and limitations of these models.
 
 ## 📚 Project Overview
 
@@ -21,6 +21,19 @@ VulnerableDetection aims to evaluate the performance of multiple vulnerability d
 - **Transformers**: A library for loading and applying pre-trained language models (such as CodeBERT and XLNet).
 - **scikit-learn**: A machine learning library used for model evaluation and metric computation.
 - **matplotlib**: A library for visualizing results.
+
+## 📦 Pre-trained Weights
+
+The pre-trained weights used for the models come from official model repositories, including:
+
+- **RoBERTa**: [roberta-base](https://huggingface.co/roberta-base)
+- **CodeBERT**: [microsoft/codebert-base](https://huggingface.co/microsoft/codebert-base)
+- **GraphCodeBERT**: [microsoft/graphcodebert-base](https://huggingface.co/microsoft/graphcodebert-base)
+- **CodeT5**: [Salesforce/codet5-base](https://huggingface.co/Salesforce/codet5-base)
+- **GPT2**: [openai-community/gpt2](https://huggingface.co/openai-community/gpt2)
+- **XLNet**: [xlnet-base-cased](https://huggingface.co/xlnet-base-cased)
+
+All experiment code is written in **Python 3.10**, and model training and evaluation processes are facilitated using **PyTorch** and **Scikit-learn**.
 
 ## 📁 Directory Structure
 
@@ -77,7 +90,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## 📬 Contact
 
-- Email: 2241908019@smail.fjut.edu.cn
+- Email: your.email@example.com
 - GitHub: [strayTiger](https://github.com/strayTiger)
 
 ---
