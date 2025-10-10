@@ -1,11 +1,11 @@
 
-# VulnerableDetection
+# Vulnerability Detection
 
 Vulnerability Detection is a project designed to compare the performance of different models in vulnerability detection tasks. The project implements and evaluates multiple vulnerability detection models, helping researchers and developers understand the advantages and limitations of these models.
 
 ## 📚 Project Overview
 
-VulnerableDetection aims to evaluate the performance of multiple vulnerability detection models across different datasets. The core goal of the project is to automate the identification of potential vulnerabilities in source code by leveraging advanced language models such as XLNet and CodeBERT.
+Vulnerability Detection aims to evaluate the performance of multiple vulnerability detection models across different datasets. The core goal of the project is to automate the identification of potential vulnerabilities in source code by leveraging advanced language models such as XLNet and CodeBERT.
 
 ## 🔑 Key Features
 
@@ -33,12 +33,12 @@ The pre-trained weights used for the models come from official model repositorie
 - **GPT2**: [openai-community/gpt2](https://huggingface.co/openai-community/gpt2)
 - **XLNet**: [xlnet-base-cased](https://huggingface.co/xlnet-base-cased)
 
-All experiment code is written in **Python 3.10**, and model training and evaluation processes are facilitated using **PyTorch** and **Scikit-learn**.
+All experiment code is written in **Python 3.11**, and model training and evaluation processes are facilitated using **PyTorch 2.9.0** and **Scikit-learn 1.7.0**.
 
 ## 📁 Directory Structure
 
 ```
-VulnerableDetection/
+Vulnerability-Detection/
 ├── data/        # Directory for datasets
 ├── model/       # Directory for model code
 ├── requirements.txt  # Dependency file
@@ -52,8 +52,8 @@ VulnerableDetection/
 First, clone the project to your local machine:
 
 ```bash
-git clone https://github.com/strayTiger/VulnerableDetection.git
-cd VulnerableDetection
+git clone https://github.com/strayTiger/Vulnerability-Detection.git
+cd Vulnerability-Detection
 ```
 
 ### 2. Install Dependencies
@@ -90,7 +90,7 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ## 📬 Contact
 
-- Email: your.email@example.com
+- Email: zhaoyinhu122@163.com
 - GitHub: [strayTiger](https://github.com/strayTiger)
 
 ---
