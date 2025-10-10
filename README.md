@@ -69,7 +69,7 @@ pip install -r requirements.txt
 Follow the instructions in the `model/` directory to choose and run the appropriate model. Typically, you can use a command like the following to start training and evaluation:
 
 ```bash
-python model/train_model.py --config config.json
+python model/train_model.py
 ```
 
 > Adjust the command according to the actual file path and configuration.
