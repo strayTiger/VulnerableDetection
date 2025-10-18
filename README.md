@@ -3,13 +3,9 @@
 
 Vulnerability Detection is a project designed to compare the performance of different models in vulnerability detection tasks. The project implements and evaluates multiple vulnerability detection models, helping researchers and developers understand the advantages and limitations of these models.
 
-## 📚 Project Overview
-
-Vulnerability Detection aims to evaluate the performance of multiple vulnerability detection models across different datasets. The core goal of the project is to automate the identification of potential vulnerabilities in source code by leveraging advanced language models such as XLNet and CodeBERT.
-
 ## 🔑 Key Features
 
-- **Multiple Model Comparison**: Implements various mainstream models (such as XLNet, CodeBERT, etc.) and compares their performance in vulnerability detection tasks.
+- **Multiple Model Comparison**: Implements various mainstream models (such as XLNet, CodeBERT, etc.) and compares their performance in vulnerability detection tasks.Based on the comparison results, the effectiveness of XLNet, which is based on Transformer-XL, is demonstrated, and an end-to-end framework XLNetVD is proposed.
 - **Dataset Support**: Supports multiple vulnerability detection datasets, allowing users to test and validate models.
 - **Efficient Performance Evaluation**: Uses standard evaluation metrics (such as F1-score) to assess model performance in vulnerability detection tasks.
 - **Flexible Configuration and Extensibility**: The project supports flexible configuration, allowing users to customize and extend it according to their needs.
@@ -44,6 +40,18 @@ Vulnerability-Detection/
 ├── requirements.txt  # Dependency file
 └── README.md    # Project description file
 ```
+#### model/
+It includes the code for all the models used for running and analysis.
+- Model.py: Used to test the performance of various baseline models.
+- loraModel.py: Used to test the performance of various models after LoRA fine-tuning.
+- train.jsonl,valid.jsonl,test.jsonl: Partial real-world dataset.
+- *_model: Folders where the models are stored. Please download them yourself.
+#### data/
+This folder contains a part of the SARD dataset.
+- train: Training set
+- val: validation set
+- test: test set
+For the complete dataset, please request it via this email: **guanjun.lin@fjsmu.edu.cn**
 
 ## 🚀 Usage
 
@@ -69,7 +77,7 @@ pip install -r requirements.txt
 Follow the instructions in the `model/` directory to choose and run the appropriate model. Typically, you can use a command like the following to start training and evaluation:
 
 ```bash
-python model/train_model.py
+python model/Model.py
 ```
 
 > Adjust the command according to the actual file path and configuration.
