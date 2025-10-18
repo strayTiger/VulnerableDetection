@@ -108,9 +108,3 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 - Email: zhaoyinhu122@163.com
 - GitHub: [strayTiger](https://github.com/strayTiger)
-
----
-
-### 📜 License
-
-This project's code is open-sourced under the [MIT License](./LICENSE). Anyone is free to use, copy, and modify it, as long as they include the original author(s) attribution.
