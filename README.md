@@ -44,10 +44,11 @@ Vulnerability-Detection/
 It includes the code for all the models used for running and analysis.
 - Model.py: Used to test the performance of various baseline models.
 - loraModel.py: Used to test the performance of various models after LoRA fine-tuning.
+- cweModel.py: Used for detecting different types of vulnerabilities.
 - train.jsonl,valid.jsonl,test.jsonl: Partial real-world dataset.
 - *_model: Folders where the models are stored. Please download them yourself.
 #### data/
-This folder contains a part of the SARD dataset.
+This folder contains a part of the SARD dataset.Used for detecting different types of vulnerabilities.
 - train: Training set
 - val: validation set
 - test: test set
@@ -79,6 +80,12 @@ Follow the instructions in the `model/` directory to choose and run the appropri
 
 ```bash
 python model/Model.py
+```
+
+For detecting different types of vulnerabilities, typically, you can use the following command to start training and evaluation:
+
+```bash
+python cweModel.py --data-root "E:\cwe_xlnet" --model "xlnet_model" --max-len 768 --batch-size 28 --epochs 3 --shuffle --strip-comments --strip-strings --mask-sard-hints
 ```
 
 > Adjust the command according to the actual file path and configuration.
