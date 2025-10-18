@@ -85,7 +85,7 @@ python model/Model.py
 For detecting different types of vulnerabilities, typically, you can use the following command to start training and evaluation:
 
 ```bash
-python cweModel.py --data-root "E:\cwe_xlnet" --model "xlnet_model" --max-len 768 --batch-size 28 --epochs 3 --shuffle --strip-comments --strip-strings --mask-sard-hints
+python cweModel.py --data-root "E:\data" --model "*_model" --max-len 768 --batch-size 28 --epochs 3 --shuffle --strip-comments --strip-strings --mask-sard-hints
 ```
 
 > Adjust the command according to the actual file path and configuration.
